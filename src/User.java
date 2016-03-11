@@ -12,14 +12,14 @@ public class User extends Person{
 	private String lName;
 	private String uName;
 	private String pWord;
-	private Boolean activated;
+	private String activated;
 	private String type;
 	private HashMap<String,University> savedUnis;
 	
 	/**
 	 * 
 	 */
-	public User(String fName, String lName, String uName, String pWord, Boolean activated, String type, HashMap<String,University> savedUnis) {
+	public User(String fName, String lName, String uName, String pWord, String activated, String type, HashMap<String,University> savedUnis) {
 		// TODO Auto-generated constructor stub
 		this.fName = fName;
 		this.lName = lName;
@@ -35,7 +35,7 @@ public class User extends Person{
 		lName = "";
 		uName = "";
 		pWord = "";
-		activated = true;
+		activated = "";
 		type = "";
 		savedUnis = new HashMap<String, University>();
 		
@@ -93,7 +93,7 @@ public class User extends Person{
 	/**
 	 * @return the activated
 	 */
-	public Boolean getActivated() {
+	public String getActivated() {
 		return activated;
 	}
 

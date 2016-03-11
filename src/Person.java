@@ -14,7 +14,7 @@ public abstract class Person {
 	private String lName;
 	private String uName;
 	private String pWord;
-	private Boolean activated;
+	private String activated;
 	private String type;
 
 	/**
@@ -24,7 +24,7 @@ public abstract class Person {
 	 * @param pWord
 	 * @param activated
 	 */
-	public Person(String fName, String lName, String uName, String pWord, Boolean activated, String type) {
+	public Person(String fName, String lName, String uName, String pWord, String activated, String type) {
 		super();
 		this.fName = fName;
 		this.lName = lName;
@@ -39,7 +39,7 @@ public abstract class Person {
 		lName = "";
 		uName = "";
 		pWord = "";
-		activated = true;
+		activated = "y";
 		type = "";	
 	}
 	/**
@@ -88,7 +88,7 @@ public abstract class Person {
 	/**
 	 * @return the activated
 	 */
-	public Boolean getActivated() {
+	public String getActivated() {
 		return activated;
 	}
 	/**
@@ -101,17 +101,33 @@ public abstract class Person {
 	
 	public void setActivated()
 	{
-		if(activated==false)
-			activated = true;
+		if(activated.equalsIgnoreCase("n"))
+			activated = "y";
 		else
-			activated = false;
+			activated = "n";
+	}
+	
+	public void setActivated(String activation)
+	{
+		if(activation.equalsIgnoreCase("y") || activation.equalsIgnoreCase("n"))
+		{
+			activated = activation;
+		}
+		else { System.out.println("You done entered an invalid acivation"); }
 	}
 	
 	public void setType()
 	{
-		if(type == "User")
-			type = "Admin";
+		if(type.equalsIgnoreCase("u"))
+			type = "a";
 		else
-			type = "User";
+			type = "u";
+	}
+	
+	public void setType(String type)
+	{
+		if(type.equalsIgnoreCase("u")||type.equalsIgnoreCase("a"))
+			this.type = type.toLowerCase();
+		else { System.out.println("You done entered an invalid type"); }
 	}
 }

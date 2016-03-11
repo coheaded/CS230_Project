@@ -14,7 +14,7 @@ public class Admin extends Person {
 	private String lName;
 	private String uName;
 	private String pWord;
-	private Boolean activated;
+	private String activated;
 	private String type;
 	
 	/**
@@ -25,7 +25,7 @@ public class Admin extends Person {
 	 * @param activated
 	 * @param type
 	 */
-	public Admin(String fName, String lName, String uName, String pWord, Boolean activated, String type) {
+	public Admin(String fName, String lName, String uName, String pWord, String activated, String type) {
 		super(fName, lName, uName, pWord, activated, type);
 		// TODO Auto-generated constructor stub
 	}
@@ -100,7 +100,7 @@ public class Admin extends Person {
 	 * @see Person#getActivated()
 	 */
 	@Override
-	public Boolean getActivated() {
+	public String getActivated() {
 		// TODO Auto-generated method stub
 		return super.getActivated();
 	}
@@ -120,7 +120,7 @@ public class Admin extends Person {
 	public void setActivated() {
 		super.setActivated();
 	}
-
+	
 	/**
 	 * @param type the type to set
 	 */
