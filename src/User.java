@@ -14,12 +14,12 @@ public class User extends Person{
 	private String pWord;
 	private Boolean activated;
 	private String type;
-	private Map<String,University> savedUnis;
+	private HashMap<String,University> savedUnis;
 	
 	/**
 	 * 
 	 */
-	public User(String fName, String lName, String uName, String pWord, Boolean activated, String type, Map<String,University> savedUnis) {
+	public User(String fName, String lName, String uName, String pWord, Boolean activated, String type, HashMap<String,University> savedUnis) {
 		// TODO Auto-generated constructor stub
 		this.fName = fName;
 		this.lName = lName;
@@ -100,19 +100,43 @@ public class User extends Person{
 	/**
 	 * @return the savedUnis
 	 */
-	public Map<String, University> getSavedUnis() {
+	public HashMap<String, University> getSavedUnis() {
 		return savedUnis;
 	}
 
 	/**
 	 * @param savedUnis the savedUnis to set
 	 */
-	public void setSavedUnis(Map<String, University> savedUnis) {
-		this.savedUnis = savedUnis;
+	public void saveUni(University uni) {
+		if(!savedUnis.containsKey(uni))
+			this.savedUnis.put(uni.getName(), uni);
+		else
+			System.out.println("Uni already saved!");
+	}
+	
+	public void removeUni(String uni){
+		savedUnis.remove(uni);
 	}
 	
 	public String getType() {
 		return type;
 	}
+	
+	public void setActivated(){
+		super.setActivated();
+	}
+	
+	public void setType(){
+		super.setType();
+	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "User [fName=" + fName + ", lName=" + lName + ", uName=" + uName + ", pWord=" + pWord + ", activated="
+				+ activated + ", type=" + type + ", savedUnis=" + savedUnis + "]";
+	}
+	
 }

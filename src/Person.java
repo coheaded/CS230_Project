@@ -99,5 +99,19 @@ public abstract class Person {
 		return type;
 	}
 	
-
+	public void setActivated()
+	{
+		if(activated==false)
+			activated = true;
+		else
+			activated = false;
+	}
+	
+	public void setType()
+	{
+		if(type == "User")
+			type = "Admin";
+		else
+			type = "User";
+	}
 }

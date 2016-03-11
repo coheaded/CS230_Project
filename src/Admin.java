@@ -117,15 +117,24 @@ public class Admin extends Person {
 	/**
 	 * @param activated the activated to set
 	 */
-	public void setActivated(Boolean activated) {
-		this.activated = activated;
+	public void setActivated() {
+		super.setActivated();
 	}
 
 	/**
 	 * @param type the type to set
 	 */
-	public void setType(String type) {
-		this.type = type;
+	public void setType() {
+		super.setType();
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Admin [fName=" + fName + ", lName=" + lName + ", uName=" + uName + ", pWord=" + pWord + ", activated="
+				+ activated + ", type=" + type + "]";
 	}
 
 }
