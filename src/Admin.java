@@ -26,11 +26,11 @@ public class Admin extends Person {
 	/**
 	 * The activation status of this Admin
 	 */
-	private String activated;
+	private char activated;
 	/**
 	 * The type of this Person 
 	 */
-	private String type;
+	private char type;
 	
 	/**
 	 * Creates a new Admin with specified parameters
@@ -41,7 +41,7 @@ public class Admin extends Person {
 	 * @param activated the activation status for this Admin
 	 * @param type the type of this Person
 	 */
-	public Admin(String fName, String lName, String uName, String pWord, String activated, String type) {
+	public Admin(String fName, String lName, String uName, String pWord, char activated, char type) {
 		super(fName, lName, uName, pWord, activated, type);
 		// TODO Auto-generated constructor stub
 	}
@@ -119,7 +119,7 @@ public class Admin extends Person {
 	 * @see Person#getActivated()
 	 */
 	@Override
-	public String getActivated() {
+	public char getActivated() {
 		// TODO Auto-generated method stub
 		return super.getActivated();
 	}
@@ -128,7 +128,7 @@ public class Admin extends Person {
 	 * @see Person#getType()
 	 */
 	@Override
-	public String getType() {
+	public char getType() {
 		// TODO Auto-generated method stub
 		return super.getType();
 	}

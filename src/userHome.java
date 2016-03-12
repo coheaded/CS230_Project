@@ -9,11 +9,13 @@ import java.util.*;
 public class userHome {
 	
 	private User user;
+	private DBController controller;
 	/**
 	 * 
 	 */
 	public userHome(User user) {
 		this.user = user;
+		controller = new DBController("cottenhead","cottenhead", "acls4");
 	}
 	
 	public Map<String,University> viewSchools(User user)
@@ -29,7 +31,7 @@ public class userHome {
 		user.removeUni(uni);
 	}
 	
-	public void saveUni(University uni){
+	public void saveUni(University uni) {
 		user.saveUni(uni);
 	}
 	
@@ -39,4 +41,5 @@ public class userHome {
 		user.setpWord(pWord);
 	}
 	
+
 }

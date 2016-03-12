@@ -11,6 +11,7 @@ public class UserUi {
 	private Map<String, University> unis;
 	private Person person;
 	
+	
 	/**
 	 * 
 	 */

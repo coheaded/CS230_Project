@@ -18,25 +18,26 @@ public class AdminHome {
 	public AdminHome(Admin admin) {
 		// TODO Auto-generated constructor stub
 		this.admin = admin;
+		controller = new DBController("cottenhead","cottenhead", "acls4");
 	}
 	
-	public void addPerson(String fname, String lname, String uname, String pnord, String type)
+	public void addPerson(String fname, String lname, String uname, String pnord, char type)
 	{
-		if(type.equalsIgnoreCase("a"))
+		if(Character.toLowerCase(type) =='a')
 		{
 			if(!admins.containsKey(uname) || !users.containsKey(uname))
 			{
-				Admin ad = new Admin(fname, lname, uname, pnord, "y", type);
+				Admin ad = new Admin(fname, lname, uname, pnord, 'y', type);
 				admins.put(uname, ad);
 			}
 			else
 				System.out.println("username already taken");
 		}
-		else if(type.equalsIgnoreCase("u"))
+		else if(Character.toLowerCase(type)== 'u')
 		{
 			if(!admins.containsKey(uname) || !users.containsKey(uname))
 			{
-				User us = new User(fname, lname, uname, pnord, "y", type, null);
+				User us = new User(fname, lname, uname, pnord, 'y', type, null);
 				users.put(uname, us);
 			}
 			else
@@ -65,7 +66,7 @@ public class AdminHome {
 		return peeps;
 	}
 	
-	public void editPerson(String fname, String lname, String uname, String pword, String type, String status)
+	public void editPerson(String fname, String lname, String uname, String pword, char type, char status)
 	{
 		if(users.containsKey(uname))
 		{
@@ -88,12 +89,18 @@ public class AdminHome {
 		}
 	}
 	
+//	public void editPerson(String fname, String lname, String uname, String pword, char type, char status)
+//	{
+//		controller.editUser(fname, lname, uname, pword, type, status);
+//	}
+	
+	
 	public void addUniversity(String school, String state, String location, String control, int studPop, 
-			int percFem, int satVerb, int satMath, int expenses,int percFinAid, int numApps, int percAdmitted, 
-			int percEnrolled, int acadScale, int qualityOfLife, ArrayList<String> emphases)
+			double percFem, double satVerb, double satMath, double expenses, double percFinAid, int numApps, double percAdmitted, 
+			double percEnrolled, int acadScale, int socialScale, int qualityOfLife)
 	{
 		controller.addUniversity(school, state, location, control, studPop, 
 				percFem, satVerb, satMath, expenses, percFinAid, numApps, percAdmitted, 
-				 percEnrolled, acadScale, qualityOfLife, emphases);
+				 percEnrolled, acadScale, socialScale, qualityOfLife);
 	}
 }
