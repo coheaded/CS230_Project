@@ -1,34 +1,53 @@
 import java.util.Map;
 
 /**
- * 
- */
-
-/**
- * @author smcarik
- *
+ * This class defines the attributes associated with and creates an instance of an Admin for the CMC System
+ * @author smcarik, Adam Noack, Curtis Noecker, Logan Schramel
+ * @version March 11, 2016
  */
 public class Admin extends Person {
-
+	
+	/**
+	 * The first name of this Admin
+	 */
 	private String fName;
+	/**
+	 * The last name of this Admin
+	 */
 	private String lName;
+	/**
+	 * The username of this Admin
+	 */
 	private String uName;
+	/**
+	 * The password for this Admin
+	 */
 	private String pWord;
+	/**
+	 * The activation status of this Admin
+	 */
 	private String activated;
+	/**
+	 * The type of this Person 
+	 */
 	private String type;
 	
 	/**
-	 * @param fName
-	 * @param lName
-	 * @param uName
-	 * @param pWord
-	 * @param activated
-	 * @param type
+	 * Creates a new Admin with specified parameters
+	 * @param fName the first name of this Admin
+	 * @param lName the last name of this Admin
+	 * @param uName the username of this Admin
+	 * @param pWord the passwrod for this Admin
+	 * @param activated the activation status for this Admin
+	 * @param type the type of this Person
 	 */
 	public Admin(String fName, String lName, String uName, String pWord, String activated, String type) {
 		super(fName, lName, uName, pWord, activated, type);
 		// TODO Auto-generated constructor stub
 	}
+	/**
+	 * Creates a new, active Admin with blank attributes
+	 */
 	public Admin(){
 		super();
 	}
@@ -115,14 +134,14 @@ public class Admin extends Person {
 	}
 
 	/**
-	 * @param activated the activated to set
+	 * Toggles the activation status for this Admin
 	 */
 	public void setActivated() {
 		super.setActivated();
 	}
 	
 	/**
-	 * @param type the type to set
+	 * Converts this Admin to a User
 	 */
 	public void setType() {
 		super.setType();
