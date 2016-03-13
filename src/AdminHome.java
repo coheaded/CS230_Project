@@ -18,12 +18,13 @@ public class AdminHome {
 	public AdminHome(Admin admin) {
 		// TODO Auto-generated constructor stub
 		this.admin = admin;
-		controller = new DBController("cottenhead","cottenhead", "acls4");
+		controller = new DBController("cottonhead","cottonhead", "acls4");
 	}
 	
 	public void addPerson(String fname, String lname, String uname, String pnord, char type)
 	{
-		if(Character.toLowerCase(type) =='a')
+		controller.addUser(String fname, String lname, String uname, String pnord, char type);
+		/**if(Character.toLowerCase(type) =='a')
 		{
 			if(!admins.containsKey(uname) || !users.containsKey(uname))
 			{
@@ -45,11 +46,14 @@ public class AdminHome {
 		}
 		else
 			System.out.println("not appropriate type, change type to a -admin or u -user");
+			**/
 	}
+	
 	
 	public void changeActivated(Person person)
 	{
-		person.setActivated();
+		//person.setActivated();
+		controller.editUser(fname, lname, uname, pword, type, status);
 	}
 	
 	public ArrayList<Person> viewPeople()
@@ -68,7 +72,8 @@ public class AdminHome {
 	
 	public void editPerson(String fname, String lname, String uname, String pword, char type, char status)
 	{
-		if(users.containsKey(uname))
+		controller.editUser(fname, lname, uname, pword, type, status);
+		/**if(users.containsKey(uname))
 		{
 			Person us = users.get(uname);
 			us.setfName(fname);
@@ -86,7 +91,7 @@ public class AdminHome {
 			ad.setType(type);
 			ad.setActivated(status);
 			users.put(uname, ad);
-		}
+		}**/
 	}
 	
 //	public void editPerson(String fname, String lname, String uname, String pword, char type, char status)
@@ -103,4 +108,13 @@ public class AdminHome {
 				percFem, satVerb, satMath, expenses, percFinAid, numApps, percAdmitted, 
 				 percEnrolled, acadScale, socialScale, qualityOfLife);
 	}
+	
+	public void editUniversity(String school, String state, String location, String control, int numberOfStudents, 
+			double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, 
+			int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
+		  univDBlib.university_editUniversity(school, state, location, control, numberOfStudents, 
+				  percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, 
+				  numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
+	}
+	  
 }
