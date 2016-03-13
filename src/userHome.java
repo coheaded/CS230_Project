@@ -15,7 +15,7 @@ public class userHome {
 	 */
 	public userHome(User user) {
 		this.user = user;
-		controller = new DBController("cottenhead","cottenhead", "acls4");
+		controller = new DBController("cottonhead","cottonhead", "acls4");
 	}
 	
 	public Map<String,University> viewSchools(User user)

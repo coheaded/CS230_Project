@@ -16,6 +16,16 @@ public class DBController {
 		  return users;
 	  }
 	  
+	  public boolean login(String username, String pass){
+		  String[][] array = getUsers();
+		  for(int i=0; i<array.length; i++){
+			  if(array[i][2].equals(username) && array[i][3].equals(pass)){
+				  return true;
+			  }
+		  }
+		  return false;
+	  }
+	  
 	  public void addUser(String firstName, String lastName, String username, String pass, char type){
 		  int check = univDBlib.user_addUser(firstName, lastName, username, pass, type);
 		  if(check<0)
