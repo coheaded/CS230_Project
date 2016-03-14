@@ -14,7 +14,7 @@ public class University implements Comparator<University>, Comparable<University
 	private String state;
 	private String location;
 	private String control;
-	private int studentPop;
+	private	int studentPop;
 	private int femPercent;
 	private int satVerbal;
 	private int satMath;
@@ -73,6 +73,30 @@ public class University implements Comparator<University>, Comparable<University
 		matchStrength = 0;
 		
 	}
+	
+	public University(String name, String state, String location, String control, int studentPop, int femPercent,
+			int satVerbal, int satMath, int expenses, int finAidPercent, int numApps, int admittedPercent,
+			int enrolledPercent, int academicScale, int socialScale, int qualityOfLife) {
+		this.name = name;
+		this.state = state;
+		this.location = location;
+		this.control = control;
+		this.studentPop = studentPop;
+		this.femPercent = femPercent;
+		this.satVerbal = satVerbal;
+		this.satMath = satMath;
+		this.expenses = expenses;
+		this.finAidPercent = finAidPercent;
+		this.numApps = numApps;
+		this.admittedPercent = admittedPercent;
+		this.enrolledPercent = enrolledPercent;
+		this.academicScale = academicScale;
+		this.socialScale = socialScale;
+		this.qualityOfLife = qualityOfLife;
+		
+		matchStrength = 0;
+		
+	}
 	/**
 	 * 
 	 */
@@ -104,10 +128,12 @@ public class University implements Comparator<University>, Comparable<University
 	
 	@Override
 	public int compare(University u1, University u2){
-		return this.matchStrength - university.getMatchStrength();
+		return this.matchStrength - u2.getMatchStrength();
 	}
 	
-	public boolean equals(Object obj){}
+//	public boolean equals(Object obj){
+//		return false;
+//	}
 	/**
 	 * @return the name
 	 */

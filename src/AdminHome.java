@@ -52,8 +52,10 @@ public class AdminHome {
 	
 	public void changeActivated(Person person)
 	{
-		//person.setActivated();
-		controller.editUser(fname, lname, uname, pword, type, status);
+		if(person.getActivated() == "Y")
+			controller.editUser(person.getfName(), person.getlName(), person.getuName(), person.getpWord(), person.getType().charAt(0), 'N');
+		else
+			controller.editUser(person.getfName(), person.getlName(), person.getuName(), person.getpWord(), person.getType().charAt(0), 'Y');
 	}
 	
 	public ArrayList<Person> viewPeople()
@@ -112,7 +114,7 @@ public class AdminHome {
 	public void editUniversity(String school, String state, String location, String control, int numberOfStudents, 
 			double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, 
 			int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
-		  univDBlib.university_editUniversity(school, state, location, control, numberOfStudents, 
+		  controller.editUniversity(school, state, location, control, numberOfStudents, 
 				  percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, 
 				  numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 	}

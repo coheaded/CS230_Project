@@ -1,4 +1,5 @@
 import dblibrary.project.csci230.UniversityDBLibrary;
+import java.util.*;
 
 public class DBController {
 	private UniversityDBLibrary univDBlib;
@@ -51,22 +52,23 @@ public class DBController {
 		  University toAdd;
 		  String[][] unisData = getUniversities();
 		  for(int i=0; i<unisData.length; i++){
-			 toAdd = new University(unisData[i][0], unisData[i][1], unisData[i][2], unisData[i][3], unisData[i][4], unisData[i][5], unisData[i][6],
-					 unisData[i][7], unisData[i][8], unisData[i][9], unisData[i][10], unisData[i][11], unisData[i][12], unisData[i][13], unisData[i][14], unisData[i][15],
-					 unisData[i][16]); 
-			 unisList.add(toAdd)
+			 toAdd = new University(unisData[i][0], unisData[i][1], unisData[i][2], unisData[i][3], Integer.parseInt(unisData[i][4]), Integer.parseInt(unisData[i][5]), Integer.parseInt(unisData[i][6]),
+					 Integer.parseInt(unisData[i][7]), Integer.parseInt(unisData[i][8]), Integer.parseInt(unisData[i][9]), Integer.parseInt(unisData[i][10]), Integer.parseInt(unisData[i][11]), 
+					 Integer.parseInt(unisData[i][12]), Integer.parseInt(unisData[i][13]), Integer.parseInt(unisData[i][14]), Integer.parseInt(unisData[i][15])); 
+			 unisList.add(toAdd);
 		  }
 		  return unisList;
 	  }
 	  
-	  String name, String state, String location, String control, int studentPop, int femPercent,
-		int satVerbal, int satMath, int expenses, int finAidPercent, int numApps, int admittedPercent,
-		int enrolledPercent, int academicScale, int socialScale, int qualityOfLife, List<String> emphases
+//	  String name, String state, String location, String control, int studentPop, int femPercent,
+//		int satVerbal, int satMath, int expenses, int finAidPercent, int numApps, int admittedPercent,
+//		int enrolledPercent, int academicScale, int socialScale, int qualityOfLife, List<String> emphases
 	  
-	  public void addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
+	  public int addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
 		  int check = univDBlib.university_addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
-		  if(check<0)
-			  	throw new IllegalArgumentException("School already exists in database");
+//		  if(check<0)
+//			  	throw new IllegalArgumentException("School already exists in database");
+		  return check;
 	  }
 	  
 	  public void editUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){

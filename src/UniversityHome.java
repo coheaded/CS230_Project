@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+import java.util.*;
 /**
  * @author smcarik
  *
@@ -23,13 +23,13 @@ public class UniversityHome {
 	 * possibly dont need this here, i think this gets taken care of in Admin home class
 	 */
 	public void addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
-		  int check = univDBlib.university_addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
+		  int check = controller.addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 		  if(check<0)
 			  	throw new IllegalArgumentException("School already exists in database");
 	  }
 	  
 	  public void editUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
-		  univDBlib.university_editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
+		  controller.editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 	  }
 	  
 	  public PriorityQueue<University> search(String school, String state, String location, String control, 
@@ -44,13 +44,13 @@ public class UniversityHome {
 				  u.addToMatchStrength(10);
 			  if(u.getState().equals(state))
 				  u.addToMatchStrength(5);
-			  if(u.Location().equals(location))
+			  if(u.getLocation().equals(location))
 				  u.addToMatchStrength(2);
 			  if(u.getControl().equals(control))
 				  u.addToMatchStrength(4);
 			  if(u.getStudentPop()>=popL && u.getStudentPop()<=popH)
 				  u.addToMatchStrength(1);
-			  if(u.getFemPercent()>=percentFemL && u.getFemPercent<=percentFemH)
+			  if(u.getFemPercent()>=perFemL && u.getFemPercent()<=perFemH)
 				  u.addToMatchStrength(1);
 			  if(u.getSatVerbal()>=SATVerbL && u.getSatVerbal()<=SATVerbH)
 				  u.addToMatchStrength(1);
