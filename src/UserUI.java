@@ -14,7 +14,7 @@ public class UserUI {
 	public String[] viewSavedSchools(){
 		return home.viewSchools(user);
 	}
-	//yayyy
+	
 	public void saveSchool(String school){
 		home.saveSchool(user.getUsername(), school);
 	}
