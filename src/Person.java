@@ -1,4 +1,3 @@
-import java.util.Map;
 
 /**
  * 
@@ -14,8 +13,8 @@ public abstract class Person {
 	private String lName;
 	private String uName;
 	private String pWord;
-	private char activated;
-	private char type;
+	private String activated;
+	private String type;
 
 	/**
 	 * @param fName
@@ -24,7 +23,7 @@ public abstract class Person {
 	 * @param pWord
 	 * @param activated
 	 */
-	public Person(String fName, String lName, String uName, String pWord, char activated, char type) {
+	public Person(String fName, String lName, String uName, String pWord, String type, String activated) {
 		super();
 		this.fName = fName;
 		this.lName = lName;
@@ -39,8 +38,8 @@ public abstract class Person {
 		lName = "";
 		uName = "";
 		pWord = "";
-		activated = 'y';
-		type = '\u0000';	
+		activated = "y";
+		type = "\u0000";	
 	}
 	/**
 	 * @return the fName
@@ -88,28 +87,28 @@ public abstract class Person {
 	/**
 	 * @return the activated
 	 */
-	public char getActivated() {
+	public String getActivated() {
 		return activated;
 	}
 	/**
 	 * @preturn the type
 	 */
-	public char getType()
+	public String getType()
 	{
 		return type;
 	}
 	
 	public void setActivated()
 	{
-		if(Character.toLowerCase(type)== 'u')
-			activated = 'y';
+		if(type.equals("u"))
+			activated = "y";
 		else
-			activated = 'n';
+			activated = "n";
 	}
 	
-	public void setActivated(char activation)
+	public void setActivated(String activation)
 	{
-		if(Character.toLowerCase(activation) == 'y' || Character.toLowerCase(activation) == 'n')
+		if(activation.equals("y") || activation.equals("n"))
 		{
 			activated = activation;
 		}
@@ -118,16 +117,16 @@ public abstract class Person {
 	
 	public void setType()
 	{
-		if(Character.toLowerCase(type)=='u')
-			type = 'a';
+		if(type.equals("u"))
+			type = "a";
 		else
-			type = 'u';
+			type = "u";
 	}
 	
-	public void setType(char type)
+	public void setType(String type)
 	{
-		if(Character.toLowerCase(type)=='u'|| Character.toLowerCase(type)=='a')
-			this.type = Character.toLowerCase(type);
+		if(type.equals("u")|| type.equals("a"))
+			this.type = type;
 		else { System.out.println("You done entered an invalid type"); }
 	}
 }

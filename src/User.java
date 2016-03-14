@@ -1,7 +1,4 @@
-/**
- * 
- */
-import java.util.*;
+
 /**
  * This class defines the attributes associated with and creates an instance of a User for the CMC System
  * @author smcarik, Adam Noack, Curtis Noecker, Logan Schramel
@@ -27,15 +24,14 @@ public class User extends Person{
 	/**
 	 * The activation status of this Admin
 	 */
-	private char activated;
+	private String activated;
 	/**
 	 * The type of this Person 
 	 */
-	private char type;
+	private String type;
 	/**
 	 * The Universities that this student has saved
 	 */
-	private HashMap<String,University> savedUnis;
 	
 	/**
 	 * Creates a new Admin with specified parameters
@@ -47,7 +43,7 @@ public class User extends Person{
 	 * @param type the type of this Person
 	 * @param savedUnis a map containing this User's saved Universities
 	 */
-	public User(String fName, String lName, String uName, String pWord, char activated, char type, HashMap<String,University> savedUnis) {
+	public User(String fName, String lName, String uName, String pWord, String activated, String type) {
 		// TODO Auto-generated constructor stub
 		this.fName = fName;
 		this.lName = lName;
@@ -55,7 +51,6 @@ public class User extends Person{
 		this.pWord = pWord;
 		this.activated = activated;
 		this.type = type;
-		this.savedUnis = savedUnis;
 	}
 	/**
 	 * Creates a new, active User with blank attributes
@@ -65,9 +60,8 @@ public class User extends Person{
 		lName = "";
 		uName = "";
 		pWord = "";
-		activated = 'y';
-		type = '\u0000';
-		savedUnis = new HashMap<String, University>();	
+		activated = "y";
+		type = "\u0000";	
 	}
 
 	/**
@@ -106,7 +100,7 @@ public class User extends Person{
 	 * Returns the username of this User
 	 * @return the uName of this User
 	 */
-	public String getuName() {
+	public String getUsername() {
 		return uName;
 	}
 
@@ -130,7 +124,7 @@ public class User extends Person{
 	 * Returns the activation status of this User
 	 * @return the activation status of this User
 	 */
-	public char getActivated() {
+	public String getActivated() {
 		return activated;
 	}
 
@@ -138,33 +132,33 @@ public class User extends Person{
 	 * Returns a map with this User's saved schools 
 	 * @return the savedUnis of this User
 	 */
-	public HashMap<String, University> getSavedUnis() {
+	/*public HashMap<String, University> getSavedUnis() {
 		return savedUnis;
-	}
+	}*/
 
 	/**
 	 * Adds the specified University to the savedUnis map
 	 * @param uni the Univeristy to add to the savedUnis map
 	 */
-	public void saveUni(University uni) {
+	/*public void saveUni(University uni) {
 		if(!savedUnis.containsKey(uni))
 			this.savedUnis.put(uni.getName(), uni);
 		else
 			System.out.println("Uni already saved!");
-	}
+	}*/
 	
 	/**
 	 * Removes the University with the specified name from this User's savedUnis map
 	 * @param uni the name of the University to remove from this User's savedUnis map
 	 */
-	public void removeUni(String uni){
+	/*public void removeUni(String uni){
 		savedUnis.remove(uni);
-	}
+	}*/
 	/**
 	 * Returns the type of this User
 	 * @return type the String representation of this User's type
 	 */
-	public char getType() {
+	public String getType() {
 		return type;
 	}
 	
@@ -188,7 +182,7 @@ public class User extends Person{
 	@Override
 	public String toString() {
 		return "User [fName=" + fName + ", lName=" + lName + ", uName=" + uName + ", pWord=" + pWord + ", activated="
-				+ activated + ", type=" + type + ", savedUnis=" + savedUnis + "]";
+				+ activated + ", type=" + type + "]";
 	}
 	
 }

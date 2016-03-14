@@ -21,9 +21,9 @@ public class AdminHome {
 		controller = new DBController("cottonhead","cottonhead", "acls4");
 	}
 	
-	public void addPerson(String fname, String lname, String uname, String pnord, char type)
+	public void addPerson(String fname, String lname, String uname, String pword, char type)
 	{
-		controller.addUser(String fname, String lname, String uname, String pnord, char type);
+		controller.addUser(fname, lname, uname,  pword, type);
 		/**if(Character.toLowerCase(type) =='a')
 		{
 			if(!admins.containsKey(uname) || !users.containsKey(uname))

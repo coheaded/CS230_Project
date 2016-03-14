@@ -16,15 +16,21 @@ public class DBController {
 		  return users;
 	  }
 	  
-	  public boolean login(String username, String pass){
-		  String[][] array = getUsers();
+	  public String login(String username, String pass){
+		  String[][] array = univDBlib.user_getUsers();
 		  for(int i=0; i<array.length; i++){
 			  if(array[i][2].equals(username) && array[i][3].equals(pass)){
-				  return true;
+				  if(array[i][4].equals("u")){
+					  return "u";
+				  }
+				  else{
+					  return "a";
+				  }
 			  }
 		  }
-		  return false;
+		  return "n";
 	  }
+	  
 	  
 	  public void addUser(String firstName, String lastName, String username, String pass, char type){
 		  int check = univDBlib.user_addUser(firstName, lastName, username, pass, type);
