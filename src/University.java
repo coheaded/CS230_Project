@@ -6,7 +6,7 @@ import java.util.*;
  * @author smcarik
  *
  */
-public class University {
+public class University implements Comparator<University>, Comparable<University>{
 
 	
 	
@@ -27,6 +27,8 @@ public class University {
 	private int socialScale;
 	private int qualityOfLife;
 	private List<String> emphases;
+	
+	private int matchStrength;
 	
 	/**
 	 * @param name
@@ -67,6 +69,9 @@ public class University {
 		this.socialScale = socialScale;
 		this.qualityOfLife = qualityOfLife;
 		this.emphases = emphases;
+		
+		matchStrength = 0;
+		
 	}
 	/**
 	 * 
@@ -89,7 +94,20 @@ public class University {
 		this.socialScale = 0;
 		this.qualityOfLife = 0;
 		this.emphases = new ArrayList<String>();
+		matchStrength = 0;
 	}
+	
+	@Override
+	public int compareTo(University university){
+		return this.matchStrength - university.getMatchStrength();
+	}
+	
+	@Override
+	public int compare(University u1, University u2){
+		return this.matchStrength - university.getMatchStrength();
+	}
+	
+	public boolean equals(Object obj){}
 	/**
 	 * @return the name
 	 */
@@ -293,6 +311,16 @@ public class University {
 	 */
 	public void setEmphases(List<String> emphases) {
 		this.emphases = emphases;
+	}
+	
+	public void addToMatchStrength(int amt){
+		this.matchStrength+=amt;
+	}
+	public void resetMatchStrength(){
+		this.matchStrength=0;
+	}
+	public int getMatchStrength(){
+		return this.matchStrength; 
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

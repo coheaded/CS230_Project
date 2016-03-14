@@ -31,5 +31,50 @@ public class UniversityHome {
 	  public void editUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
 		  univDBlib.university_editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 	  }
+	  
+	  public PriorityQueue<University> search(String school, String state, String location, String control, 
+			  int popL, int popH, double perFemL, double perFemH, double SATVerbL, double SATVerbH,
+			  double SATMathL, double SATMathH, double expensesL, double expensesH,
+			  double finAidL, double finAidH, int numAppsL, int numAppsH, double perAdmL, double perAdmH,
+			  double perEnrollL, double perEnrollH, int acadScaleL, int acadScaleH, int socialScaleL, 
+			  int socialScaleH, int qualLifeScaleL, int qualLifeScaleH){
+		  PriorityQueue<University> matches = controller.getUs();
+		  for(University u: matches){
+			  if(u.getName().equals(school))
+				  u.addToMatchStrength(10);
+			  if(u.getState().equals(state))
+				  u.addToMatchStrength(5);
+			  if(u.Location().equals(location))
+				  u.addToMatchStrength(2);
+			  if(u.getControl().equals(control))
+				  u.addToMatchStrength(4);
+			  if(u.getStudentPop()>=popL && u.getStudentPop()<=popH)
+				  u.addToMatchStrength(1);
+			  if(u.getFemPercent()>=percentFemL && u.getFemPercent<=percentFemH)
+				  u.addToMatchStrength(1);
+			  if(u.getSatVerbal()>=SATVerbL && u.getSatVerbal()<=SATVerbH)
+				  u.addToMatchStrength(1);
+			  if(u.getSatMath()>=SATMathL && u.getSatMath()<=SATMathH)
+				  u.addToMatchStrength(1);
+			  if(u.getExpenses()>=expensesL && u.getExpenses()<=expensesH)
+				  u.addToMatchStrength(1);
+			  if(u.getFinAidPercent()>=finAidL && u.getFinAidPercent()<=finAidH)
+				  u.addToMatchStrength(1);
+			  if(u.getNumApps()>=numAppsL && u.getNumApps()<=numAppsH)
+				  u.addToMatchStrength(1);
+			  if(u.getAdmittedPercent()>=perAdmL && u.getAdmittedPercent()<=perAdmH)
+				  u.addToMatchStrength(1);
+			  if(u.getEnrolledPercent()>=perEnrollL && u.getEnrolledPercent()<=perEnrollH)
+				  u.addToMatchStrength(1);
+			  if(u.getAcademicScale()>=acadScaleL && u.getAcademicScale()<=acadScaleH)
+				  u.addToMatchStrength(1);
+			  if(u.getSocialScale()>=socialScaleL && u.getSocialScale()>=socialScaleH)
+				  u.addToMatchStrength(1);
+			  if(u.getQualityOfLife()>=qualLifeScaleL && u.getQualityOfLife()>=qualLifeScaleH)
+				  u.addToMatchStrength(1);
+		  }
+		  return matches;
+		  
+	  }
 
 }

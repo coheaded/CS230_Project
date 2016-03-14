@@ -40,6 +40,23 @@ public class DBController {
 		  return univDBlib.university_getUniversities();
 	  }
 	  
+	  public PriorityQueue<University> getUs(){
+		  PriorityQueue<University> unisList = new PriorityQueue<University>();
+		  University toAdd;
+		  String[][] unisData = getUniversities();
+		  for(int i=0; i<unisData.length; i++){
+			 toAdd = new University(unisData[i][0], unisData[i][1], unisData[i][2], unisData[i][3], unisData[i][4], unisData[i][5], unisData[i][6],
+					 unisData[i][7], unisData[i][8], unisData[i][9], unisData[i][10], unisData[i][11], unisData[i][12], unisData[i][13], unisData[i][14], unisData[i][15],
+					 unisData[i][16]); 
+			 unisList.add(toAdd)
+		  }
+		  return unisList;
+	  }
+	  
+	  String name, String state, String location, String control, int studentPop, int femPercent,
+		int satVerbal, int satMath, int expenses, int finAidPercent, int numApps, int admittedPercent,
+		int enrolledPercent, int academicScale, int socialScale, int qualityOfLife, List<String> emphases
+	  
 	  public void addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
 		  int check = univDBlib.university_addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 		  if(check<0)
