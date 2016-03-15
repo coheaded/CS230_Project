@@ -1,11 +1,7 @@
-
 /**
- * 
- */
-
-/**
- * @author smcarik
- *
+ * Abstract Class of a person containing first name, last name, user name , password, activated, and type
+ * @author smcarik, ldschramel, ccnoecker, a1noack
+ * @version 3.15.16
  */
 public abstract class Person {
 	
@@ -17,11 +13,12 @@ public abstract class Person {
 	private char type;
 
 	/**
-	 * @param fName
-	 * @param lName
-	 * @param uName
-	 * @param pWord
-	 * @param activated
+	 * constructor creates a person object
+	 * @param fName persons first name
+	 * @param lName persons last name
+	 * @param uName persons user name
+	 * @param pWord persons password
+	 * @param activated persons activation status
 	 */
 	public Person(String fName, String lName, String uName, String pWord, char type, char activated) {
 		super();
@@ -33,6 +30,9 @@ public abstract class Person {
 		this.type = type;
 	}
 	
+	/**
+	 * default constructor for person
+	 */
 	public Person(){
 		fName = "";
 		lName = "";
@@ -41,31 +41,40 @@ public abstract class Person {
 		activated = 'y';
 		type = '\u0000';	
 	}
+	
 	/**
+	 * gets the persons first name
 	 * @return the fName
 	 */
 	public String getfName() {
 		return fName;
 	}
 	/**
+	 * sets the persons first name
 	 * @param fName the fName to set
 	 */
 	public void setfName(String fName) {
 		this.fName = fName;
 	}
+	
 	/**
+	 * gets the persons last name 
 	 * @return the lName
 	 */
 	public String getlName() {
 		return lName;
 	}
+	
 	/**
+	 * sets the persons last name
 	 * @param lName the lName to set
 	 */
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
+	
 	/**
+	 * gets the persons user name
 	 * @return the uName
 	 */
 	public String getuName() {
@@ -73,31 +82,37 @@ public abstract class Person {
 	}
 
 	/**
+	 * gets the persons password
 	 * @return the pWord
 	 */
 	public String getpWord() {
 		return pWord;
 	}
 	/**
+	 * sets the persons password
 	 * @param pWord the pWord to set
 	 */
 	public void setpWord(String pWord) {
 		this.pWord = pWord;
 	}
 	/**
+	 * gets the persons activation status
 	 * @return the activated
 	 */
 	public char getActivated() {
 		return activated;
 	}
 	/**
+	 * gets the persons type
 	 * @return the type
 	 */
 	public char getType()
 	{
 		return type;
 	}
-	
+	/**
+	 * changes the activation status of the person
+	 */
 	public void setActivated()
 	{
 		if(type=='u')
@@ -105,7 +120,10 @@ public abstract class Person {
 		else
 			activated = 'n';
 	}
-	
+	/**
+	 * sets the activation status of the person
+	 * @param activation
+	 */
 	public void setActivated(char activation)
 	{
 		if(activation=='y' || activation=='n')
@@ -115,6 +133,9 @@ public abstract class Person {
 		else { System.out.println("You done entered an invalid acivation"); }
 	}
 	
+	/**
+	 * changes the type of the person
+	 */
 	public void setType()
 	{
 		if(type=='u')
@@ -123,6 +144,10 @@ public abstract class Person {
 			type = 'u';
 	}
 	
+	/**
+	 * sets the type of the person
+	 * @param type persons new type
+	 */
 	public void setType(char type)
 	{
 		if(type=='u'|| type=='a')

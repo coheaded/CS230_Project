@@ -171,6 +171,10 @@ public class AdminUI {
 		return ret;
 	}
 	
+	/**
+	 * returns a priorityQueue of all University objects
+	 * @return the priorityQueue containing all university objects
+	 */
 	public PriorityQueue<University> getAllUs()
 	{
 		return home.getAllUs();
