@@ -15,14 +15,14 @@ public class University implements Comparable<University>{
 	private String location;
 	private String control;
 	private	int studentPop;
-	private int femPercent;
-	private int satVerbal;
-	private int satMath;
-	private int expenses;
-	private int finAidPercent;
+	private double femPercent;
+	private double satVerbal;
+	private double satMath;
+	private double expenses;
+	private double finAidPercent;
 	private int numApps;
-	private int admittedPercent;
-	private int enrolledPercent;
+	private double admittedPercent;
+	private double enrolledPercent;
 	private int academicScale;
 	private int socialScale;
 	private int qualityOfLife;
@@ -200,7 +200,7 @@ public class University implements Comparable<University>{
 	/**
 	 * @return the femPercent
 	 */
-	public int getFemPercent() {
+	public double getFemPercent() {
 		return femPercent;
 	}
 	/**
@@ -212,7 +212,7 @@ public class University implements Comparable<University>{
 	/**
 	 * @return the satVerbal
 	 */
-	public int getSatVerbal() {
+	public double getSatVerbal() {
 		return satVerbal;
 	}
 	/**
@@ -224,7 +224,7 @@ public class University implements Comparable<University>{
 	/**
 	 * @return the satMath
 	 */
-	public int getSatMath() {
+	public double getSatMath() {
 		return satMath;
 	}
 	/**
@@ -236,7 +236,7 @@ public class University implements Comparable<University>{
 	/**
 	 * @return the expenses
 	 */
-	public int getExpenses() {
+	public double getExpenses() {
 		return expenses;
 	}
 	/**
@@ -248,7 +248,7 @@ public class University implements Comparable<University>{
 	/**
 	 * @return the finAidPercent
 	 */
-	public int getFinAidPercent() {
+	public double getFinAidPercent() {
 		return finAidPercent;
 	}
 	/**
@@ -272,7 +272,7 @@ public class University implements Comparable<University>{
 	/**
 	 * @return the admittedPercent
 	 */
-	public int getAdmittedPercent() {
+	public double getAdmittedPercent() {
 		return admittedPercent;
 	}
 	/**
@@ -284,7 +284,7 @@ public class University implements Comparable<University>{
 	/**
 	 * @return the enrolledPercent
 	 */
-	public int getEnrolledPercent() {
+	public double getEnrolledPercent() {
 		return enrolledPercent;
 	}
 	/**
