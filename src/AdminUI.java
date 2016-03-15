@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * @author a1noack
  * @version 3/15/16
@@ -168,5 +169,10 @@ public class AdminUI {
 			}
 		}
 		return ret;
+	}
+	
+	public PriorityQueue<University> getAllUs()
+	{
+		return home.getAllUs();
 	}
 }
