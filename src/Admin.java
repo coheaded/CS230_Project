@@ -1,4 +1,4 @@
-import java.util.Map;
+import java.util.*;
 
 /**
  * This class defines the attributes associated with and creates an instance of an Admin for the CMC System
