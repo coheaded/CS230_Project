@@ -7,7 +7,7 @@ public class Driver {
 	public static void main(String[] args){
 
 		//Testing LoginUI
-		System.out.println("\n*****************************Login as user*****************************\n");
+		System.out.println("\n*****************************U1: Login as user*****************************\n");
 		LoginUI login = new LoginUI();
 
 		if(login.login("juser", "user")=='a'){
@@ -24,7 +24,7 @@ public class Driver {
 		}
 
 		login = new LoginUI();
-		System.out.println("\n*****************************Login as admin*****************************\n");
+		System.out.println("\n*****************************U1: Login as admin*****************************\n");
 		if(login.login("nadmin", "admin")=='a'){
 			adminUI = new AdminUI("nadmin");
 			System.out.println("Created new AdminUI");
@@ -40,7 +40,7 @@ public class Driver {
 		}
 
 		login = new LoginUI();
-		System.out.println("\n*****************************Login fails*****************************\n");
+		System.out.println("\n*****************************U1: Login fails*****************************\n");
 		if(login.login("junk", "morJunk")=='a'){
 			adminUI = new AdminUI("junk");
 			System.out.println("Created new AdminUI");
@@ -57,13 +57,15 @@ public class Driver {
 		
 
 		//Testing Save School
+		
+		System.out.println("\n*****************************U10, U9: save school*****************************\n");
 
 		userUI.saveSchool("Brown");
 		userUI.saveSchool("Villanova");
 		userUI.saveSchool("Seton Hall");
 
 		//Testing ViewSavedSchools
-		System.out.println("\n*****************************View saved schools*****************************\n");
+		System.out.println("\n*****************************U3: View saved schools*****************************\n");
 		String[] array1 = userUI.viewSavedSchools();
 		for(int i = 1;i<array1.length; i = i+2){
 			if(array1[i]!=null)
@@ -71,24 +73,25 @@ public class Driver {
 		}
 
 		//Testing RemoveSchool
-		System.out.println("\n*****************************View saved schools 2*****************************\n");
+		System.out.println("\n*****************************U13: Remove saved school*****************************\n");
 		int check = userUI.removeSchool("Brown");
 		if(check>0){
 			System.out.println("School removed");
 		}
 		array1 = userUI.viewSavedSchools();
+		System.out.println("\n*****************************U3: View saved schools 2*****************************\n");
 		for(int i = 1;i<array1.length;i = i+2){
 			if(array1[i]!=null)
 				System.out.println(array1[i]);
 		}
 
 		//Testing editProfile
-		System.out.println("\n*****************************Edit info as user*****************************\n");
+		System.out.println("\n*****************************U14: Edit info as user*****************************\n");
 		userUI.editProfile("John", "theUser", "user");
 		System.out.println(login.getUser("juser").toString());
 
 		//Testing displaySchool
-
+		System.out.println("\n*****************************U8, U12: View specific school ****************************\n");
 		String[] schoolInfo = userUI.displaySchool("Barnard");
 		String school = schoolInfo[0];
 		String state = schoolInfo[1];
@@ -129,12 +132,13 @@ public class Driver {
 		//System.out.println(login.getUser("lschramel").toString());
 
 		//Testing editing user
-		System.out.println("\n*****************************edit info as admin*****************************\n");
+		System.out.println("\n*****************************U17, U16, U4: edit Person info*****************************\n");
 		adminUI.editPerson("Logan", "Schramel", "lschramel", "Logan", 'u', 'Y');
 		System.out.println(login.getUser("lschramel").toString());
 		System.out.println();
 
 		//Testing add university
+		System.out.println("\n*****************************U18: add University*****************************\n");
 		/*String[] emphases = {"Liberal Arts","Computer Science"};
 		adminUI.addUniversity("BlarghUS", "Minnesota", "Collegeville", "PRIVATE", 2000, 0, 600, 790, 50000, 60, 9000, 70, 20, 3, 4, 5, emphases);
 		String[] schoolInfo1 = userUI.displaySchool("BlarghUS");
@@ -171,7 +175,7 @@ public class Driver {
 		}*/
 		
 		//Testing search method
-		System.out.println("\n*****************************Search for school*****************************\n");
+		System.out.println("\n*****************************U2, U7: Search for school*****************************\n");
 		ArrayList<University> matches = userUI.search("BARNARD", "MINNESOTA", "RURAL", "PRIVATE", 2000, 5000, 25, 50, 300, 600, 500, 750, 15000, 20000, 35, 50, 6000, 15000, 
 				15, 25, 5, 35, 1, 3, 4, 5, 3, 5);
 		Collections.sort(matches);
@@ -180,7 +184,7 @@ public class Driver {
 			System.out.println(iter.next().toString());
 		}
 		
-		System.out.println("\n*****************************Search for school 2*****************************\n");
+		System.out.println("\n*****************************U2, U7: Search for school 2*****************************\n");
 		matches = userUI.search("n/a","NEW YORK", "n/a", "PRIVATE", 2000,10000, 25,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 		Collections.sort(matches);
 		iter = matches.iterator();
@@ -189,7 +193,7 @@ public class Driver {
 		}
 
 		//Testing edit university
-		System.out.println("\n*****************************Edit university*****************************\n");
+		System.out.println("\n*****************************U19: Edit university*****************************\n");
 		String[] emphases1 = {"Yo Mama", "Parties"};
 		adminUI.editUniversity("BlarghU", "NEW YORK", "RURAL", "PUBLIC", 5000, 53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emphases1);
 		String[] schoolInfo2 = adminUI.displaySchool("BlarghU");
@@ -225,7 +229,7 @@ public class Driver {
 			}
 		}
 
-		System.out.println("\n*****************************view all users*****************************\n");
+		System.out.println("\n*****************************U5: view all users*****************************\n");
 		String [][] peeps = adminUI.viewPeople();
 		for(int i = 0; i < peeps.length; i++) {
 			System.out.println("First Name: " + peeps[i][0] + ", Last Name: " + peeps[i][1] + ", User Name: " + peeps[i][2] +
@@ -234,7 +238,7 @@ public class Driver {
 		}
 
 
-		System.out.println("\n*****************************view all universities*****************************\n");
+		System.out.println("\n*****************************U6: view all universities*****************************\n");
 		
 		System.out.println("view all schools works, but is disabled due to amount of time and space it takes up.");
 //		String[][] stuff = adminUI.viewSchools();
@@ -273,7 +277,7 @@ public class Driver {
 //			}//end if
 //		}//end for
 		
-		System.out.println("\n*****************************view related universities*****************************\n");
+		System.out.println("\n*****************************U11: view recommended universities*****************************\n");
 		PriorityQueue<University> listAllSchools = adminUI.getAllUs();
 		University test = listAllSchools.poll();
 		System.out.println("THE SCHOOL USED TO FIND RELATED SCHOOLS");
@@ -287,7 +291,7 @@ public class Driver {
 			System.out.println(iter2.next().toString());
 		}//end for
 		
-		System.out.println("\n*****************************view related universites 2*****************************\n");
+		System.out.println("\n*****************************U11: view recommended universites 2*****************************\n");
 		test = listAllSchools.poll();
 		ArrayList<University> related2 = userUI.relatedSchools(test);
 		Collections.sort(related2);
@@ -298,6 +302,11 @@ public class Driver {
 		for(int i = 0; i < 5; i++){
 			System.out.println(iter2.next().toString());
 		}//end for
+		
+		System.out.println("\n*****************************U20: logout*****************************\n");
+
+		
+		
 	}//end main
 	
 }
