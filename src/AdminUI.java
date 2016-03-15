@@ -84,4 +84,5 @@ public class AdminUI {
 	public PriorityQueue<University> getAllUs() {
 		return home.getAllUs();
 	}
+	
 }
