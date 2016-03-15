@@ -24,11 +24,11 @@ public class User extends Person{
 	/**
 	 * The activation status of this Admin
 	 */
-	private String activated;
+	private char activated;
 	/**
 	 * The type of this Person 
 	 */
-	private String type;
+	private char type;
 	/**
 	 * The Universities that this student has saved
 	 */
@@ -43,7 +43,7 @@ public class User extends Person{
 	 * @param type the type of this Person
 	 * @param savedUnis a map containing this User's saved Universities
 	 */
-	public User(String fName, String lName, String uName, String pWord, String activated, String type) {
+	public User(String fName, String lName, String uName, String pWord, char type, char activated) {
 		// TODO Auto-generated constructor stub
 		this.fName = fName;
 		this.lName = lName;
@@ -60,8 +60,8 @@ public class User extends Person{
 		lName = "";
 		uName = "";
 		pWord = "";
-		activated = "y";
-		type = "\u0000";	
+		activated = 'y';
+		type = '\u0000';	
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class User extends Person{
 	 * Returns the activation status of this User
 	 * @return the activation status of this User
 	 */
-	public String getActivated() {
+	public char getActivated() {
 		return activated;
 	}
 
@@ -158,7 +158,7 @@ public class User extends Person{
 	 * Returns the type of this User
 	 * @return type the String representation of this User's type
 	 */
-	public String getType() {
+	public char getType() {
 		return type;
 	}
 	

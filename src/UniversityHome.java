@@ -8,13 +8,12 @@ import java.util.*;
  */
 public class UniversityHome {
 
-	private University uni;
+
 	private DBController controller;
 	/**
 	 * 
 	 */
-	public UniversityHome(University uni) {
-		this.uni = uni;
+	public UniversityHome() {
 		controller = new DBController("cottonhead","cottonhead", "acls4");
 		// TODO Auto-generated constructor stub
 	}
@@ -23,9 +22,8 @@ public class UniversityHome {
 	 * possibly dont need this here, i think this gets taken care of in Admin home class
 	 */
 	public void addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
-		  int check = controller.addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
-		  if(check<0)
-			  	throw new IllegalArgumentException("School already exists in database");
+		  controller.addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
+		  
 	  }
 	  
 	  public void editUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
@@ -40,14 +38,16 @@ public class UniversityHome {
 			  int socialScaleH, int qualLifeScaleL, int qualLifeScaleH){
 		  PriorityQueue<University> matches = controller.getUs();
 		  for(University u: matches){
-			  if(u.getName().equals(school))
+			  if(u.getName().equalsIgnoreCase(school))
 				  u.addToMatchStrength(10);
-			  if(u.getState().equals(state))
+			  else if(u.getName().contains(school))
 				  u.addToMatchStrength(5);
-			  if(u.getLocation().equals(location))
+			  if(u.getState().equalsIgnoreCase(state))
+				  u.addToMatchStrength(3);
+			  if(u.getLocation().equalsIgnoreCase(location))
 				  u.addToMatchStrength(2);
-			  if(u.getControl().equals(control))
-				  u.addToMatchStrength(4);
+			  if(u.getControl().equalsIgnoreCase(control))
+				  u.addToMatchStrength(3);
 			  if(u.getStudentPop()>=popL && u.getStudentPop()<=popH)
 				  u.addToMatchStrength(1);
 			  if(u.getFemPercent()>=perFemL && u.getFemPercent()<=perFemH)
@@ -68,12 +68,18 @@ public class UniversityHome {
 				  u.addToMatchStrength(1);
 			  if(u.getAcademicScale()>=acadScaleL && u.getAcademicScale()<=acadScaleH)
 				  u.addToMatchStrength(1);
-			  if(u.getSocialScale()>=socialScaleL && u.getSocialScale()>=socialScaleH)
+			  if(u.getSocialScale()>=socialScaleL && u.getSocialScale()<=socialScaleH)
 				  u.addToMatchStrength(1);
-			  if(u.getQualityOfLife()>=qualLifeScaleL && u.getQualityOfLife()>=qualLifeScaleH)
+			  if(u.getQualityOfLife()>=qualLifeScaleL && u.getQualityOfLife()<=qualLifeScaleH)
 				  u.addToMatchStrength(1);
 		  }
-		  return matches;
+		  PriorityQueue<University> matches2 = new PriorityQueue<University>();
+		  University univ;
+		  while(!matches.isEmpty()){
+			  univ = matches.poll();
+			  matches2.add(univ);
+		  }
+		  return matches2;
 		  
 	  }
 

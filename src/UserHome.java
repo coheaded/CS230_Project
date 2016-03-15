@@ -5,13 +5,11 @@
  */
 public class UserHome {
 	
-	private User user;
 	private DBController controller;
 	/**
 	 * 
 	 */
-	public UserHome(User user) {
-		this.user = user;
+	public UserHome() {
 		controller = new DBController("cottonhead","cottonhead", "acls4");
 	}
 	
@@ -19,13 +17,14 @@ public class UserHome {
 	{
 		String[][] array = controller.getUsernamesWithSavedSchools();
 		String[] savedSchools = new String[100];
+		int count = 0;
 		for(int i=0; i<array.length; i++){
 			  if(array[i][0].equals(user.getUsername())){
 				  for(int j = 0; j<array[i].length; j++){
-					  if(savedSchools[j]==null){
-							  savedSchools[j] = array[i][j];
+					  if(savedSchools[count]==null){
+							  savedSchools[count] = array[i][j];
+							  count++;
 					  }
-				  
 				  }
 			  }
 		  }
@@ -36,19 +35,44 @@ public class UserHome {
 		user.toString();
 	}
 	
-	/*public void removeUni(String uni){
-		user.removeUni(uni);
-	}*/
+	public int removeSchool(String username, String school){
+		return controller.removeSchool(username,school);
+	}
 	
 	public void saveSchool(String user, String school) {
 		controller.saveSchool(user, school);
 	}
 	
-	public void editProfile(String fname, String lname, String pWord) {
-		user.setfName(fname);
-		user.setlName(lname);
-		user.setpWord(pWord);
+	public void editProfile(String firstName, String lastName, String username, String pass, char type, char activated) {
+		controller.editUser(firstName, lastName, username, pass, type, activated);
 	}
 	
+	public String[] displaySchool(String school){
+		String[][] array = controller.getUniversities();
+		String[] retArray = new String[16];
+		for(int i = 0; i<array.length; i++ ){
+			if(array[i][0].equalsIgnoreCase(school)){
+				for(int j = 0; j<array[i].length; j++){
+					retArray[j] = array[i][j];
+				}
+			}
+		}
+		return retArray;
+	}
+	
+	public String[] findEmphases(String school){
+
+		String[][] emphases = controller.getNamesWithEmphases();
+		String[] retArray = new String[5];
+		int count = 0;
+		for(int i = 0; i<emphases.length; i++){
+			
+			if(emphases[i][0].equalsIgnoreCase(school)){
+				retArray[count] = emphases[i][1];
+				count++;
+			}
+		}
+		return retArray;
+	}
 
 }

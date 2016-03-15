@@ -13,8 +13,8 @@ public abstract class Person {
 	private String lName;
 	private String uName;
 	private String pWord;
-	private String activated;
-	private String type;
+	private char activated;
+	private char type;
 
 	/**
 	 * @param fName
@@ -23,7 +23,7 @@ public abstract class Person {
 	 * @param pWord
 	 * @param activated
 	 */
-	public Person(String fName, String lName, String uName, String pWord, String type, String activated) {
+	public Person(String fName, String lName, String uName, String pWord, char type, char activated) {
 		super();
 		this.fName = fName;
 		this.lName = lName;
@@ -38,8 +38,8 @@ public abstract class Person {
 		lName = "";
 		uName = "";
 		pWord = "";
-		activated = "y";
-		type = "\u0000";	
+		activated = 'y';
+		type = '\u0000';	
 	}
 	/**
 	 * @return the fName
@@ -87,28 +87,28 @@ public abstract class Person {
 	/**
 	 * @return the activated
 	 */
-	public String getActivated() {
+	public char getActivated() {
 		return activated;
 	}
 	/**
-	 * @preturn the type
+	 * @return the type
 	 */
-	public String getType()
+	public char getType()
 	{
 		return type;
 	}
 	
 	public void setActivated()
 	{
-		if(type.equals("u"))
-			activated = "y";
+		if(type=='u')
+			activated = 'y';
 		else
-			activated = "n";
+			activated = 'n';
 	}
 	
-	public void setActivated(String activation)
+	public void setActivated(char activation)
 	{
-		if(activation.equals("y") || activation.equals("n"))
+		if(activation=='y' || activation=='n')
 		{
 			activated = activation;
 		}
@@ -117,15 +117,15 @@ public abstract class Person {
 	
 	public void setType()
 	{
-		if(type.equals("u"))
-			type = "a";
+		if(type=='u')
+			type = 'a';
 		else
-			type = "u";
+			type = 'u';
 	}
 	
-	public void setType(String type)
+	public void setType(char type)
 	{
-		if(type.equals("u")|| type.equals("a"))
+		if(type=='u'|| type=='a')
 			this.type = type;
 		else { System.out.println("You done entered an invalid type"); }
 	}

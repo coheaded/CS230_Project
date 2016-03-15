@@ -6,7 +6,7 @@ import java.util.*;
  * @author smcarik
  *
  */
-public class University implements Comparator<University>, Comparable<University>{
+public class University implements Comparable<University>{
 
 	
 	
@@ -26,7 +26,7 @@ public class University implements Comparator<University>, Comparable<University
 	private int academicScale;
 	private int socialScale;
 	private int qualityOfLife;
-	private List<String> emphases;
+	private String[] emphases;
 	
 	private int matchStrength;
 	
@@ -51,7 +51,7 @@ public class University implements Comparator<University>, Comparable<University
 	 */
 	public University(String name, String state, String location, String control, int studentPop, int femPercent,
 			int satVerbal, int satMath, int expenses, int finAidPercent, int numApps, int admittedPercent,
-			int enrolledPercent, int academicScale, int socialScale, int qualityOfLife, List<String> emphases) {
+			int enrolledPercent, int academicScale, int socialScale, int qualityOfLife, String[] emphases) {
 		this.name = name;
 		this.state = state;
 		this.location = location;
@@ -117,19 +117,22 @@ public class University implements Comparator<University>, Comparable<University
 		this.academicScale = 0;
 		this.socialScale = 0;
 		this.qualityOfLife = 0;
-		this.emphases = new ArrayList<String>();
+		this.emphases = new String[5];
 		matchStrength = 0;
 	}
 	
-	@Override
+	
 	public int compareTo(University university){
-		return this.matchStrength - university.getMatchStrength();
+		return -(this.matchStrength - university.getMatchStrength());
+		/*if (this.matchStrength > university.getMatchStrength())
+		      return -1;
+		    else if (this.matchStrength == university.getMatchStrength())
+		        return 0;
+		    else 
+		      return 1;*/
+		  
 	}
 	
-	@Override
-	public int compare(University u1, University u2){
-		return this.matchStrength - u2.getMatchStrength();
-	}
 	
 //	public boolean equals(Object obj){
 //		return false;
@@ -329,13 +332,13 @@ public class University implements Comparator<University>, Comparable<University
 	/**
 	 * @return the emphases
 	 */
-	public List<String> getEmphases() {
+	public String[] getEmphases() {
 		return emphases;
 	}
 	/**
 	 * @param emphases the emphases to set
 	 */
-	public void setEmphases(List<String> emphases) {
+	public void setEmphases(String[] emphases) {
 		this.emphases = emphases;
 	}
 	
@@ -353,12 +356,17 @@ public class University implements Comparator<University>, Comparable<University
 	 */
 	@Override
 	public String toString() {
-		return "University [name=" + name + ", state=" + state + ", location=" + location + ", control=" + control
+		String emphasis = "";
+		for(int i = 0; i < emphases.length; i++){
+			if(emphases[i]!=null)
+				emphasis = emphasis + ", " + emphases[i];
+		}
+		return matchStrength + "  [name=" + name + ", state=" + state + ", location=" + location + ", control=" + control
 				+ ", studentPop=" + studentPop + ", femPercent=" + femPercent + ", satVerbal=" + satVerbal
 				+ ", satMath=" + satMath + ", expenses=" + expenses + ", finAidPercent=" + finAidPercent + ", numApps="
 				+ numApps + ", academicScale=" + academicScale + ", admittedPercent=" + admittedPercent
 				+ ", enrolledPercent=" + enrolledPercent + ", socialScale=" + socialScale + ", qualityOfLife="
-				+ qualityOfLife + ", emphases=" + emphases + "]";
+				+ qualityOfLife + ", emphases=" + emphasis + "]";
 	}
 
 }
