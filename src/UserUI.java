@@ -44,7 +44,7 @@ public class UserUI {
 		return array;
 	}
 	
-	public PriorityQueue<University> search(String school, String state, String location, String control, 
+	public ArrayList<University> search(String school, String state, String location, String control, 
 			  int popL, int popH, double perFemL, double perFemH, double SATVerbL, double SATVerbH,
 			  double SATMathL, double SATMathH, double expensesL, double expensesH,
 			  double finAidL, double finAidH, int numAppsL, int numAppsH, double perAdmL, double perAdmH,
@@ -55,7 +55,7 @@ public class UserUI {
 				qualLifeScaleH);
 	}
 	
-	public PriorityQueue<University> relatedSchools(University uni) {
+	public ArrayList<University> relatedSchools(University uni) {
 		return uniHome.relatedSchool(uni);
 	}
 	

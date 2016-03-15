@@ -30,7 +30,7 @@ public class UniversityHome {
 		  controller.editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 	  }
 	  
-	  public PriorityQueue<University> search(String school, String state, String location, String control, 
+	  public  ArrayList<University> search(String school, String state, String location, String control, 
 			  int popL, int popH, double perFemL, double perFemH, double SATVerbL, double SATVerbH,
 			  double SATMathL, double SATMathH, double expensesL, double expensesH,
 			  double finAidL, double finAidH, int numAppsL, int numAppsH, double perAdmL, double perAdmH,
@@ -74,18 +74,20 @@ public class UniversityHome {
 				  u.addToMatchStrength(1);
 		  }
 		  PriorityQueue<University> matches2 = new PriorityQueue<University>();
+		  ArrayList<University> matches3 = new ArrayList<University>();
 		  University univ;
 		  while(!matches.isEmpty()){
 			  univ = matches.poll();
 			  matches2.add(univ);
+			  matches3.add(univ);
 		  }
-		  return matches2;
+		  return matches3;
 		  
 	  }
 	  
-	  public PriorityQueue<University> relatedSchool(University uni)
+	  public ArrayList<University> relatedSchool(University uni)
 	  {
-		  PriorityQueue<University> out = search("n/a", uni.getState(), uni.getLocation(), uni.getControl(),
+		  ArrayList<University> out = search("n/a", uni.getState(), uni.getLocation(), uni.getControl(),
 				  (int)(uni.getStudentPop()*.85), (int)(uni.getStudentPop()*1.15), uni.getFemPercent()*.85, uni.getFemPercent()*1.15,
 				  uni.getSatVerbal()*.85, uni.getSatVerbal()*1.15, uni.getSatMath()*.85, uni.getSatMath()*1.15,
 				  uni.getExpenses()*.85, uni.getExpenses()*1.15, uni.getFinAidPercent()*.85, uni.getFinAidPercent()*1.15,

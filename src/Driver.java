@@ -170,9 +170,9 @@ public class Driver {
 		}*/
 
 		//Testing search method
-		PriorityQueue<University> matches = userUI.search("BARNARD", "MINNESOTA", "RURAL", "PRIVATE", 2000, 5000, 25, 50, 300, 600, 500, 750, 15000, 20000, 35, 50, 6000, 15000, 
+		ArrayList<University> matches = userUI.search("BARNARD", "MINNESOTA", "RURAL", "PRIVATE", 2000, 5000, 25, 50, 300, 600, 500, 750, 15000, 20000, 35, 50, 6000, 15000, 
 				15, 25, 5, 35, 1, 3, 4, 5, 3, 5);
-
+		Collections.sort(matches);
 		Iterator<University> iter = matches.iterator();
 		for(int i = 0; i < 10; i++){
 			System.out.println(iter.next().toString());
@@ -182,6 +182,7 @@ public class Driver {
 		System.out.println();
 
 		matches = userUI.search("n/a","NEW YORK", "n/a", "PRIVATE", 2000,10000, 25,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+		Collections.sort(matches);
 		iter = matches.iterator();
 		for(int i = 0; i < 10; i++){
 			System.out.println(iter.next().toString());
@@ -237,41 +238,43 @@ public class Driver {
 
 
 		System.out.println("\n*****************************view all universities*****************************\n");
-		String[][] stuff = adminUI.viewSchools();
-		for(int i  = 0; i < stuff.length; i++){
-			String school3 = stuff[i][0];
-			String state3 = stuff[i][1];
-			String location3 = stuff[i][2];
-			String control3 = stuff[i][3];
-			String numStudents3 = stuff[i][4];
-			String percentFemale3 = stuff[i][5];
-			String satVerbal3 = stuff[i][6];
-			String satMath3 = stuff[i][7];
-			String expenses3 = stuff[i][8];
-			String percentFinanAid3 = stuff[i][9];
-			String numApplicants3 = stuff[i][10];
-			String percentAdmitted3 = stuff[i][11];
-			String percentEnrolled3 = stuff[i][12];
-			String academicScale3 = stuff[i][13];
-			String socialScale3 = stuff[i][14];
-			String qualityOfLife3 = stuff[i][15];
-			if(school3 != null){
-				System.out.println("School: " + school3 +", State: " + state3 + ", Location: " + location3 +
-						", Control: " + control3 + ", NumStudents: " + numStudents3 + ", Percent Female: " + percentFemale3 +
-						", SAT Verbal: " + satVerbal3 + ", SAT Math: " + satMath3);
-				System.out.println("Expenses: " + expenses3 + ", Percent Financial Aid: " + percentFinanAid3
-						+ ", Number of Applicants: " + numApplicants3 + ", Percent Admitted: " + percentAdmitted3 +
-						", Percent Enrolled: " +percentEnrolled3);
-				System.out.println("Academic Scale(1-5): " + academicScale3 + ", Social Scale(1-5): " 
-						+ socialScale3 + ", Quality of Life(1-5): " + qualityOfLife3);
-				System.out.print("Emphases: ");
-				for(int j = 16; j<stuff[i].length; j++){
-					if(stuff[i][j]!=null){
-						System.out.print(stuff[i][j]+ ", ");
-					}//end if
-				}//end for
-			}//end if
-		}//end for
+		
+		System.out.println("view all schools works, but is disabled due to amount of time and space it takes up.");
+//		String[][] stuff = adminUI.viewSchools();
+//		for(int i  = 0; i < stuff.length; i++){
+//			String school3 = stuff[i][0];
+//			String state3 = stuff[i][1];
+//			String location3 = stuff[i][2];
+//			String control3 = stuff[i][3];
+//			String numStudents3 = stuff[i][4];
+//			String percentFemale3 = stuff[i][5];
+//			String satVerbal3 = stuff[i][6];
+//			String satMath3 = stuff[i][7];
+//			String expenses3 = stuff[i][8];
+//			String percentFinanAid3 = stuff[i][9];
+//			String numApplicants3 = stuff[i][10];
+//			String percentAdmitted3 = stuff[i][11];
+//			String percentEnrolled3 = stuff[i][12];
+//			String academicScale3 = stuff[i][13];
+//			String socialScale3 = stuff[i][14];
+//			String qualityOfLife3 = stuff[i][15];
+//			if(school3 != null){
+//				System.out.println("School: " + school3 +", State: " + state3 + ", Location: " + location3 +
+//						", Control: " + control3 + ", NumStudents: " + numStudents3 + ", Percent Female: " + percentFemale3 +
+//						", SAT Verbal: " + satVerbal3 + ", SAT Math: " + satMath3);
+//				System.out.println("Expenses: " + expenses3 + ", Percent Financial Aid: " + percentFinanAid3
+//						+ ", Number of Applicants: " + numApplicants3 + ", Percent Admitted: " + percentAdmitted3 +
+//						", Percent Enrolled: " +percentEnrolled3);
+//				System.out.println("Academic Scale(1-5): " + academicScale3 + ", Social Scale(1-5): " 
+//						+ socialScale3 + ", Quality of Life(1-5): " + qualityOfLife3);
+//				System.out.print("Emphases: ");
+//				for(int j = 16; j<stuff[i].length; j++){
+//					if(stuff[i][j]!=null){
+//						System.out.print(stuff[i][j]+ ", ");
+//					}//end if
+//				}//end for
+//			}//end if
+//		}//end for
 		
 		System.out.println("\n*****************************view related universities*****************************\n");
 		PriorityQueue<University> listAllSchools = adminUI.getAllUs();
@@ -279,14 +282,25 @@ public class Driver {
 		System.out.println("THE SCHOOL USED TO FIND RELATED SCHOOLS");
 		System.out.println(test.toString() +"\n");
 		System.out.println(" The Related Schools \n---------------------");
-		PriorityQueue<University> related = userUI.relatedSchools(test);
+		ArrayList<University> related = userUI.relatedSchools(test);
+		Collections.sort(related);
 		Iterator<University> iter2 = related.iterator();
 		iter2.next();
 		for(int i = 0; i < 5; i++){
 			System.out.println(iter2.next().toString());
 		}//end for
 		
-		System.out.println("\n*****************************view*****************************\n");
+		System.out.println("\n*****************************view related uniersites 2*****************************\n");
+		test = listAllSchools.poll();
+		ArrayList<University> related2 = userUI.relatedSchools(test);
+		Collections.sort(related2);
+		iter2 = related2.iterator();
+		System.out.println("THE SCHOOL USED TO FIND RELATED SCHOOLS");
+		System.out.println(iter2.next().toString()+ "\n\n");
+		System.out.println(" The Related Schools \n---------------------");
+		for(int i = 0; i < 5; i++){
+			System.out.println(iter2.next().toString());
+		}//end for
 	}//end main
 	
 }
