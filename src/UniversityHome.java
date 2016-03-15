@@ -4,14 +4,16 @@
 import java.util.*;
 /**
  * @author smcarik
- *
+ * A controller that class that contains the appropriate methods to edit, add, or search the Universities
  */
 public class UniversityHome {
 
-
+	/**
+	 * variable for the dbcontroller class that contains all of the universities and their info
+	 */
 	private DBController controller;
 	/**
-	 * 
+	 * default constructor that creates the controller variable with the appropriate info
 	 */
 	public UniversityHome() {
 		controller = new DBController("cottonhead","cottonhead", "acls4");
@@ -19,17 +21,38 @@ public class UniversityHome {
 	}
 	
 	/**
-	 * possibly dont need this here, i think this gets taken care of in Admin home class
+	 * method that rates the schools by how well the schools match the given search material (params)
+	 * then returns an arraylist with the correct order of the schools based upon how well they match
+	 * @param school for the name of the school
+	 * @param state for the state of the school
+	 * @param location for the location of the school eg. RURAL, URBAN
+	 * @param control for the control of the school eg. PUBLIC, PRIVATE
+	 * @param popL for the low end of the desired student population
+	 * @param popH for the high end of the desired student population
+	 * @param perFemL for the low end of the desired percentage of school that is female
+	 * @param perFemH for the high end of the desired percentage of school that is female
+	 * @param SATVerbL for the low end of the desired SAT Verbal scores that are accepted
+	 * @param SATVerbH for the high end of the desired SAT Verbal scores that are accepted
+	 * @param SATMathL for the low end of the desired SAT Math scores that are accepted
+	 * @param SATMathH for the high end of the desired SAT Math scores that are accepted
+	 * @param expensesL for the low end of the desired expenses of a school for one year
+	 * @param expensesH for the high end of the desired expenses of a school for one year
+	 * @param finAidL for the low end of the desired percent financial aid the school gives
+	 * @param finAidH for the high end of the desired percent financial aid the school gives
+	 * @param numAppsL for the low end of the desired number of applicants
+	 * @param numAppsH for the high end of the desired number of applicants
+	 * @param perAdmL for the low end of the desired percent of applicants admitted
+	 * @param perAdmH for the high end of the desired percent of applicants admitted
+	 * @param perEnrollL for the low end of the desired percent of admitted that enroll
+	 * @param perEnrollH for the high end of the desired percent of admitted that enroll
+	 * @param acadScaleL for the low end of the rating of the schools academics (1-5)
+	 * @param acadScaleh for the high end of the rating of the schools academics (1-5)
+	 * @param socialScaleL for the low end of the rating of the schools social life (1-5)
+	 * @param socialScaleH for the high end of the rating of the schools social life (1-5)
+	 * @param qualLifeL for the low end of the rating of the schools quality of life (1-5)
+	 * @param qualLifeH for the high end of the rating of the schools quality of life (1-5)
+	 * @return an ArrayList<University> containing all the universities in their correct order
 	 */
-	public void addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
-		  controller.addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
-		  
-	  }
-	  
-	  public void editUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
-		  controller.editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
-	  }
-	  
 	  public  ArrayList<University> search(String school, String state, String location, String control, 
 			  int popL, int popH, double perFemL, double perFemH, double SATVerbL, double SATVerbH,
 			  double SATMathL, double SATMathH, double expensesL, double expensesH,
@@ -85,6 +108,11 @@ public class UniversityHome {
 		  
 	  }
 	  
+	  /**
+	   * a method that returns the schools that most closely match the given school
+	   * @param the university for which you wish to fine related schools
+	   * @return an ArrayList<University> containing the ordered list of the schools that match the given school, from best to worst match
+	   */
 	  public ArrayList<University> relatedSchool(University uni)
 	  {
 		  ArrayList<University> out = search("n/a", uni.getState(), uni.getLocation(), uni.getControl(),

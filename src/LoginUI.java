@@ -1,5 +1,8 @@
 
 public class LoginUI {
+	/**
+	 * 
+	 */
 	DBController controller;
 	
 	public LoginUI(){
