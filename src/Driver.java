@@ -287,7 +287,7 @@ public class Driver {
 			System.out.println(iter2.next().toString());
 		}//end for
 		
-		System.out.println("\n*****************************view related uniersites 2*****************************\n");
+		System.out.println("\n*****************************view related universites 2*****************************\n");
 		test = listAllSchools.poll();
 		ArrayList<University> related2 = userUI.relatedSchools(test);
 		Collections.sort(related2);
