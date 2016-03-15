@@ -54,6 +54,7 @@ public class Driver {
 		else{
 			System.out.println("Invalid username or password");
 		}
+		
 
 		//Testing Save School
 
@@ -172,7 +173,7 @@ public class Driver {
 		PriorityQueue<University> matches = userUI.search("BARNARD", "MINNESOTA", "RURAL", "PRIVATE", 2000, 5000, 25, 50, 300, 600, 500, 750, 15000, 20000, 35, 50, 6000, 15000, 
 				15, 25, 5, 35, 1, 3, 4, 5, 3, 5);
 
-		Iterator iter = matches.iterator();
+		Iterator<University> iter = matches.iterator();
 		for(int i = 0; i < 10; i++){
 			System.out.println(iter.next().toString());
 		}
@@ -267,10 +268,26 @@ public class Driver {
 				for(int j = 16; j<stuff[i].length; j++){
 					if(stuff[i][j]!=null){
 						System.out.print(stuff[i][j]+ ", ");
-					}
-				}
-			}
-		}
-	}
+					}//end if
+				}//end for
+			}//end if
+		}//end for
+		
+		System.out.println("\n*****************************view related universities*****************************\n");
+		PriorityQueue<University> listAllSchools = adminUI.getAllUs();
+		University test = listAllSchools.poll();
+		System.out.println("THE SCHOOL USED TO FIND RELATED SCHOOLS");
+		System.out.println(test.toString() +"\n");
+		System.out.println(" The Related Schools \n---------------------");
+		PriorityQueue<University> related = userUI.relatedSchools(test);
+		Iterator<University> iter2 = related.iterator();
+		iter2.next();
+		for(int i = 0; i < 5; i++){
+			System.out.println(iter2.next().toString());
+		}//end for
+		
+		System.out.println("\n*****************************view*****************************\n");
+	}//end main
+	
 }
 

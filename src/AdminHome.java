@@ -115,6 +115,10 @@ public class AdminHome {
 		String [][] shit = controller.getUniversities();
 		return shit;
 	}
+	
+	public PriorityQueue<University> getAllUs() {
+		return controller.getUs();
+	}
 	  
 	
 }

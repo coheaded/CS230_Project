@@ -49,9 +49,9 @@ public class University implements Comparable<University>{
 	 * @param qualityOfLife
 	 * @param emphases
 	 */
-	public University(String name, String state, String location, String control, int studentPop, int femPercent,
-			int satVerbal, int satMath, int expenses, int finAidPercent, int numApps, int admittedPercent,
-			int enrolledPercent, int academicScale, int socialScale, int qualityOfLife, String[] emphases) {
+	public University(String name, String state, String location, String control, int studentPop, double femPercent,
+			double satVerbal, double satMath, double expenses, double finAidPercent, int numApps, double admittedPercent,
+			double enrolledPercent, int academicScale, int socialScale, int qualityOfLife, String[] emphases) {
 		this.name = name;
 		this.state = state;
 		this.location = location;
@@ -74,9 +74,9 @@ public class University implements Comparable<University>{
 		
 	}
 	
-	public University(String name, String state, String location, String control, int studentPop, int femPercent,
-			int satVerbal, int satMath, int expenses, int finAidPercent, int numApps, int admittedPercent,
-			int enrolledPercent, int academicScale, int socialScale, int qualityOfLife) {
+	public University(String name, String state, String location, String control, int studentPop, double femPercent,
+			double satVerbal, double satMath, double expenses, double finAidPercent, int numApps, double admittedPercent,
+			double enrolledPercent, int academicScale, int socialScale, int qualityOfLife) {
 		this.name = name;
 		this.state = state;
 		this.location = location;
@@ -368,5 +368,7 @@ public class University implements Comparable<University>{
 				+ ", enrolledPercent=" + enrolledPercent + ", socialScale=" + socialScale + ", qualityOfLife="
 				+ qualityOfLife + ", emphases=" + emphasis + "]";
 	}
+	
+	
 
 }

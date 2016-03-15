@@ -1,4 +1,4 @@
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class UserUI {
 	
@@ -53,6 +53,10 @@ public class UserUI {
 		return uniHome.search(school, state, location, control, popL, popH, perFemL, perFemH, SATVerbL, SATVerbH, SATMathL, SATMathH, expensesL, expensesH, finAidL, 
 				finAidH, numAppsL, numAppsH, perAdmL, perAdmH, perEnrollL, perEnrollH, acadScaleL, acadScaleH, socialScaleL, socialScaleH, qualLifeScaleL, 
 				qualLifeScaleH);
+	}
+	
+	public PriorityQueue<University> relatedSchools(University uni) {
+		return uniHome.relatedSchool(uni);
 	}
 	
 }

@@ -86,12 +86,13 @@ public class UniversityHome {
 	  public PriorityQueue<University> relatedSchool(University uni)
 	  {
 		  PriorityQueue<University> out = search("n/a", uni.getState(), uni.getLocation(), uni.getControl(),
-				  uni.getStudentPop()*.85, uni.getStudentPop()*1.15, uni.getFemPercent()*.85, uni.getFemPercent()*1.15,
+				  (int)(uni.getStudentPop()*.85), (int)(uni.getStudentPop()*1.15), uni.getFemPercent()*.85, uni.getFemPercent()*1.15,
 				  uni.getSatVerbal()*.85, uni.getSatVerbal()*1.15, uni.getSatMath()*.85, uni.getSatMath()*1.15,
 				  uni.getExpenses()*.85, uni.getExpenses()*1.15, uni.getFinAidPercent()*.85, uni.getFinAidPercent()*1.15,
-				  uni.getNumApps()*.85, uni.getNumApps()*1.15, uni.getAdmittedPercent()*.85, uni.getAdmittedPercent()*1.15,
-				  uni.getEnrolledPercent()*.85, uni.getEnrolledPercent()*1.15, uni.getAcademicScale()*.85, uni.getAcademicScale()*1.15,
-				  uni.getSocialScale()*.85, uni.getSocialScale()*1.15, uni.getQualityOfLife()*.85, uni.getQualityOfLife()*1.15);
+				  (int)(uni.getNumApps()*.85), (int)(uni.getNumApps()*1.15), uni.getAdmittedPercent()*.85, uni.getAdmittedPercent()*1.15,
+				  uni.getEnrolledPercent()*.85, uni.getEnrolledPercent()*1.15, (int)(uni.getAcademicScale()*.85), (int)(uni.getAcademicScale()*1.15),
+				  (int)(uni.getSocialScale()*.85), (int)(uni.getSocialScale()*1.15), (int)(uni.getQualityOfLife()*.85), (int)(uni.getQualityOfLife()*1.15));
+		  return out;
 	  }
-	  }
+	  
 }

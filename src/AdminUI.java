@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class AdminUI {
 	
 	AdminHome home;
@@ -79,5 +79,9 @@ public class AdminUI {
 			}
 		}
 		return ret;
+	}
+	
+	public PriorityQueue<University> getAllUs() {
+		return home.getAllUs();
 	}
 }
