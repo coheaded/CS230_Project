@@ -1,5 +1,5 @@
 import java.util.*;
-
+//This is a test message!!!!!! Delete eventually!!!!!!!
 /**
  * This class defines the attributes associated with and creates an instance of an Admin for the CMC System
  * @author smcarik, Adam Noack, Curtis Noecker, Logan Schramel
