@@ -8,15 +8,15 @@ public class AdminUI {
 	/**
 	 * The AdminHome used to modify Persons in the system
 	 */
-	AdminHome home;
+	private AdminHome home;
 	/**
 	 * The User that is currently logged in
 	 */
-	Person user;
+	private Person user;
 	/**
 	 * The LoginUI class that is used to login to the system
 	 */
-	LoginUI loginUI;
+	private LoginUI loginUI;
 	
 	/**
 	 * Returns a new AdminUI

@@ -13,22 +13,22 @@ public class UserUI {
 	/**
 	 * The user home, used for all user-related methods
 	 */
-	UserHome home;
+	private UserHome home;
 	
 	/**
 	 * The user object.
 	 */
-	User user;
+	private User user;
 	
 	/**
 	 * The login user interface, used to login.
 	 */
-	LoginUI loginUI;
+	private LoginUI loginUI;
 	
 	/**
 	 * The university home, used for university-related methods. (Search and relatedSchools)
 	 */
-	UniversityHome uniHome;
+	private UniversityHome uniHome;
 	
 	/**
 	 * Default constructor that initializes the loginUI, user, home, and uniHome objects

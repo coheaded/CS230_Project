@@ -29,17 +29,15 @@ public class User extends Person{
 	 * The type of this Person 
 	 */
 	private char type;
-	/**
-	 * The Universities that this student has saved
-	 */
+
 	
 	/**
-	 * Creates a new Admin with specified parameters
-	 * @param fName the first name of this Admin
-	 * @param lName the last name of this Admin
-	 * @param uName the username of this Admin
-	 * @param pWord the passwrod for this Admin
-	 * @param activated the activation status for this Admin
+	 * Creates a new user with specified parameters
+	 * @param fName the first name of this user
+	 * @param lName the last name of this user
+	 * @param uName the username of this user
+	 * @param pWord the passwrod for this user
+	 * @param activated the activation status for this user
 	 * @param type the type of this Person
 	 * @param savedUnis a map containing this User's saved Universities
 	 */
@@ -128,32 +126,6 @@ public class User extends Person{
 		return activated;
 	}
 
-	/**
-	 * Returns a map with this User's saved schools 
-	 * @return the savedUnis of this User
-	 */
-	/*public HashMap<String, University> getSavedUnis() {
-		return savedUnis;
-	}*/
-
-	/**
-	 * Adds the specified University to the savedUnis map
-	 * @param uni the Univeristy to add to the savedUnis map
-	 */
-	/*public void saveUni(University uni) {
-		if(!savedUnis.containsKey(uni))
-			this.savedUnis.put(uni.getName(), uni);
-		else
-			System.out.println("Uni already saved!");
-	}*/
-	
-	/**
-	 * Removes the University with the specified name from this User's savedUnis map
-	 * @param uni the name of the University to remove from this User's savedUnis map
-	 */
-	/*public void removeUni(String uni){
-		savedUnis.remove(uni);
-	}*/
 	/**
 	 * Returns the type of this User
 	 * @return type the String representation of this User's type
