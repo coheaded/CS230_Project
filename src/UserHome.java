@@ -68,16 +68,32 @@ public class UserHome {
 	 * which saves the given school to the user.
 	 * 
 	 * @param school The school name that you want to save to the user.
-	 * @param user
+	 * @param user The user who the school is being saved to
 	 */
 	public void saveSchool(String user, String school) {
 		controller.saveSchool(user, school);
 	}
 	
+	/**
+	   * method that edits a user with the given username
+	   * 
+	   * @param firstName firstname you wish to change to
+	   * @param lastName lastname you wish to change to
+	   * @param username username of person to be edited
+	   * @param pass password you wish to change to
+	   * @param type type you wish to change to
+	   * @param activated activation you wish to change to
+	   */
 	public void editProfile(String firstName, String lastName, String username, String pass, char type, char activated) {
 		controller.editUser(firstName, lastName, username, pass, type, activated);
 	}
 	
+	/**
+	 * displaySchool outputs a string array containing a given school's information that can then be displayed.
+	 * 
+	 * @param school the name of the school to be displayed
+	 * @return a string array containing a given school's information
+	 */
 	public String[] displaySchool(String school){
 		String[][] array = controller.getUniversities();
 		String[] retArray = new String[16];
@@ -91,6 +107,12 @@ public class UserHome {
 		return retArray;
 	}
 	
+	/**
+	 * Method that finds the emphases for a given school
+	 * 
+	 * @param school The name of the school
+	 * @return	A String[] containing all the emphases for school
+	 */
 	public String[] findEmphases(String school){
 
 		String[][] emphases = controller.getNamesWithEmphases();
