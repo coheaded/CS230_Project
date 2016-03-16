@@ -4,6 +4,7 @@ import java.util.*;
 /**
  * class that communicates with the database library and contains methods to  ease controller functions
  * @author ldschramel
+ * @version 03/15/2016
  *
  */
 public class DBController {

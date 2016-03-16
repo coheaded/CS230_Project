@@ -1,4 +1,12 @@
 import java.util.*;
+/**
+ * 
+ * @author ccnoecker
+ * @version 03/15/2016
+ * 
+ * Driver that tests each CMC use case using sample inputs.
+ *
+ */
 public class Driver {
 
 	//AdminUI adminUI;
@@ -304,7 +312,6 @@ public class Driver {
 		}//end for
 		
 		System.out.println("\n*****************************U20: logout*****************************\n");
-
 		
 		
 	}//end main

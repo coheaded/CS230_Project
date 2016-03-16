@@ -1,9 +1,7 @@
-/**
- * 
- */
-import java.util.*;
+
 /**
  * @author smcarik
+ * @version 03/15/2016
  *Class that creates a university object with its given variables
  */
 public class University implements Comparable<University>{
