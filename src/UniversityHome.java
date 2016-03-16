@@ -9,7 +9,7 @@ import java.util.*;
 public class UniversityHome {
 
 	/**
-	 * variable for the dbcontroller class that contains all of the universities and their info
+	 * variable for the dbcontroller class that contains all of the universities and their info as well as users and their info.
 	 */
 	private DBController controller;
 	/**
