@@ -1,4 +1,6 @@
 /**
+ * @author smcarik
+ * @version 03/15/2016
  * class that checks DBController for username and password and returns appropriate char for opening of an interface
  */
 public class LoginUI {

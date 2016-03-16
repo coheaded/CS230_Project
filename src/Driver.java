@@ -312,7 +312,6 @@ public class Driver {
 		}//end for
 		
 		System.out.println("\n*****************************U20: logout*****************************\n");
-
 		
 		
 	}//end main
