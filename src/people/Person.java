@@ -1,3 +1,4 @@
+package people;
 /**
  * Abstract Class of a person containing first name, last name, user name , password, activated, and type
  * @author smcarik, ldschramel, ccnoecker, a1noack

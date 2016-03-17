@@ -1,7 +1,11 @@
+package homes;
 /**
  * 
  */
 import java.util.*;
+import controller.DBController;
+import people.Person;
+import people.University;
 
 /**
  * @author smcarik, ldschramel, ccnoecker, a1noack

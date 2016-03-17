@@ -1,3 +1,4 @@
+package people;
 import java.util.*;
 /**
  * This class defines the attributes associated with and creates an instance of an Admin for the CMC System

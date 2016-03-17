@@ -1,3 +1,6 @@
+package homes;
+import controller.DBController;
+import people.User;
 
 /**
  * @author ccnoecker

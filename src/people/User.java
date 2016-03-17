@@ -1,4 +1,4 @@
-
+package people;
 /**
  * This class defines the attributes associated with and creates an instance of a User for the CMC System
  * @author smcarik, Adam Noack, Curtis Noecker, Logan Schramel

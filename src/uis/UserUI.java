@@ -1,8 +1,15 @@
+package uis;
+
 import java.util.*;
+
+import homes.UniversityHome;
+import homes.UserHome;
+import people.University;
+import people.User;
 
 /**
  * 
- * @author ccnoecker
+ * @author ccnoecker, smcarik, a1noack, ldschramel
  * @version 3/15/2016
  * 
  * The UI for users. Contains all functionalities for the user.

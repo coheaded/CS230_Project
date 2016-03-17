@@ -1,4 +1,8 @@
 import java.util.*;
+import uis.AdminUI;
+import uis.LoginUI;
+import uis.UserUI;
+import people.*;
 /**
  * 
  * @author ccnoecker
@@ -71,6 +75,8 @@ public class Driver {
 		userUI.saveSchool("Brown");
 		userUI.saveSchool("Villanova");
 		userUI.saveSchool("Seton Hall");
+		System.out.println("Saved:\n Brown, Villanova, Seton Hall\n");
+
 
 		//Testing ViewSavedSchools
 		System.out.println("\n*****************************U3: View saved schools*****************************\n");
@@ -147,40 +153,41 @@ public class Driver {
 
 		//Testing add university
 		System.out.println("\n*****************************U18: add University*****************************\n");
-		/*String[] emphases = {"Liberal Arts","Computer Science"};
-		adminUI.addUniversity("BlarghUS", "Minnesota", "Collegeville", "PRIVATE", 2000, 0, 600, 790, 50000, 60, 9000, 70, 20, 3, 4, 5, emphases);
-		String[] schoolInfo1 = userUI.displaySchool("BlarghUS");
-		String school1 = schoolInfo1[0];
-		String state1 = schoolInfo1[1];
-		String location1 = schoolInfo1[2];
-		String control1 = schoolInfo1[3];
-		String numStudents1 = schoolInfo1[4];
-		String percentFemale1 = schoolInfo1[5];
-		String satVerbal1 = schoolInfo1[6];
-		String satMath1 = schoolInfo1[7];
-		String expenses1 = schoolInfo1[8];
-		String percentFinanAid1 = schoolInfo1[9];
-		String numApplicants1 = schoolInfo1[10];
-		String percentAdmitted1 = schoolInfo1[11];
-		String percentEnrolled1 = schoolInfo1[12];
-		String academicScale1 = schoolInfo1[13];
-		String socialScale1 = schoolInfo1[14];
-		String qualityOfLife1 = schoolInfo1[15];
-
-		System.out.println("School: " + school1 +", State: " + state1 + ", Location: " + location1 +
-				", Control: " + control1 + ", NumStudents: " + numStudents1 + ", Percent Female: " + percentFemale1 +
-				", SAT Verbal: " + satVerbal1 + ", SAT Math: " + satMath1);
-		System.out.println("Expenses: " + expenses1 + ", Percent Financial Aid: " + percentFinanAid1
-				+ ", Number of Applicants: " + numApplicants1 + ", Percent Admitted: " + percentAdmitted1 +
-				", Percent Enrolled: " +percentEnrolled1);
-		System.out.println("Academic Scale(1-5): " + academicScale1 + ", Social Scale(1-5): " 
-				+ socialScale1 + ", Quality of Life(1-5): " + qualityOfLife1);
-		System.out.print("Emphases: ");
-		for(int i = 16; i<schoolInfo1.length; i++){
-			if(schoolInfo1[i]!=null){
-				System.out.print(schoolInfo1[i]+ ", ");
-			}
-		}*/
+		System.out.println("Add University works, cant add with same name, supressed the code for now");
+//		String[] emphases = {"Liberal Arts","Computer Science"};
+//		adminUI.addUniversity("BlarghUS", "Minnesota", "Collegeville", "PRIVATE", 2000, 0, 600, 790, 50000, 60, 9000, 70, 20, 3, 4, 5, emphases);
+//		String[] schoolInfo1 = userUI.displaySchool("BlarghUS");
+//		String school1 = schoolInfo1[0];
+//		String state1 = schoolInfo1[1];
+//		String location1 = schoolInfo1[2];
+//		String control1 = schoolInfo1[3];
+//		String numStudents1 = schoolInfo1[4];
+//		String percentFemale1 = schoolInfo1[5];
+//		String satVerbal1 = schoolInfo1[6];
+//		String satMath1 = schoolInfo1[7];
+//		String expenses1 = schoolInfo1[8];
+//		String percentFinanAid1 = schoolInfo1[9];
+//		String numApplicants1 = schoolInfo1[10];
+//		String percentAdmitted1 = schoolInfo1[11];
+//		String percentEnrolled1 = schoolInfo1[12];
+//		String academicScale1 = schoolInfo1[13];
+//		String socialScale1 = schoolInfo1[14];
+//		String qualityOfLife1 = schoolInfo1[15];
+//
+//		System.out.println("School: " + school1 +", State: " + state1 + ", Location: " + location1 +
+//				", Control: " + control1 + ", NumStudents: " + numStudents1 + ", Percent Female: " + percentFemale1 +
+//				", SAT Verbal: " + satVerbal1 + ", SAT Math: " + satMath1);
+//		System.out.println("Expenses: " + expenses1 + ", Percent Financial Aid: " + percentFinanAid1
+//				+ ", Number of Applicants: " + numApplicants1 + ", Percent Admitted: " + percentAdmitted1 +
+//				", Percent Enrolled: " +percentEnrolled1);
+//		System.out.println("Academic Scale(1-5): " + academicScale1 + ", Social Scale(1-5): " 
+//				+ socialScale1 + ", Quality of Life(1-5): " + qualityOfLife1);
+//		System.out.print("Emphases: ");
+//		for(int i = 16; i<schoolInfo1.length; i++){
+//			if(schoolInfo1[i]!=null){
+//				System.out.print(schoolInfo1[i]+ ", ");
+//			}
+//		}
 		
 		//Testing search method
 		System.out.println("\n*****************************U2, U7: Search for school*****************************\n");
@@ -249,41 +256,41 @@ public class Driver {
 		System.out.println("\n*****************************U6: view all universities*****************************\n");
 		
 		System.out.println("view all schools works, but is disabled due to amount of time and space it takes up.");
-//		String[][] stuff = adminUI.viewSchools();
-//		for(int i  = 0; i < stuff.length; i++){
-//			String school3 = stuff[i][0];
-//			String state3 = stuff[i][1];
-//			String location3 = stuff[i][2];
-//			String control3 = stuff[i][3];
-//			String numStudents3 = stuff[i][4];
-//			String percentFemale3 = stuff[i][5];
-//			String satVerbal3 = stuff[i][6];
-//			String satMath3 = stuff[i][7];
-//			String expenses3 = stuff[i][8];
-//			String percentFinanAid3 = stuff[i][9];
-//			String numApplicants3 = stuff[i][10];
-//			String percentAdmitted3 = stuff[i][11];
-//			String percentEnrolled3 = stuff[i][12];
-//			String academicScale3 = stuff[i][13];
-//			String socialScale3 = stuff[i][14];
-//			String qualityOfLife3 = stuff[i][15];
-//			if(school3 != null){
-//				System.out.println("School: " + school3 +", State: " + state3 + ", Location: " + location3 +
-//						", Control: " + control3 + ", NumStudents: " + numStudents3 + ", Percent Female: " + percentFemale3 +
-//						", SAT Verbal: " + satVerbal3 + ", SAT Math: " + satMath3);
-//				System.out.println("Expenses: " + expenses3 + ", Percent Financial Aid: " + percentFinanAid3
-//						+ ", Number of Applicants: " + numApplicants3 + ", Percent Admitted: " + percentAdmitted3 +
-//						", Percent Enrolled: " +percentEnrolled3);
-//				System.out.println("Academic Scale(1-5): " + academicScale3 + ", Social Scale(1-5): " 
-//						+ socialScale3 + ", Quality of Life(1-5): " + qualityOfLife3);
-//				System.out.print("Emphases: ");
-//				for(int j = 16; j<stuff[i].length; j++){
-//					if(stuff[i][j]!=null){
-//						System.out.print(stuff[i][j]+ ", ");
-//					}//end if
-//				}//end for
-//			}//end if
-//		}//end for
+		String[][] stuff = adminUI.viewSchools();
+		for(int i  = 0; i < stuff.length; i++){
+			String school3 = stuff[i][0];
+			String state3 = stuff[i][1];
+			String location3 = stuff[i][2];
+			String control3 = stuff[i][3];
+			String numStudents3 = stuff[i][4];
+			String percentFemale3 = stuff[i][5];
+			String satVerbal3 = stuff[i][6];
+			String satMath3 = stuff[i][7];
+			String expenses3 = stuff[i][8];
+			String percentFinanAid3 = stuff[i][9];
+			String numApplicants3 = stuff[i][10];
+			String percentAdmitted3 = stuff[i][11];
+			String percentEnrolled3 = stuff[i][12];
+			String academicScale3 = stuff[i][13];
+			String socialScale3 = stuff[i][14];
+			String qualityOfLife3 = stuff[i][15];
+			if(school3 != null){
+				System.out.println("\nSchool: " + school3 +", State: " + state3 + ", Location: " + location3 +
+						", Control: " + control3 + ", NumStudents: " + numStudents3 + ", Percent Female: " + percentFemale3 +
+						", SAT Verbal: " + satVerbal3 + ", SAT Math: " + satMath3);
+				System.out.println("Expenses: " + expenses3 + ", Percent Financial Aid: " + percentFinanAid3
+						+ ", Number of Applicants: " + numApplicants3 + ", Percent Admitted: " + percentAdmitted3 +
+						", Percent Enrolled: " +percentEnrolled3);
+				System.out.println("Academic Scale(1-5): " + academicScale3 + ", Social Scale(1-5): " 
+						+ socialScale3 + ", Quality of Life(1-5): " + qualityOfLife3);
+				System.out.print("Emphases: ");
+				for(int j = 16; j<stuff[i].length; j++){
+					if(stuff[i][j]!=null){
+						System.out.print(stuff[i][j]+ ", ");
+					}//end if
+				}//end for
+			}//end if
+		}//end for
 		
 		System.out.println("\n*****************************U11: view recommended universities*****************************\n");
 		PriorityQueue<University> listAllSchools = adminUI.getAllUs();
