@@ -30,7 +30,9 @@ public class LoginUITest {
 	 */
 	@Test
 	public void testLogin() {
-		assertTrue("Type of user is incorrect.", lui.login("juser", "user")=='u');
+		assertTrue("Error on user branch", lui.login("juser", "user")=='u');
+		assertTrue("Error on admin branch", lui.login("nadmin", "admin")=='a');
+		assertTrue("Wrong username or password", lui.login("hehe", "user")=='n');
 	}
 
 	/**
@@ -38,13 +40,13 @@ public class LoginUITest {
 	 */
 	@Test
 	public void testGetUser() {
-		User u = lui.getUser("juser");
-		assertTrue("firstname", u.getfName().equals("John"));
-		assertTrue("lastname", u.getlName().equals("theUser"));
-		assertTrue("username", u.getuName().equals("juser"));
-		
-		assertTrue("type", u.getType()=='u');
-		assertTrue("activated", u.getActivated()=='y');
+
+		assertTrue("toString", lui.getUser("juser").toString().equals("User [fName=John, lName=theUser, uName=juser, pWord=user, activated=Y, type=u]"));
+//		assertTrue("firstname", u.getfName().equals("John"));
+//		assertTrue("lastname", u.getlName().equals("theUser"));
+//		assertTrue("username", u.getuName().equals("juser"));
+//		assertTrue("type", u.getType()=='u');
+//		assertTrue("activated", u.getActivated()=='y');
 	}
 
 	/**
@@ -52,7 +54,7 @@ public class LoginUITest {
 	 */
 	@Test
 	public void testGetAdmin() {
-		fail("Not yet implemented");
+		assertTrue("toString", lui.getAdmin("nadmin").toString().equals("Admin [fName=Noreen, lName=Admin, uName=nadmin, pWord=admin, activated=Y, type=a]"));
 	}
 
 }
