@@ -27,13 +27,13 @@ public class UserHome {
 	 * @param user	the User that is logged in
 	 * @return	a String array containing the name of each of the user's saved schools.
 	 */
-	public String[] viewSchools(User user)
+	public String[] viewSchools(String user)
 	{
 		String[][] array = controller.getUsernamesWithSavedSchools();
 		String[] savedSchools = new String[100];
 		int count = 0;
 		for(int i=0; i<array.length; i++){
-			  if(array[i][0].equals(user.getUsername())){
+			  if(array[i][0].equals(user)){
 				  for(int j = 0; j<array[i].length; j++){
 					  if(savedSchools[count]==null){
 							  savedSchools[count] = array[i][j];
