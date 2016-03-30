@@ -119,7 +119,7 @@ public class UserHome {
 	public String[] findEmphases(String school){
 
 		String[][] emphases = controller.getNamesWithEmphases();
-		String[] retArray = new String[5];
+		String[] retArray = new String[15];
 		int count = 0;
 		for(int i = 0; i<emphases.length; i++){
 			

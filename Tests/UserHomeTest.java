@@ -40,30 +40,6 @@ public class UserHomeTest {
 	}
 
 	/**
-	 * Test method for {@link homes.UserHome#removeSchool(java.lang.String, java.lang.String)}.
-	 */
-	@Test
-	public void testRemoveSchool() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link homes.UserHome#saveSchool(java.lang.String, java.lang.String)}.
-	 */
-	@Test
-	public void testSaveSchool() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link homes.UserHome#editProfile(java.lang.String, java.lang.String, java.lang.String, java.lang.String, char, char)}.
-	 */
-	@Test
-	public void testEditProfile() {
-		fail("Not yet implemented");
-	}
-
-	/**
 	 * Test method for {@link homes.UserHome#displaySchool(java.lang.String)}.
 	 */
 	@Test
