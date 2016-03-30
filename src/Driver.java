@@ -103,6 +103,7 @@ public class Driver {
 		System.out.println("\n*****************************U14: Edit info as user*****************************\n");
 		userUI.editProfile("John", "theUser", "user");
 		System.out.println(login.getUser("juser").toString());
+		System.out.println(login.getAdmin("nadmin").toString());
 
 		//Testing displaySchool
 		System.out.println("\n*****************************U8, U12: View specific school ****************************\n");
