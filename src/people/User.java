@@ -138,14 +138,20 @@ public class User extends Person{
 	 * Toggles this User's activation status
 	 */
 	public void setActivated(){
-		super.setActivated();
+		if(type=='y')
+			activated = 'y';
+		else
+			activated = 'n';
 	}
 	
 	/**
 	 * Converts this User to an Admin
 	 */
 	public void setType(){
-		super.setType();
+		if(type=='u')
+			type = 'a';
+		else
+			type = 'u';
 	}
 
 	/* (non-Javadoc)

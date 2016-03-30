@@ -116,7 +116,7 @@ public abstract class Person {
 	 */
 	public void setActivated()
 	{
-		if(type=='u')
+		if(type=='n')
 			activated = 'y';
 		else
 			activated = 'n';
