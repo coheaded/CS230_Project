@@ -42,14 +42,24 @@ public class Admin extends Person {
 	 * @param type the type of this Person
 	 */
 	public Admin(String fName, String lName, String uName, String pWord, char activated, char type) {
-		super(fName, lName, uName, pWord, type, activated);
+		this.fName = fName;
+		this.lName = lName;
+		this.uName = uName;
+		this.pWord = pWord;
+		this.activated = activated;
+		this.type = type;
 		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * Creates a new, active Admin with blank attributes
 	 */
 	public Admin(){
-		super();
+		fName = "";
+		lName = "";
+		uName = "";
+		pWord = "";
+		activated = 'y';
+		type = '\u0000';	
 	}
 
 	/* (non-Javadoc)
@@ -58,7 +68,7 @@ public class Admin extends Person {
 	@Override
 	public String getfName() {
 		// TODO Auto-generated method stub
-		return super.getfName();
+		return fName;
 	}
 
 	/* (non-Javadoc)
@@ -67,7 +77,7 @@ public class Admin extends Person {
 	@Override
 	public void setfName(String fName) {
 		// TODO Auto-generated method stub
-		super.setfName(fName);
+		this.fName = fName;
 	}
 
 	/* (non-Javadoc)
@@ -76,7 +86,7 @@ public class Admin extends Person {
 	@Override
 	public String getlName() {
 		// TODO Auto-generated method stub
-		return super.getlName();
+		return lName;
 	}
 
 	/* (non-Javadoc)
@@ -85,7 +95,7 @@ public class Admin extends Person {
 	@Override
 	public void setlName(String lName) {
 		// TODO Auto-generated method stub
-		super.setlName(lName);
+		this.lName = lName;
 	}
 
 	/* (non-Javadoc)
@@ -94,7 +104,7 @@ public class Admin extends Person {
 	@Override
 	public String getuName() {
 		// TODO Auto-generated method stub
-		return super.getuName();
+		return uName;
 	}
 
 	/* (non-Javadoc)
@@ -103,7 +113,7 @@ public class Admin extends Person {
 	@Override
 	public String getpWord() {
 		// TODO Auto-generated method stub
-		return super.getpWord();
+		return pWord;
 	}
 
 	/* (non-Javadoc)
@@ -112,7 +122,7 @@ public class Admin extends Person {
 	@Override
 	public void setpWord(String pWord) {
 		// TODO Auto-generated method stub
-		super.setpWord(pWord);
+		this.pWord = pWord;
 	}
 
 	/* (non-Javadoc)
@@ -121,7 +131,7 @@ public class Admin extends Person {
 	@Override
 	public char getActivated() {
 		// TODO Auto-generated method stub
-		return super.getActivated();
+		return activated;
 	}
 
 	/* (non-Javadoc)
@@ -130,21 +140,27 @@ public class Admin extends Person {
 	@Override
 	public char getType() {
 		// TODO Auto-generated method stub
-		return super.getType();
+		return type;
 	}
 
 	/**
 	 * Toggles the activation status for this Admin
 	 */
 	public void setActivated() {
-		super.setActivated();
+		if(type=='y')
+			activated = 'y';
+		else
+			activated = 'n';
 	}
 	
 	/**
 	 * Converts this Admin to a User
 	 */
 	public void setType() {
-		super.setType();
+		if(type=='u')
+			type = 'a';
+		else
+			type = 'u';
 	}
 	
 	/* (non-Javadoc)
