@@ -194,12 +194,12 @@ public class AdminHome {
 	
 	/**
 	 * gets all the schools in the database and returns an 2-D array of the information
-	 * @return shit the 2-D of the schools and their information
+	 * @return schools the 2-D of the schools and their information
 	 */
 	public String[][] viewSchools()
 	{
-		String [][] shit = controller.getUniversities();
-		return shit;
+		String [][] schools = controller.getUniversities();
+		return schools;
 	}
 	
 	/**
