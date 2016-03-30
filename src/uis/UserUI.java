@@ -58,7 +58,7 @@ public class UserUI {
 	 */
 	
 	public String[] viewSavedSchools(){
-		return home.viewSchools(user);
+		return home.viewSchools(user.getuName());
 	}
 	
 	/**
