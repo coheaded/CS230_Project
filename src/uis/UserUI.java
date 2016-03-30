@@ -99,7 +99,7 @@ public class UserUI {
 	 * @return a string array containing a given school's information
 	 */
 	public String[] displaySchool(String school){
-		String[] array = new String[21];
+		String[] array = new String[31];
 		String[] otherArray = home.displaySchool(school);
 		for(int i = 0; i<otherArray.length; i++){
 			array[i] = otherArray[i];
