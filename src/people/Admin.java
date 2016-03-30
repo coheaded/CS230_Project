@@ -42,7 +42,7 @@ public class Admin extends Person {
 	 * @param type the type of this Person
 	 */
 	public Admin(String fName, String lName, String uName, String pWord, char activated, char type) {
-		super(fName, lName, uName, pWord, activated, type);
+		super(fName, lName, uName, pWord, type, activated);
 		// TODO Auto-generated constructor stub
 	}
 	/**
