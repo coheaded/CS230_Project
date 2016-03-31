@@ -76,30 +76,110 @@ public class UniversityHome {
 				  u.addToMatchStrength(2);
 			  if(u.getControl().equalsIgnoreCase(control))
 				  u.addToMatchStrength(3);
-			  if(u.getStudentPop()>=popL && u.getStudentPop()<=popH)
+			  if(u.getStudentPop()>=popL && u.getStudentPop()<=popH){
+				  if(popL <0)
+					  throw new IllegalArgumentException("Population needs to be greater than 0");
+			  	  if (popH <0)
+			  		  throw new IllegalArgumentException("Population needs to be greater than 0");
+			  	  if(popL>popH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getFemPercent()>=perFemL && u.getFemPercent()<=perFemH)
+			  }
+			  if(u.getFemPercent()>=perFemL && u.getFemPercent()<=perFemH){
+				  if (perFemL < 0.0 || perFemL > 100.0)
+					  throw new IllegalArgumentException("Percent female needs to be between 0 and 100");
+				  if (perFemH < 0.0 || perFemH > 100.0)
+					  throw new IllegalArgumentException("Percent female needs to be between 0 and 100");
+				  if(perFemL>perFemH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getSatVerbal()>=SATVerbL && u.getSatVerbal()<=SATVerbH)
+			  }
+			  if(u.getSatVerbal()>=SATVerbL && u.getSatVerbal()<=SATVerbH){
+				  if (SATVerbL <0 || SATVerbL >800)
+					  throw new IllegalArgumentException("SAT Verbal needs to be between 0 and 800");
+				  if (SATVerbH <0 || SATVerbH >800)
+					  throw new IllegalArgumentException("SAT Verbal needs to be between 0 and 800");
+				  if(SATVerbL>SATVerbH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getSatMath()>=SATMathL && u.getSatMath()<=SATMathH)
+			  }
+			  if(u.getSatMath()>=SATMathL && u.getSatMath()<=SATMathH){
+				  if (SATMathL <0 || SATMathL >800)
+					  throw new IllegalArgumentException("SAT Math needs to be between 0 and 800");
+				  if (SATMathH <0 || SATMathH >800)
+					  throw new IllegalArgumentException("SAT Math needs to be between 0 and 800");
+				  if(SATMathL>SATMathH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getExpenses()>=expensesL && u.getExpenses()<=expensesH)
+			  }
+			  if(u.getExpenses()>=expensesL && u.getExpenses()<=expensesH){
+				  if (expensesL <0 || expensesH <0)
+					  throw new IllegalArgumentException("Expenses cannot be below 0");
+				  if(expensesL>expensesH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getFinAidPercent()>=finAidL && u.getFinAidPercent()<=finAidH)
+			  }
+			  if(u.getFinAidPercent()>=finAidL && u.getFinAidPercent()<=finAidH){
+				  if(finAidL <0 || finAidL > 100)
+					  throw new IllegalArgumentException("percent female needs to be between 0 and 100");
+				  if(finAidH <0 || finAidH > 100)
+					  throw new IllegalArgumentException("percent female needs to be between 0 and 100");
+				  if(finAidL>finAidH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getNumApps()>=numAppsL && u.getNumApps()<=numAppsH)
+			  }
+			  if(u.getNumApps()>=numAppsL && u.getNumApps()<=numAppsH){
+				  if(numAppsL<0)
+					  throw new IllegalArgumentException("Number of applicants cannot be below 0");
+				  if(numAppsL>numAppsH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getAdmittedPercent()>=perAdmL && u.getAdmittedPercent()<=perAdmH)
+			  }
+			  if(u.getAdmittedPercent()>=perAdmL && u.getAdmittedPercent()<=perAdmH){
+				  if(perAdmL<0||perAdmL>100)
+					  throw new IllegalArgumentException("percent admitted needs to be between 0 and 100");
+				  if(perAdmH<0||perAdmH>100)
+					  throw new IllegalArgumentException("percent admitted needs to be between 0 and 100");
+				  if(perAdmL>perAdmH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getEnrolledPercent()>=perEnrollL && u.getEnrolledPercent()<=perEnrollH)
+			  }
+			  if(u.getEnrolledPercent()>=perEnrollL && u.getEnrolledPercent()<=perEnrollH){
+				  if(perEnrollL<0||perEnrollL>100)
+					  throw new IllegalArgumentException("percent enrolled needs to be between 0 and 100");
+				  if(perEnrollH<0||perEnrollH>100)
+					  throw new IllegalArgumentException("percent enrolled needs to be between 0 and 100");
+				  if(perEnrollL>perEnrollH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getAcademicScale()>=acadScaleL && u.getAcademicScale()<=acadScaleH)
+			  }
+			  if(u.getAcademicScale()>=acadScaleL && u.getAcademicScale()<=acadScaleH){
+				  if(acadScaleL<0||acadScaleL>5)
+					  throw new IllegalArgumentException("scale must be between 0 and 5");
+				  if(acadScaleH<0||acadScaleH>5)
+					  throw new IllegalArgumentException("scale must be between 0 and 5");
+				  if(acadScaleL>acadScaleH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getSocialScale()>=socialScaleL && u.getSocialScale()<=socialScaleH)
+			  }
+			  if(u.getSocialScale()>=socialScaleL && u.getSocialScale()<=socialScaleH){
+				  if(socialScaleL<0||socialScaleL>5)
+					  throw new IllegalArgumentException("scale must be between 0 and 5");
+				  if(socialScaleH<0||socialScaleH>5)
+					  throw new IllegalArgumentException("scale must be between 0 and 5");
+				  if(socialScaleL>socialScaleH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
-			  if(u.getQualityOfLife()>=qualLifeScaleL && u.getQualityOfLife()<=qualLifeScaleH)
+			  }
+			  if(u.getQualityOfLife()>=qualLifeScaleL && u.getQualityOfLife()<=qualLifeScaleH){
+				  if(qualLifeScaleL<0||qualLifeScaleL>5)
+					  throw new IllegalArgumentException("scale must be between 0 and 5");
+				  if(qualLifeScaleH<0||qualLifeScaleH>5)
+					  throw new IllegalArgumentException("scale must be between 0 and 5");
+				  if(qualLifeScaleL>qualLifeScaleH)
+					  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 				  u.addToMatchStrength(1);
+			  }
 		  }
 		  PriorityQueue<University> matches2 = new PriorityQueue<University>();
 		  ArrayList<University> matches3 = new ArrayList<University>();

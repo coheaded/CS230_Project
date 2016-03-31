@@ -14,14 +14,6 @@ public class AdminUI {
 	 * The AdminHome used to modify Persons in the system
 	 */
 	private AdminHome home;
-	/**
-	 * The User that is currently logged in
-	 */
-	private Person user;
-	/**
-	 * The LoginUI class that is used to login to the system
-	 */
-	private LoginUI loginUI;
 	
 	/**
 	 * Returns a new AdminUI
@@ -56,14 +48,6 @@ public class AdminUI {
 	public void editPerson(String fname, String lname, String username, String pass, char type, char activated)
 	{
 		home.editPerson(fname, lname, username, pass, type, activated);
-	}
-	
-	/**
-	 * This method sets the Person instance variable to the user with the specified username
-	 * @param username the username of the Person to edit
-	 */
-	public void chooseEdited(String username){
-		user = loginUI.getUser(username);
 	}
 	
 	/**
