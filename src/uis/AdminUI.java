@@ -20,7 +20,6 @@ public class AdminUI {
 	 * @param username the username of the admin logged in
 	 */
 	public AdminUI(String username){
-		loginUI = new LoginUI();
 		home = new AdminHome();
 	}
 	
