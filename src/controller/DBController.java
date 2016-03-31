@@ -73,10 +73,13 @@ public class DBController {
 	   * @param pass password for person
 	   * @param type the type of person eg. 'a' for admin, 'u' for user
 	   */
-	  public void addUser(String firstName, String lastName, String username, String pass, char type){
+	  public int addUser(String firstName, String lastName, String username, String pass, char type){
+		  if(type!='u' && type!= 'U' && type!='a' && type!='A')
+			  throw new IllegalArgumentException("Type must either be u, U, a, or A");
 		  int check = univDBlib.user_addUser(firstName, lastName, username, pass, type);
 		  if(check<0)
 			  throw new IllegalArgumentException("Username taken");
+		  return check;
 	  }
 	  
 	  /**
@@ -120,8 +123,12 @@ public class DBController {
 	   * @param type type you wish to change to
 	   * @param activated activation you wish to change to
 	   */
-	  public void editUser( String firstName, String lastName, String username,  String pass, char type, char activated){
-		  univDBlib.user_editUser(username, firstName, lastName,  pass, type, activated);
+	  public int editUser( String firstName, String lastName, String username,  String pass, char type, char activated){
+		  if(type!='u' && type!= 'U' && type!='a' && type!='A')
+			  throw new IllegalArgumentException("Type must either be u, U, a, or A");
+		  if(activated!='y' && activated!='Y' && activated!= 'n' && activated!= 'N')
+			  throw new IllegalArgumentException("Activation must either y, Y, n, N");
+		  return univDBlib.user_editUser(username, firstName, lastName,  pass, type, activated);
 	  }
 	  
 	  /**
@@ -152,10 +159,11 @@ public class DBController {
 	 * @param qualityOfLife for the quality of life scale 1-5
 	 * @param emphases array containing the emphases of the school
 	 */
-	  public void addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
+	  public int addUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
 		  int check = univDBlib.university_addUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 		  if(check<0)
 			  	throw new IllegalArgumentException("School already exists in database");
+		  return check;
 	  }
 	  
 	  /**
@@ -178,8 +186,8 @@ public class DBController {
 	   * @param qualityOfLife for the quality of life scale 1-5
 	   * @param emphases array containing the emphases of the school
 	   */
-	  public void editUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
-		  univDBlib.university_editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
+	  public int editUniversity(String school, String state, String location, String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale){
+		  return univDBlib.university_editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 	  }
 	  
 	  /**
@@ -195,10 +203,11 @@ public class DBController {
 	   * @param school the name of the school you wish to add emphasis to
 	   * @param emphasis the name of the emphasis you with to add
 	   */
-	  public void addUniversityEmphasis(String school, String emphasis){
+	  public int addUniversityEmphasis(String school, String emphasis){
 		 int check = univDBlib.university_addUniversityEmphasis(school, emphasis);
 		 if(check<0)
 			 throw new IllegalArgumentException("School already has given emphasis");
+		 return check;
 	  }
 	  
 	  /**
@@ -206,8 +215,8 @@ public class DBController {
 	   * @param school the name of the school you wish to remove an emphasis from
 	   * @param emphasis the name of the emphasis you wish to remove
 	   */
-	  public void removeUniversityEmphasis(String school, String emphasis){
-		  univDBlib.university_removeUniversityEmphasis(school, emphasis);
+	  public int removeUniversityEmphasis(String school, String emphasis){
+		  return univDBlib.university_removeUniversityEmphasis(school, emphasis);
 	  }
 	  
 	  /**
@@ -231,8 +240,8 @@ public class DBController {
 	   * @param user the username you wish to save a university to
 	   * @param school the name of the school
 	   */
-	  public void saveSchool(String user, String school){
-		  univDBlib.user_saveSchool(user, school);
+	  public int saveSchool(String user, String school){
+		  return univDBlib.user_saveSchool(user, school);
 	  }
 	  
 	  /**

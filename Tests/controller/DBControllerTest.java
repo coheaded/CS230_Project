@@ -1,10 +1,11 @@
 package controller;
 
 import static org.junit.Assert.*;
-import controller.*;
 
+import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.AfterClass;
 
 public class DBControllerTest {
 	
@@ -13,8 +14,11 @@ public class DBControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		controller = new DBController("cottonhead","cottonhead","acls4");
+		
 	}
 
+
+	
 	@Test
 	public void testLogin() {
 		char result;
@@ -40,28 +44,69 @@ public class DBControllerTest {
 	@Test(expected=IllegalArgumentException.class)
 	public void testAddUserFailsForExistingUser() {
 		controller.addUser("Curtis", "Noecker", "luser", "user", 'a');
+		
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testAddUserFailsWrongType(){
+		controller.addUser("Curtis", "Noecker", "sdfh", "aslkdfh", 'e');
 	}
 
+	@Test
+	public void testAddUser(){
+		controller.deleteUser("curtis");
+		int test = controller.addUser("Curtis", "Noecker", "curtis", "cnoecker", 'u');
+		assertTrue("Testing add user", test==1);
+	}
+	
 	@Test
 	public void testGetUs() {
 		fail("Not yet implemented");
 	}
 
-	@Test(expected=IllegalArgumentException.class)
-	public void testAddUniversityFailsForExistingSchool() {
-		controller.addUniversity("Brown", "ndfs", "zald", "control", 2304,23, 498, 499, 1234, 44, 4400, 56, 33, 2, 3, 5);
-	}
+	
 
 	@Test(expected=IllegalArgumentException.class)
 	public void testAddUniversityEmphasisFailsForExistingEmphasis() {
 		controller.addUniversityEmphasis("Brown", "BIOLOGY");
 	}
+	
+	@Test
+	public void testAddUniversityEmphasis(){
+		int test = controller.addUniversityEmphasis("ADELPHI", "FUN");
+		assertTrue("testing adding emphasis", test==1);
+		controller.removeUniversityEmphasis("ADELPHI", "FUN");
+	}
 
 	@Test
 	public void testRemoveUniversityEmphasis() {
-		fail("Not yet implemented");
+		controller.addUniversityEmphasis("ADELPHI", "BIOLOGY");
+		int test = controller.removeUniversityEmphasis("ADELPHI", "BIOLOGY");
+		assertTrue("Testing remove emphasis", test==1);
+	}
+	
+	@Test
+	public void testRemoveUniversityEmphasisDoesntExist(){
+		int test =controller.removeUniversityEmphasis("ADELPHI", "MATH");
+		assertTrue("Testing remove emphases doesnt work", test==0);
+	}
+	
+	@Test
+	public void testEditUser(){
+		int test = controller.editUser("Logan", "Schramel", "luser", "lschramel", 'u', 'Y');
+		assertTrue("Testing correct edit user", test==1);
 	}
 
+	@Test(expected=IllegalArgumentException.class)
+	public void testEditUserWrongType(){
+	controller.editUser("Logan", "Schramel", "luser", "lschramel", 'j', 'y');
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testEditUserWrongActivated(){
+	controller.editUser("Logan", "Schramel", "luser", "lschramel", 'u', 't');
+	}
+	
 	@Test
 	public void testGetEmphases() {
 		fail("Not yet implemented");
@@ -79,7 +124,9 @@ public class DBControllerTest {
 
 	@Test
 	public void testRemoveSchool() {
-		fail("Not yet implemented");
+		int test = controller.removeSchool("juser", "Seton Hall");
+		assertTrue("testing remove school", test==1);
+		controller.saveSchool("juser", "Seton Hall");
 	}
-
+	
 }
