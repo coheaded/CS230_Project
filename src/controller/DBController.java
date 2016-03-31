@@ -244,4 +244,22 @@ public class DBController {
 	  public int removeSchool(String user, String school){
 		  return univDBlib.user_removeSchool(user, school);
 	  }
+	  
+	  /**
+	   * deletes a school from the database,  not a functional requirement, only used in testing
+	   * @param school the school to be deleted
+	   * @return 1 for true deletion, -1 for false deletion
+	   */
+	  public int deleteUniversity(String school) {
+		  return univDBlib.university_deleteUniversity(school);
+	  }
+	  
+	  /**
+	   * deletes a user from the database, not a functional requirement, only used in testing
+	   * @param user the user to be delete
+	   * @return 1 for true deletion, -1 for false deletion
+	   */
+	  public int deleteUser(String user) {
+		  return univDBlib.user_deleteUser(user);
+	  }
 }
