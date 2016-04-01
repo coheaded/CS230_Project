@@ -1,4 +1,4 @@
-package homeTests;
+package allTests.homeTests;
 import static org.junit.Assert.*;
 
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package uiTests;
+package allTests.uiTests;
 import static org.junit.Assert.*;
 import uis.*;
 import people.*;
