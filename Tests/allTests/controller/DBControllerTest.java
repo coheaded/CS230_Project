@@ -61,13 +61,6 @@ public class DBControllerTest {
 		int test = controller.addUser("Curtis", "Noecker", "curtis", "cnoecker", 'u');
 		assertTrue("Testing add user", test==1);
 	}
-	
-	@Test
-	public void testGetUs() {
-		fail("Not yet implemented");
-	}
-
-	
 
 	@Test(expected=IllegalArgumentException.class)
 	public void testAddUniversityEmphasisFailsForExistingEmphasis() {
@@ -83,9 +76,9 @@ public class DBControllerTest {
 
 	@Test
 	public void testRemoveUniversityEmphasis() {
-		controller.addUniversityEmphasis("ADELPHI", "BIOLOGY");
 		int test = controller.removeUniversityEmphasis("ADELPHI", "BIOLOGY");
 		assertTrue("Testing remove emphasis", test==1);
+		controller.addUniversityEmphasis("ADELPHI", "BIOLOGY");
 	}
 	
 	@Test
@@ -111,18 +104,33 @@ public class DBControllerTest {
 	}
 	
 	@Test
-	public void testGetEmphases() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetUsernamesWithSavedSchools() {
-		fail("Not yet implemented");
+	public void testGetNamesWithEmphases() {
+		String[][] test = controller.getNamesWithEmphases();
+		String [] expected = {"LIBERAL-ARTS","BIOLOGY","BUSINESS-ADMINISTRATION", "ENGINEERING"};
+		String [] expected1 = {"ABILENE CHRISTIAN UNIVERSITY","ADELPHI","ADELPHI", "AMERICAN UNIVERSITY OF BEIRUT"};
+		String [] results = new String[4];
+		for (int i =0; i <4; i++){
+			results[i] = test[i][1];
+		}
+		String [] results1 = new String[4];
+		for (int i =0; i <4; i++){
+			results1[i] = test[i][0];
+		}
+		assertTrue("testing to make sure emphases are correct", Arrays.equals(results,expected));
+		assertTrue("Testing to make sure schools are correct", Arrays.equals(results1, expected1));
 	}
 
 	@Test
 	public void testSaveSchool() {
-		fail("Not yet implemented");
+		controller.removeSchool("juser", "BROWN");
+		int test = controller.saveSchool("juser", "BROWN");
+		assertTrue("Testing save school", test==1);
+	}
+	
+	@Test
+	public void testAlreadySavedSchoolFails(){
+		int test = controller.saveSchool("juser", "Seton Hall");
+		assertTrue("Testing already saved school", test==-1);
 	}
 
 	@Test
@@ -132,4 +140,20 @@ public class DBControllerTest {
 		controller.saveSchool("juser", "Seton Hall");
 	}
 	
+	@Test
+	public void testGetUsernamesWithSavedSchools() {
+		String[][] test = controller.getUsernamesWithSavedSchools();
+		String [] expected1 = {"juser","juser","juser", "luser"};
+		String [] expected = {"BROWN","Seton Hall","Villanova","Seton Hall"};
+		String [] results = new String[4];
+		for (int i =0; i <4; i++){
+			results[i] = test[i][1];
+		}
+		String [] results1 = new String[4];
+		for (int i =0; i <4; i++){
+			results1[i] = test[i][0];
+		}
+		assertTrue("Testing to make sure usernames are correct", Arrays.equals(results,expected));
+		assertTrue("Testing to make sure schools are correct", Arrays.equals(results1, expected1));
+	}
 }
