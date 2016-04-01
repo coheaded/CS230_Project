@@ -1,23 +1,49 @@
-
+package homeTests;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import uis.UserUI;
+import homes.UserHome;
+import people.User;
 
-public class UserUITest {
+/**
+ * 
+ */
 
-	private UserUI userui;
+/**
+ * @author smcarik
+ *
+ */
+public class UserHomeTest {
+
+	private UserHome uhome;
+	private User user;
+	/**
+	 * @throws java.lang.Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
-		userui = new UserUI("juser");
+		uhome = new UserHome();
+		user  = new User("John","theUser", "juser", "user", 'u', 'Y');
 	}
 
+	/**
+	 * Test method for {@link homes.UserHome#viewSchools(people.User)}.
+	 */
+	@Test
+	public void testViewSchools() {
+		String[] schools = uhome.viewSchools(user);
+		assertEquals("The first saved school is Seton Hall", "Seton Hall", schools[1]);
+		assertEquals("The second saved school is Villanova", "Villanova", schools[3]);
+	}
 
+	/**
+	 * Test method for {@link homes.UserHome#displaySchool(java.lang.String)}.
+	 */
 	@Test
 	public void testDisplaySchool() {
-		String[] school = userui.displaySchool("Rice");
+		String[] school = uhome.displaySchool("Rice");
 		assertEquals("the schools name is Rice", "RICE", school[0]);
 		assertEquals("the schools state is Texas", "TEXAS", school[1]);
 		assertEquals("the schools location is SUBURBAN","SUBURBAN", school[2]);
@@ -34,6 +60,15 @@ public class UserUITest {
 		assertEquals("the schools academicScale is 5", "5", school[13]);
 		assertEquals("the schools socialScale is 2", "2", school[14]);
 		assertEquals("the schools qualityOfLife is 3", "3", school[15]);
-		assertEquals("The schools emphasis is ARCHITECTURE, ENGINEERING, HUMANITIES", "ARCHITECTUREENGINEERINGHUMANITIES",school[16]+school[17]+school[18]);
 	}
+
+	/**
+	 * Test method for {@link homes.UserHome#findEmphases(java.lang.String)}.
+	 */
+	@Test
+	public void testFindEmphases() {
+		String[] emphs = uhome.findEmphases("Rice");
+		assertEquals("The schools emphasis is ARCHITECTURE, ENGINEERING, HUMANITIES", "ARCHITECTUREENGINEERINGHUMANITIES",emphs[0]+emphs[1]+emphs[2]);
+	}
+
 }
