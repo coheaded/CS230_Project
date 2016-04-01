@@ -104,29 +104,29 @@ public class AdminHome {
 			double percFem, double satVerb, double satMath, double expenses, double percFinAid, int numApps, double percAdmitted, 
 			double percEnrolled, int acadScale, int socialScale, int qualityOfLife, String[] emphases)
 	{
-		if(studPop<0)
+		if(studPop<-1)
 			throw new IllegalArgumentException("Must have a positive student population");
-		if(percFem<0 || percFem>100)
+		if(percFem<-1 || percFem>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(satVerb<0 || satVerb>800)
+		if(satVerb<-1 || satVerb>800)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(satMath<0 || satMath>800)
+		if(satMath<-1 || satMath>800)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(expenses<0)
+		if(expenses<-1)
 			throw new IllegalArgumentException("Must have a positive expense");
-		if(percFinAid<0 || percFinAid>100)
+		if(percFinAid<-1 || percFinAid>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(numApps<0)
+		if(numApps<-1)
 			throw new IllegalArgumentException("Must have a positive number of applicants");
-		if(percAdmitted<0 || percAdmitted>100)
+		if(percAdmitted<-1 || percAdmitted>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(percEnrolled<0 || percEnrolled>100)
+		if(percEnrolled<-1 || percEnrolled>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(acadScale<0 || acadScale>5)
+		if(acadScale<-1 || acadScale>5)
 			throw new IllegalArgumentException("Academic scale must be between 0 and 5");
-		if(socialScale<0 || socialScale>5)
+		if(socialScale<-1 || socialScale>5)
 			throw new IllegalArgumentException("Social scale must be between 0 and 5");
-		if(qualityOfLife<0 || qualityOfLife>5)
+		if(qualityOfLife<-1 || qualityOfLife>5)
 			throw new IllegalArgumentException("Quality of life scale must be between 0 and 5");
 		
 		controller.addUniversity(school, state, location, control, studPop, 
@@ -160,29 +160,29 @@ public class AdminHome {
 	public void editUniversity(String school, String state, String location, String control, int numberOfStudents, 
 			double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, 
 			int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale, String[] emphases){
-		if(numberOfStudents<0)
+		if(numberOfStudents<-1)
 			throw new IllegalArgumentException("Must have a positive student population");
-		if(percentFemales<0 || percentFemales>100)
+		if(percentFemales<-1 || percentFemales>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(SATVerbal<0 || SATVerbal>800)
+		if(SATVerbal<-1 || SATVerbal>800)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(SATMath<0 || SATMath>800)
+		if(SATMath<-1 || SATMath>800)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(expenses<0)
+		if(expenses<-1)
 			throw new IllegalArgumentException("Must have a positive expense");
-		if(percentFinancialAid<0 || percentFinancialAid>100)
+		if(percentFinancialAid<-1 || percentFinancialAid>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(numberOfApplicants<0)
+		if(numberOfApplicants<-1)
 			throw new IllegalArgumentException("Must have a positive number of applicants");
-		if(percentAdmitted<0 || percentAdmitted>100)
+		if(percentAdmitted<-1 || percentAdmitted>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(percentEnrolled<0 || percentEnrolled>100)
+		if(percentEnrolled<-1 || percentEnrolled>100)
 			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
-		if(academicsScale<0 || academicsScale>5)
+		if(academicsScale<-1 || academicsScale>5)
 			throw new IllegalArgumentException("Academic scale must be between 0 and 5");
-		if(socialScale<0 || socialScale>5)
+		if(socialScale<-1 || socialScale>5)
 			throw new IllegalArgumentException("Social scale must be between 0 and 5");
-		if(qualityOfLifeScale<0 || qualityOfLifeScale>5)
+		if(qualityOfLifeScale<-1 || qualityOfLifeScale>5)
 			throw new IllegalArgumentException("Quality of life scale must be between 0 and 5");  
 		
 		controller.editUniversity(school, state, location, control, numberOfStudents, 
