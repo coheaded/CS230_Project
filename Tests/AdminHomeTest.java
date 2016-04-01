@@ -1,15 +1,20 @@
+
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import controller.DBController;
 import homes.*;
 import java.util.*;
 
 public class AdminHomeTest {
 
 	private AdminHome adHome;
+	private DBController controller;
 	@Before
 	public void setUp() throws Exception {
 		adHome = new AdminHome();
+		controller = new DBController("cottonhead","cottonhead", "acls4");
 	}
 	
 	@Test
@@ -19,18 +24,19 @@ public class AdminHomeTest {
 		assertTrue("Viewing Emphases for Tulane", Arrays.equals(test, expected));
 	}
 	
-	// This works just cannot add university every time
-	/*@Test
-	public void testAddUniversity() {
-		String[] array = {"Math", "Computer Science"};
-		adHome.addUniversity("Gatorade2", "Minnesota", "Urban", "Private", 100, 100, 100, 100, 100, 100, 100, 100, 100, 1, 1, 1, array);
-		String[] test = adHome.displaySchool("Gatorade2");
-		String[] expected = {"Gatorade2", "Minnesota", "Urban", "Private", "100", "100", "100", "100", "100", "100", "100", "100", "100", "1", "1", "1"};
-		String[] expected1 = {"Computer Science", "Math", null,  null, null, null, null, null, null, null, null, null, null, null, null};
-		String[] test1 = adHome.findEmphases("Gatorade2");
-		assertTrue("Should be displaying: Gatorade2, Minnesota, Urban, Private, 100, 100, 100, 100, 100, 100, 100, 100, 100, 1, 1, 1,", Arrays.equals(test, expected));
-		assertTrue("Should be displaying: Math, Computer Science", Arrays.equals(test1, expected1));
-	}*/
+
+//	@Test
+//	public void testAddUniversity() {
+//
+//		String[] array = {"Math", "Computer Science"};
+//		adHome.addUniversity("Gatorade10", "Minnesota", "Urban", "Private", 100, 100, 100, 100, 100, 100, 100, 100, 100, 1, 1, 1, array);
+//		String[] test = adHome.displaySchool("Gatorade10");
+//		String[] expected = {"Gatorade10", "Minnesota", "Urban", "Private", "100", "100", "100", "100", "100", "100", "100", "100", "100", "1", "1", "1"};
+//		String[] expected1 = {"Computer Science", "Math", null,  null, null, null, null, null, null, null, null, null, null, null, null};
+//		String[] test1 = adHome.findEmphases("Gatorade10");
+//		assertTrue("Should be displaying: Gatorade10, Minnesota, Urban, Private, 100, 100, 100, 100, 100, 100, 100, 100, 100, 1, 1, 1,", Arrays.equals(test, expected));
+//		assertTrue("Should be displaying: Math, Computer Science", Arrays.equals(test1, expected1));
+//	}
 
 	@Test
 	public void testEditUniversity() {
