@@ -104,6 +104,31 @@ public class AdminHome {
 			double percFem, double satVerb, double satMath, double expenses, double percFinAid, int numApps, double percAdmitted, 
 			double percEnrolled, int acadScale, int socialScale, int qualityOfLife, String[] emphases)
 	{
+		if(studPop<0)
+			throw new IllegalArgumentException("Must have a positive student population");
+		if(percFem<0 || percFem>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(satVerb<0 || satVerb>800)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(satMath<0 || satMath>800)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(expenses<0)
+			throw new IllegalArgumentException("Must have a positive expense");
+		if(percFinAid<0 || percFinAid>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(numApps<0)
+			throw new IllegalArgumentException("Must have a positive number of applicants");
+		if(percAdmitted<0 || percAdmitted>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(percEnrolled<0 || percEnrolled>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(acadScale<0 || acadScale>5)
+			throw new IllegalArgumentException("Academic scale must be between 0 and 5");
+		if(socialScale<0 || socialScale>5)
+			throw new IllegalArgumentException("Social scale must be between 0 and 5");
+		if(qualityOfLife<0 || qualityOfLife>5)
+			throw new IllegalArgumentException("Quality of life scale must be between 0 and 5");
+		
 		controller.addUniversity(school, state, location, control, studPop, 
 				percFem, satVerb, satMath, expenses, percFinAid, numApps, percAdmitted, 
 				 percEnrolled, acadScale, socialScale, qualityOfLife);
@@ -135,7 +160,32 @@ public class AdminHome {
 	public void editUniversity(String school, String state, String location, String control, int numberOfStudents, 
 			double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, 
 			int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale, String[] emphases){
-		  controller.editUniversity(school, state, location, control, numberOfStudents, 
+		if(numberOfStudents<0)
+			throw new IllegalArgumentException("Must have a positive student population");
+		if(percentFemales<0 || percentFemales>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(SATVerbal<0 || SATVerbal>800)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(SATMath<0 || SATMath>800)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(expenses<0)
+			throw new IllegalArgumentException("Must have a positive expense");
+		if(percentFinancialAid<0 || percentFinancialAid>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(numberOfApplicants<0)
+			throw new IllegalArgumentException("Must have a positive number of applicants");
+		if(percentAdmitted<0 || percentAdmitted>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(percentEnrolled<0 || percentEnrolled>100)
+			throw new IllegalArgumentException("Must have a percentage between 0 and 100");
+		if(academicsScale<0 || academicsScale>5)
+			throw new IllegalArgumentException("Academic scale must be between 0 and 5");
+		if(socialScale<0 || socialScale>5)
+			throw new IllegalArgumentException("Social scale must be between 0 and 5");
+		if(qualityOfLifeScale<0 || qualityOfLifeScale>5)
+			throw new IllegalArgumentException("Quality of life scale must be between 0 and 5");  
+		
+		controller.editUniversity(school, state, location, control, numberOfStudents, 
 				  percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, 
 				  numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 		  
