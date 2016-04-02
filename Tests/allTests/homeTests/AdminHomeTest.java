@@ -25,18 +25,52 @@ public class AdminHomeTest {
 	}
 	
 
-//	@Test
-//	public void testAddUniversity() {
-//
-//		String[] array = {"Math", "Computer Science"};
-//		adHome.addUniversity("Gatorade10", "Minnesota", "Urban", "Private", 100, 100, 100, 100, 100, 100, 100, 100, 100, 1, 1, 1, array);
-//		String[] test = adHome.displaySchool("Gatorade10");
-//		String[] expected = {"Gatorade10", "Minnesota", "Urban", "Private", "100", "100", "100", "100", "100", "100", "100", "100", "100", "1", "1", "1"};
-//		String[] expected1 = {"Computer Science", "Math", null,  null, null, null, null, null, null, null, null, null, null, null, null};
-//		String[] test1 = adHome.findEmphases("Gatorade10");
-//		assertTrue("Should be displaying: Gatorade10, Minnesota, Urban, Private, 100, 100, 100, 100, 100, 100, 100, 100, 100, 1, 1, 1,", Arrays.equals(test, expected));
-//		assertTrue("Should be displaying: Math, Computer Science", Arrays.equals(test1, expected1));
-//	}
+	@Test
+	public void testAddUniversity() {
+		controller.removeUniversityEmphasis("Gatorade10", "Computer Science");
+		controller.removeUniversityEmphasis("Gatorade10", "Math");
+		controller.deleteUniversity("Gatorade10");
+		String[] array = {"Math", "Computer Science"};
+		adHome.addUniversity("Gatorade10", "Minnesota", "Urban", "Private", 100, 50, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
+		String[] test = adHome.displaySchool("Gatorade10");
+		String[] expected = {"Gatorade10", "Minnesota", "Urban", "Private", "100", "50", "100", "100", "100", "50", "100", "50", "50", "1", "1", "1"};
+		String[] expected1 = {"Computer Science", "Math", null,  null, null, null, null, null, null, null, null, null, null, null, null};
+		String[] test1 = adHome.findEmphases("Gatorade10");
+		assertTrue("Should be displaying: Gatorade10, Minnesota, Urban, Private, 100, 50, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1,", Arrays.equals(test, expected));
+		assertTrue("Should be displaying: Math, Computer Science", Arrays.equals(test1, expected1));
+	}
+	
+	@Test
+	public void testAddUniversity_AllFieldsNegative1pass()
+	{
+		controller.removeUniversityEmphasis("Gatorade10", "Computer Science");
+		controller.removeUniversityEmphasis("Gatorade10", "Math");
+		controller.deleteUniversity("Gatorade10");
+		String[] array = {"Math", "Computer Science"};
+		adHome.addUniversity("Gatorade10", "Minnesota", "Urban", "Private", -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, array);
+		String[] test = adHome.displaySchool("Gatorade10");
+		String[] expected = {"Gatorade10", "Minnesota", "Urban", "Private", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"};
+		String[] expected1 = {"Computer Science", "Math", null,  null, null, null, null, null, null, null, null, null, null, null, null};
+		String[] test1 = adHome.findEmphases("Gatorade10");
+		assertTrue("Should be displaying: Gatorade10, Minnesota, Urban, Private, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,", Arrays.equals(test, expected));
+		assertTrue("Should be displaying: Math, Computer Science", Arrays.equals(test1, expected1));
+	}
+	
+	@Test
+	public void testAddUniversity_AllFieldsMaxAllowedValue() {
+		controller.removeUniversityEmphasis("Gatorade10", "Computer Science");
+		controller.removeUniversityEmphasis("Gatorade10", "Math");
+		controller.deleteUniversity("Gatorade10");
+		String[] array = {"Math", "Computer Science"};
+		adHome.addUniversity("Gatorade10", "Minnesota", "Urban", "Private", 1000000000, 100, 800, 800, 52000, 100, 500000, 100, 100, 5, 5, 5, array);
+		String[] test = adHome.displaySchool("Gatorade10");
+		String[] expected = {"Gatorade10", "Minnesota", "Urban", "Private", "1000000000", "100", "800", "800", "52000", "100", "500000", "100", "100", "5", "5", "5"};
+		String[] expected1 = {"Computer Science", "Math", null,  null, null, null, null, null, null, null, null, null, null, null, null};
+		String[] test1 = adHome.findEmphases("Gatorade10");
+		assertTrue("Should be displaying: Gatorade10, Minnesota, Urban, Private, 1000000000, 100, 800, 800, 52000, 100, 500000, 100, 100, 5, 5, 5,", Arrays.equals(test, expected));
+		assertTrue("Should be displaying: Math, Computer Science", Arrays.equals(test1, expected1));
+	}
+	
 
 	@Test
 	public void testEditUniversity() {
