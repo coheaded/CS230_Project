@@ -44,13 +44,19 @@ public class AdminHome {
 	 * changes the activation of the person specified, if Y -> N if N -> Y
 	 * @param person
 	 */
-	public void changeActivated(Person person)
+	public void changeActivated(String user)
 	{
+		String[][] users = controller.getUsers();
+		for(int i = 0; i<users.length;i++){
+			if(users[i][2].equals(user)){
+				if(users[i][5].equalsIgnoreCase("y"))
+					controller.editUser(users[i][0], users[i][1], users[i][2], users[i][3], users[i][4].charAt(0), 'N');
+				else
+					controller.editUser(users[i][0], users[i][1], users[i][2], users[i][3], users[i][4].charAt(0), 'Y');
+			}
+		}
+		
 		//person.setActivated();
-		if(person.getActivated() == 'y' || person.getActivated() == 'Y')
-			controller.editUser(person.getfName(), person.getlName(), person.getuName(), person.getpWord(), person.getType(), 'N');
-		else
-			controller.editUser(person.getfName(), person.getlName(), person.getuName(), person.getpWord(), person.getType(), 'Y');
 	}
 	
 	/**

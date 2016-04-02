@@ -57,6 +57,40 @@ public class UniversityHome {
 	 * @param qualLifeL for the low end of the rating of the schools quality of life (1-5)
 	 * @param qualLifeH for the high end of the rating of the schools quality of life (1-5)
 	 * @return an ArrayList<University> containing all the universities in their correct order
+	 * @throws IllegalArgumentException if popL is below -1
+	 * @throws IllegalArgumentException if popH is below -1
+	 * @throws IllegalArgumentException if popL is higher than popH
+	 * @throws IllegalArgumentException if perFemL is below -1 or above 100
+	 * @throws IllegalArgumentException if perFemH is below -1 or above 100
+	 * @throws IllegalArgumentException if perFemL is higher than perFemH
+	 * @throws IllegalArgumentException if SATVerbL is below -1 or above 800
+	 * @throws IllegalArgumentException if SATVerbH is below -1 or above 800
+	 * @throws IllegalArgumentException if SATVerbL is higher than SATVerbH
+	 * @throws IllegalArgumentException if SATMathL is below -1 or above 800
+	 * @throws IllegalArgumentException if SATMathH is below -1 or above 800
+	 * @throws IllegalArgumentException if SATMathL is higher than SATMathH
+	 * @throws IllegalArgumentException if expensesL or expensesH are below 0
+	 * @throws IllegalArgumentException if expensesL is higher than expensesH
+	 * @throws IllegalArgumentException if finAidL is below -1 or above 100
+	 * @throws IllegalArgumentException if findAidH is below -1 or above 100
+	 * @throws IllegalArgumentException if finAidL is higher than finAidH
+	 * @throws IllegalArgumentException if numAppsL or numAppsH are below 0
+	 * @throws IllegalArgumentException if numAppsL is higher than numAppsH
+	 * @throws IllegalArgumentException if perAdmL is below -1 or above 100
+	 * @throws IllegalArgumentException if perAdmH is below -1 or above 100
+	 * @throws IllegalArgumentException if perAdmL is higher than perAdmH
+	 * @throws IllegalArgumentException if perEnrollL is below -1 or above 100
+	 * @throws IllegalArgumentException if perEnrollH is below -1 or above 100
+	 * @throws IllegalArgumentException if perEnrollL is higher than perEnrollH
+	 * @throws IllegalArgumentException if acadScaleL is below -1 or above 5
+	 * @throws IllegalArgumentException if acadScaleH is below -1 or above 5
+	 * @throws IllegalArgumentException if acadScaleL is higher than acadScaleH
+	 * @throws IllegalArgumentException if socialScaleL is below -1 or above 5
+	 * @throws IllegalArgumentException if socialScaleH is below -1 or above 5
+	 * @throws IllegalArgumentException if socialScaleL is higher than socialScaleH
+	 * @throws IllegalArgumentException if qualLifeScaleL is below -1 or above 5
+	 * @throws IllegalArgumentException if qualLifeScaleH is below -1 or above 5
+	 * @throws IllegalArgumentException if qualLifeScaleL is higher than qualLifeScaleH
 	 */
 	  public  ArrayList<University> search(String school, String state, String location, String control, 
 			  int popL, int popH, double perFemL, double perFemH, double SATVerbL, double SATVerbH,
@@ -71,7 +105,7 @@ public class UniversityHome {
 	  		  throw new IllegalArgumentException("Population needs to be greater than 0");
 	  	  if(popL>popH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-	  	if (perFemL < 0.0 || perFemL > 100.0)
+	  	  if (perFemL < 0.0 || perFemL > 100.0)
 			  throw new IllegalArgumentException("Percent female needs to be between 0 and 100");
 		  if (perFemH < 0.0 || perFemH > 100.0)
 			  throw new IllegalArgumentException("Percent female needs to be between 0 and 100");
@@ -94,12 +128,12 @@ public class UniversityHome {
 		  if(expensesL>expensesH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
 		  if(finAidL <0 || finAidL > 100)
-			  throw new IllegalArgumentException("percent female needs to be between 0 and 100");
+			  throw new IllegalArgumentException("percent financial aid needs to be between 0 and 100");
 		  if(finAidH <0 || finAidH > 100)
-			  throw new IllegalArgumentException("percent female needs to be between 0 and 100");
+			  throw new IllegalArgumentException("percent financial aid needs to be between 0 and 100");
 		  if(finAidL>finAidH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(numAppsL<0)
+		  if(numAppsL<0 || numAppsH<0)
 			  throw new IllegalArgumentException("Number of applicants cannot be below 0");
 		  if(numAppsL>numAppsH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");

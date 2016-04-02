@@ -103,6 +103,10 @@ public class AdminUI {
 				  numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale, emphases);
 	}
 	
+	public void changeActivated(String user){
+		home.changeActivated(user);
+	}
+	
 	/**
 	 * This method returns a String array of the attributes associated with the specified school name
 	 * @param school the name of the school to display
