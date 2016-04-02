@@ -79,7 +79,6 @@ public class AdminHome {
 	}
 	
 
-	
 	/**
 	 * creates a new university and adds it to the database via the database controller
 	 * @param school  Universities name
@@ -99,7 +98,20 @@ public class AdminHome {
 	 * @param socialScale universities social life scale
 	 * @param qualityOfLife universities quality of life scale
 	 * @param emphases universities main academic focuses
+	 * @throws IllegalArgumentException  if studPop is below -1
+	 * @throws IllegalArgumentException if percFem is below -1 or above 100
+	 * @throws IllegalArgumentException if satVerb is below -1 or above 800
+	 * @throws IllegalArgumentException if satMath is below -1 or above 800
+	 * @throws IllegalArgumentException if expenses is below -1
+	 * @throws IllegalArgumentException if percFinAid is below -1 or above 100
+	 * @throws IllegalArgumentException if numApps is below -1
+	 * @throws IllegalArgumentException if percAdmitted is below -1 or above 100
+	 * @throws IllegalArgumentException if acadScale is below -1 or above 5
+	 * @throws IllegalArgumentException if socialScale is below -1 or above 5
+	 * @throws IllegalArgumentException if qualityOfLife is below -1 or above 5
 	 */
+	
+	
 	public void addUniversity(String school, String state, String location, String control, int studPop, 
 			double percFem, double satVerb, double satMath, double expenses, double percFinAid, int numApps, double percAdmitted, 
 			double percEnrolled, int acadScale, int socialScale, int qualityOfLife, String[] emphases)
@@ -156,6 +168,17 @@ public class AdminHome {
 	 * @param socialScale universities social life scale
 	 * @param qualityOfLife universities quality of life scale
 	 * @param emphases universities main academic focuses
+	 * @throws IllegalArgumentException if numberOfStudents is below -1
+	 * @throws IllegalArgumentException if percentFemales is below -1 or above 100
+	 * @throws IllegalArgumentException if SATVerbal is below -1 or above 800
+	 * @throws IllegalArgumentException if SATMath is below -1 or above 800
+	 * @throws IllegalArgumentException if expenses is below -1
+	 * @throws IllegalArgumentException if percentFinancialAid is below -1 or above 100
+	 * @throws IllegalArgumentException if numberOfApplicants is below -1
+	 * @throws IllegalArgumentException if percentAdmitted is below -1 or above 100
+	 * @throws IllegalArgumentException if academicsScale is below -1 or above 5
+	 * @throws IllegalArgumentException if socialScale is below -1 or above 5
+	 * @throws IllegalArgumentException if qualityOfLifeScale is below -1 or above 5
 	 */
 	public void editUniversity(String school, String state, String location, String control, int numberOfStudents, 
 			double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, 
