@@ -16,9 +16,19 @@ public class UniversityHomeTest {
 
 	@Test
 	public void testSearch() {
-		uHome.search(school, state, location, control, popL, popH, perFemL, perFemH, SATVerbL, SATVerbH, SATMathL, SATMathH, expensesL, expensesH, finAidL, finAidH, numAppsL, numAppsH, perAdmL, perAdmH, perEnrollL, perEnrollH, acadScaleL, acadScaleH, socialScaleL, socialScaleH, qualLifeScaleL, qualLifeScaleH);
+		uHome.search("n/a","NEW YORK", "n/a", "PRIVATE", 2000,10000, 25,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 	}
 
+	
+	//Test studentPop low is -10, -2, -1, 1000
+	//Test studentPop high is -10, -2, -1, 10000
+	//Test student pop low > student pop high.  10000>1000
+	
+	//Test percFem low is -10, -2, -1, 50, 100, 110
+	//Test percFem high is -10, -2, -1, 50 100, 110
+	//Test percFem low > percFem high. 100>50
+	
+	
 	@Test
 	public void testRelatedSchool() {
 		fail("Not yet implemented");
