@@ -246,7 +246,7 @@ public class UniversityHome {
 	  public ArrayList<University> relatedSchool(University uni)
 	  {	
 		  int studpop, numapps, academicscale, socialscale,qualityoflife;
-		  double febperc, satverb, satmath, expenses, finaidperc, admittedperc, enrolledperc;
+		  double femperc, satverb, satmath, expenses, finaidperc, admittedperc, enrolledperc;
 		  if(uni.getStudentPop()== -1)
 			  studpop = 0;
 		  else
@@ -255,14 +255,67 @@ public class UniversityHome {
 			  numapps = 0;
 		  else
 			  numapps = uni.getNumApps();
+		  if(uni.getAcademicScale()==-1)
+			  academicscale = 0;
+		  else
+			  academicscale = uni.getAcademicScale();
+		  if(uni.getSocialScale() == -1)
+			  socialscale = 0;
+		  else
+			  socialscale = uni.getSocialScale();
+		  if(uni.getQualityOfLife()==-1)
+			  qualityoflife = 0;
+		  else
+			  qualityoflife = uni.getQualityOfLife();
+		  if(uni.getFemPercent() == -1)
+			  femperc = 0;
+		  else if(uni.getFemPercent()>86)
+			  femperc = 86.95652173913043478261;
+		  else
+			  femperc = uni.getFemPercent();
+		  if(uni.getSatVerbal()==-1)
+			  satverb = 0;
+		  else if(uni.getSatVerbal()>695)
+			  satverb = 800/1.15;
+		  else
+			  satverb = uni.getSatVerbal();
+		  if(uni.getSatMath() == -1)
+			  satmath = 0;
+		  else if(uni.getSatMath() > 695)
+			  satmath = 800/1.15;
+		  else
+			  satmath = uni.getSatMath();
+		  if(uni.getExpenses() == -1)
+			  expenses = 0;
+		  else
+			  expenses = uni.getExpenses();
+		  if(uni.getFinAidPercent() == -1)
+			  finaidperc = 0;
+		  else if(uni.getFinAidPercent() > 86)
+			  finaidperc = 86.95652173913043478261;
+		  else
+			  finaidperc = uni.getFinAidPercent();
+		  if(uni.getAdmittedPercent() == -1)
+			  admittedperc = 0;
+		  else if(uni.getAdmittedPercent() > 86)
+			  admittedperc = 86.95652173913043478261;
+		  else
+			  admittedperc = uni.getAdmittedPercent();
+		  if(uni.getEnrolledPercent() == -1)
+			  enrolledperc = 0;
+		  else if(uni.getEnrolledPercent() > 86)
+			  enrolledperc = 86.95652173913043478261;
+		  else
+			  enrolledperc = uni.getEnrolledPercent();
+		  
 			  
 		  ArrayList<University> out = search("n/a", uni.getState(), uni.getLocation(), uni.getControl(),
-				  (int)(uni.getStudentPop()*.85), (int)(uni.getStudentPop()*1.15), uni.getFemPercent()*.85, uni.getFemPercent()*1.15,
-				  uni.getSatVerbal()*.85, uni.getSatVerbal()*1.15, uni.getSatMath()*.85, uni.getSatMath()*1.15,
-				  uni.getExpenses()*.85, uni.getExpenses()*1.15, uni.getFinAidPercent()*.85, uni.getFinAidPercent()*1.15,
-				  (int)(uni.getNumApps()*.85), (int)(uni.getNumApps()*1.15), uni.getAdmittedPercent()*.85, uni.getAdmittedPercent()*1.15,
-				  uni.getEnrolledPercent()*.85, uni.getEnrolledPercent()*1.15, (int)(uni.getAcademicScale()*.85), (int)(uni.getAcademicScale()*1.15),
-				  (int)(uni.getSocialScale()*.85), (int)(uni.getSocialScale()*1.15), (int)(uni.getQualityOfLife()*.85), (int)(uni.getQualityOfLife()*1.15));
+				  (int)(studpop*.85), (int)(studpop*1.15), femperc*.85, femperc*1.15,
+				  satmath*.85, satmath*1.15, satmath*.85, satmath*1.15,
+				  expenses*.85, expenses*1.15, finaidperc*.85, finaidperc*1.15,
+				  (int)(numapps*.85), (int)(numapps*1.15), admittedperc*.85, admittedperc*1.15,
+				  enrolledperc*.85, enrolledperc*1.15, (int)(academicscale*.85), (int)(academicscale*1.15),
+				  (int)(socialscale*.85), (int)(socialscale*1.15), (int)(qualityoflife*.85), (int)(qualityoflife*1.15));
 		  return out;
 	  }
 	  
