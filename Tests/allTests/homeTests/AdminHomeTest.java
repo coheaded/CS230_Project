@@ -24,6 +24,20 @@ public class AdminHomeTest {
 		assertTrue("Viewing Emphases for Tulane", Arrays.equals(test, expected));
 	}
 	
+	@Test
+	public void testDeactivate(){
+		adHome.changeActivated("luser");
+		String answer = "blah";
+		String[][] array = controller.getUsers();
+		for(int i = 0; i<array.length; i++ ){
+			if(array[i][2].equalsIgnoreCase("luser")){
+				answer = array[i][5];
+			}
+		}
+		assertTrue("testing deactivate", answer.equals("N"));
+		adHome.changeActivated("luser");
+		
+	}
 
 	@Test
 	public void testAddUniversity() {
