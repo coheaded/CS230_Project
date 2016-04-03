@@ -4,20 +4,19 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UniversityHomeTest {
+import homes.UniversityHome;
 
+public class UniversityHomeTest {
+	
+	private UniversityHome uHome;
 	@Before
 	public void setUp() throws Exception {
-	}
-
-	@Test
-	public void testUniversityHome() {
-		fail("Not yet implemented");
+		uHome = new UniversityHome();
 	}
 
 	@Test
 	public void testSearch() {
-		fail("Not yet implemented");
+		uHome.search(school, state, location, control, popL, popH, perFemL, perFemH, SATVerbL, SATVerbH, SATMathL, SATMathH, expensesL, expensesH, finAidL, finAidH, numAppsL, numAppsH, perAdmL, perAdmH, perEnrollL, perEnrollH, acadScaleL, acadScaleH, socialScaleL, socialScaleH, qualLifeScaleL, qualLifeScaleH);
 	}
 
 	@Test

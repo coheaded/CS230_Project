@@ -99,71 +99,71 @@ public class UniversityHome {
 			  double perEnrollL, double perEnrollH, int acadScaleL, int acadScaleH, int socialScaleL, 
 			  int socialScaleH, int qualLifeScaleL, int qualLifeScaleH){
 		  PriorityQueue<University> matches = controller.getUs();
-		  if(popL <0)
+		  if(popL <-1)
 			  throw new IllegalArgumentException("Population needs to be greater than 0");
-	  	  if (popH <0)
+	  	  if (popH <-1)
 	  		  throw new IllegalArgumentException("Population needs to be greater than 0");
 	  	  if(popL>popH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-	  	  if (perFemL < 0.0 || perFemL > 100.0)
+	  	  if (perFemL < -1 || perFemL > 100.0)
 			  throw new IllegalArgumentException("Percent female needs to be between 0 and 100");
-		  if (perFemH < 0.0 || perFemH > 100.0)
+		  if (perFemH < -1 || perFemH > 100.0)
 			  throw new IllegalArgumentException("Percent female needs to be between 0 and 100");
 		  if(perFemL>perFemH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if (SATVerbL <0 || SATVerbL >800)
+		  if (SATVerbL <-1 || SATVerbL >800)
 			  throw new IllegalArgumentException("SAT Verbal needs to be between 0 and 800");
-		  if (SATVerbH <0 || SATVerbH >800)
+		  if (SATVerbH <-1 || SATVerbH >800)
 			  throw new IllegalArgumentException("SAT Verbal needs to be between 0 and 800");
 		  if(SATVerbL>SATVerbH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if (SATMathL <0 || SATMathL >800)
+		  if (SATMathL <-1 || SATMathL >800)
 			  throw new IllegalArgumentException("SAT Math needs to be between 0 and 800");
-		  if (SATMathH <0 || SATMathH >800)
+		  if (SATMathH <-1 || SATMathH >800)
 			  throw new IllegalArgumentException("SAT Math needs to be between 0 and 800");
 		  if(SATMathL>SATMathH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if (expensesL <0 || expensesH <0)
+		  if (expensesL <-1 || expensesH <0)
 			  throw new IllegalArgumentException("Expenses cannot be below 0");
 		  if(expensesL>expensesH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(finAidL <0 || finAidL > 100)
+		  if(finAidL <-1 || finAidL > 100)
 			  throw new IllegalArgumentException("percent financial aid needs to be between 0 and 100");
-		  if(finAidH <0 || finAidH > 100)
+		  if(finAidH <-1 || finAidH > 100)
 			  throw new IllegalArgumentException("percent financial aid needs to be between 0 and 100");
 		  if(finAidL>finAidH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(numAppsL<0 || numAppsH<0)
+		  if(numAppsL<-1 || numAppsH<0)
 			  throw new IllegalArgumentException("Number of applicants cannot be below 0");
 		  if(numAppsL>numAppsH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(perAdmL<0||perAdmL>100)
+		  if(perAdmL<-1||perAdmL>100)
 			  throw new IllegalArgumentException("percent admitted needs to be between 0 and 100");
-		  if(perAdmH<0||perAdmH>100)
+		  if(perAdmH<-1||perAdmH>100)
 			  throw new IllegalArgumentException("percent admitted needs to be between 0 and 100");
 		  if(perAdmL>perAdmH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(perEnrollL<0||perEnrollL>100)
+		  if(perEnrollL<-1||perEnrollL>100)
 			  throw new IllegalArgumentException("percent enrolled needs to be between 0 and 100");
-		  if(perEnrollH<0||perEnrollH>100)
+		  if(perEnrollH<-1||perEnrollH>100)
 			  throw new IllegalArgumentException("percent enrolled needs to be between 0 and 100");
 		  if(perEnrollL>perEnrollH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(acadScaleL<0||acadScaleL>5)
+		  if(acadScaleL<-1||acadScaleL>5)
 			  throw new IllegalArgumentException("scale must be between 0 and 5");
-		  if(acadScaleH<0||acadScaleH>5)
+		  if(acadScaleH<-1||acadScaleH>5)
 			  throw new IllegalArgumentException("scale must be between 0 and 5");
 		  if(acadScaleL>acadScaleH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(socialScaleL<0||socialScaleL>5)
+		  if(socialScaleL<-1||socialScaleL>5)
 			  throw new IllegalArgumentException("scale must be between 0 and 5");
-		  if(socialScaleH<0||socialScaleH>5)
+		  if(socialScaleH<-1||socialScaleH>5)
 			  throw new IllegalArgumentException("scale must be between 0 and 5");
 		  if(socialScaleL>socialScaleH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(qualLifeScaleL<0||qualLifeScaleL>5)
+		  if(qualLifeScaleL<-1||qualLifeScaleL>5)
 			  throw new IllegalArgumentException("scale must be between 0 and 5");
-		  if(qualLifeScaleH<0||qualLifeScaleH>5)
+		  if(qualLifeScaleH<-1||qualLifeScaleH>5)
 			  throw new IllegalArgumentException("scale must be between 0 and 5");
 		  if(qualLifeScaleL>qualLifeScaleH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
@@ -227,15 +227,14 @@ public class UniversityHome {
 				  u.addToMatchStrength(1);
 			  }
 		  }
-		  PriorityQueue<University> matches2 = new PriorityQueue<University>();
-		  ArrayList<University> matches3 = new ArrayList<University>();
+
+		  ArrayList<University> matches2 = new ArrayList<University>();
 		  University univ;
 		  while(!matches.isEmpty()){
 			  univ = matches.poll();
 			  matches2.add(univ);
-			  matches3.add(univ);
 		  }
-		  return matches3;
+		  return matches2;
 		  
 	  }
 	  
@@ -245,7 +244,18 @@ public class UniversityHome {
 	   * @return an ArrayList<University> containing the ordered list of the schools that match the given school, from best to worst match
 	   */
 	  public ArrayList<University> relatedSchool(University uni)
-	  {
+	  {	
+		  int studpop, numapps, academicscale, socialscale,qualityoflife;
+		  double febperc, satverb, satmath, expenses, finaidperc, admittedperc, enrolledperc;
+		  if(uni.getStudentPop()== -1)
+			  studpop = 0;
+		  else
+			  studpop = uni.getStudentPop();
+		  if(uni.getNumApps() ==-1)
+			  numapps = 0;
+		  else
+			  numapps = uni.getNumApps();
+			  
 		  ArrayList<University> out = search("n/a", uni.getState(), uni.getLocation(), uni.getControl(),
 				  (int)(uni.getStudentPop()*.85), (int)(uni.getStudentPop()*1.15), uni.getFemPercent()*.85, uni.getFemPercent()*1.15,
 				  uni.getSatVerbal()*.85, uni.getSatVerbal()*1.15, uni.getSatMath()*.85, uni.getSatMath()*1.15,
