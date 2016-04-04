@@ -355,7 +355,6 @@ public class UniversityHomeTest {
 		University university = new University("n/a","TEXAS","SUBURBAN","PRIVATE",10000,50,-1,-1,12088,70,4000,90,80,2,3,3);
 		ArrayList<University> array = uHome.relatedSchool(university);
 		assertTrue("Top result should be Abilene Christian University",array.get(0).getName().equalsIgnoreCase("ABILENE CHRISTIAN UNIVERSITY"));
-		
 	}
 
 }

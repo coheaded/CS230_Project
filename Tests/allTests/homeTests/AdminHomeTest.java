@@ -443,77 +443,77 @@ public class AdminHomeTest {
 		assertTrue("Making sure emphases changed", Arrays.equals(testEmph, expected1));
 	}
 	@Test
-	public void testeditUniversity_AllFieldsNegative1pass()
+	public void testEditUniversity_AllFieldsNegative1pass()
 	{
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, array);
 	}
 	
 	@Test
-	public void testeditUniversity_AllFieldsMaxAllowedValue() {
+	public void testEditUniversity_AllFieldsMaxAllowedValue() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 1000000000, 100, 800, 800, 52000, 100, 500000, 100, 100, 5, 5, 5, array);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_studPopFails()
+	public void testEditUniversity_studPopFails()
 	{
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", -2, 50, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_studPopFails2()
+	public void testEditUniversity_studPopFails2()
 	{
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", -10, 50, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FemPercentFails()
+	public void testEditUniversity_FemPercentFails()
 	{
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, -2, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FemPercentFails2() {
+	public void testEditUniversity_FemPercentFails2() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, -10, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FemPercentFails3() {
+	public void testEditUniversity_FemPercentFails3() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 101, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FemPercentFails4() {
+	public void testEditUniversity_FemPercentFails4() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 110, 100, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}	
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_SATVerbalFails() {
+	public void testEditUniversity_SATVerbalFails() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, -2, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_SATVerbalFails2() {
+	public void testEditUniversity_SATVerbalFails2() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, -10, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_SATVerbalFails3() {
+	public void testEditUniversity_SATVerbalFails3() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 801, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_SATVerbalFails4() {
+	public void testEditUniversity_SATVerbalFails4() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 810, 100, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_SATMathFails() {
+	public void testEditUniversity_SATMathFails() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, -2, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
@@ -523,67 +523,67 @@ public class AdminHomeTest {
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, -10, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_SATMathFails3() {
+	public void testEditUniversity_SATMathFails3() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 801, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_SATMathFails4() {
+	public void testEditUniversity_SATMathFails4() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 810, 100, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_ExpensesFails() {
+	public void testEditUniversity_ExpensesFails() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, -2, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_ExpensesFails2() {
+	public void testEditUniversity_ExpensesFails2() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, -10, 50, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FinacialAidPercFails() {
+	public void testEditUniversity_FinacialAidPercFails() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, -2, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FinacialAidPercFails2() {
+	public void testEditUniversity_FinacialAidPercFails2() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, -10, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FinacialAidPercFails3() {
+	public void testEditUniversity_FinacialAidPercFails3() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, 101, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_FinacialAidPercFails4() {
+	public void testEditUniversity_FinacialAidPercFails4() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, 110, 100, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_numAppsFails() {
+	public void testEditUniversity_numAppsFails() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, 50, -2, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_numAppsFails2() {
+	public void testEditUniversity_numAppsFails2() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, 50, -10, 50, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_PercentAdmittedFails() {
+	public void testEditUniversity_PercentAdmittedFails() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, 50, 100, -2, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_PercentAdmittedFails2() {
+	public void testEditUniversity_PercentAdmittedFails2() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, 50, 100, -10, 50, 1, 1, 1, array);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testeditUniversity_PercentAdmittedFails3() {
+	public void testEditUniversity_PercentAdmittedFails3() {
 		String[] array = {"Math", "Computer Science"};
 		adHome.editUniversity("Blargh", "Blargh", "Blargh", "Blargh", 100, 50, 100, 100, 100, 50, 100, 101, 50, 1, 1, 1, array);
 	}
