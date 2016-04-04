@@ -5,10 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import homes.UniversityHome;
+import people.*;
+import java.util.*;
 
 public class UniversityHomeTest {
 	
 	private UniversityHome uHome;
+	private University uni;
 	@Before
 	public void setUp() throws Exception {
 		uHome = new UniversityHome();
@@ -16,7 +19,15 @@ public class UniversityHomeTest {
 
 	@Test
 	public void testSearch() {
-		uHome.search("n/a","NEW YORK", "n/a", "PRIVATE", 2000,10000, 25,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+		ArrayList<University> array = uHome.search("BARNARD","NEW YORK", "URBAN", "PRIVATE", 9999,10001, 99,100,629,631,609,611,31008,31010,59,61,3999,4001,59,61,19,21,3,5,2,4,3,5);
+		Collections.sort(array);
+		uni = array.get(0);
+		int test = uni.getMatchStrength();
+		assertTrue("testing perfect match",test==30);
+		
+		
+		
+		
 	}
 
 	
