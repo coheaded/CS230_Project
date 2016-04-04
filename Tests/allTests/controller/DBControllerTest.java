@@ -146,6 +146,27 @@ public class DBControllerTest {
 	}
 	
 	@Test
+	public void testGetUsers(){
+		String[][] array = controller.getUsers();
+		String[] expected = {"Curtis", "Noecker", "curtis", "cnoecker", "u", "Y"};
+		String[] results = new String[6];
+		for (int i =0; i <6; i++){
+			results[i] = array[0][i];
+		}
+		assertTrue("Testing get u", Arrays.equals(results, expected));
+	}
+	
+	@Test
+	public void testGetUniversities(){
+		String[][] array = controller.getUniversities();
+		String[] expected = {"ABILENE CHRISTIAN UNIVERSITY","TEXAS","SUBURBAN","PRIVATE","10000","50","-1","-1","12088","70","4000","90","80","2","3","3"};
+		String[] results = new String[16];
+		for (int i =0; i <16; i++){
+			results[i] = array[0][i];
+		}
+		assertTrue("Testing get u", Arrays.equals(results, expected));
+	}
+	@Test
 	public void testGetUsernamesWithSavedSchools() {
 		String[][] test = controller.getUsernamesWithSavedSchools();
 		String [] expected1 = {"juser","juser","juser", "luser"};
