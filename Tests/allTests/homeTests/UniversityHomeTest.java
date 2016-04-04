@@ -329,7 +329,6 @@ public class UniversityHomeTest {
 		ArrayList<University> array = uHome.search("00", "00", "00", "00", 1, 1, 34.355, 34.355, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 		Collections.sort(array);
 		
-		University uni;
 		for(int i = 0; i<array.size();i++){
 			uni = array.get(i);
 			assertTrue("School match strength is 0",uni.getMatchStrength()==0);
@@ -347,20 +346,16 @@ public class UniversityHomeTest {
 		assertTrue("testing perfect match strength",test==30);
 		assertTrue("making sure school is Barnard",uni.getName().equalsIgnoreCase("BARNARD"));
 	}
-
 	
-	//Test studentPop low is -10, -2, -1, 1000
-	//Test studentPop high is -10, -2, -1, 10000
-	//Test student pop low > student pop high.  10000>1000
 	
-	//Test percFem low is -10, -2, -1, 50, 100, 110
-	//Test percFem high is -10, -2, -1, 50 100, 110
-	//Test percFem low > percFem high. 100>50
 	
 	
 	@Test
 	public void testRelatedSchool() {
-		fail("Not yet implemented");
+		University university = new University("n/a","TEXAS","SUBURBAN","PRIVATE",10000,50,-1,-1,12088,70,4000,90,80,2,3,3);
+		ArrayList<University> array = uHome.relatedSchool(university);
+		assertTrue("Top result should be Abilene Christian University",array.get(0).getName().equalsIgnoreCase("ABILENE CHRISTIAN UNIVERSITY"));
+		
 	}
 
 }
