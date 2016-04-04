@@ -64,7 +64,12 @@ public class DBControllerTest {
 
 	@Test(expected=IllegalArgumentException.class)
 	public void testAddUniversityEmphasisFailsForExistingEmphasis() {
-		controller.addUniversityEmphasis("Brown", "BIOLOGY");
+		controller.addUniversityEmphasis("BROWN", "BIOLOGY");
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testAddUniversityEmphasisfailsForSchoolDoesntExist(){
+		controller.addUniversityEmphasis("saDF", "FUN");
 	}
 	
 	@Test

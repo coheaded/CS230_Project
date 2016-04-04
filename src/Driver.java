@@ -307,6 +307,8 @@ public class Driver {
 			System.out.println(iter2.next().toString());
 		}//end for
 		
+		adminUI.editUniversity("BlarghU", "Minnesota", "URBAN", "PRIVATE", 500, 50, 50, 50, 50, 50, 50, 50, 50, 5, 5, 5, emphases1);
+		adminUI.editUniversity("Saint Johns", "Minnesota", "URBAN", "PRIVATE", 500, 50, 50, 50, 50, 50, 50, 50, 50, 5, 5, 5, emphases1);
 		System.out.println("\n*****************************U11: view recommended universites 2*****************************\n");
 		test = listAllSchools.poll();
 		ArrayList<University> related2 = userUI.relatedSchools(test);
