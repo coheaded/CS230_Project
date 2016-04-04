@@ -31,6 +31,6 @@ public class AdminUITest {
 		assertTrue("Viewing Abilene Christian University",Arrays.equals(array[0],expected));
 		String[] expected2 = {"CORNELL","NEW YORK","SMALL-CITY","PRIVATE","25000","45","600","650","42037","50","17000","30","50","5","3","2","AGRICULTURE",
 				"ARCHITECTURE","ARTS-AND-SCIENCES","ENGINEERING","HOTEL-ADMINISTRATION","HUMAN-ECOLOGY","INDUSTRIAL:LABOR-RELATIONS",null,null,null,null,null,null,null,null};
-		assertTrue("Viewing Cornell",Arrays.equals(array[35],expected2));
+		assertTrue("Viewing Cornell",Arrays.equals(array[34],expected2));
 	}
 }
