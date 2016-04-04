@@ -55,6 +55,7 @@ public class LoginUITest {
 	 */
 	@Test
 	public void testGetAdmin() {
+		assertEquals("Testing string", "Admin [fName=Noreen, lName=Admin, uName=nadmin, pWord=admin, activated=Y, type=a]", lui.getAdmin("nadmin").toString());
 		assertTrue("toString", lui.getAdmin("nadmin").toString().equals("Admin [fName=Noreen, lName=Admin, uName=nadmin, pWord=admin, activated=Y, type=a]"));
 	}
 

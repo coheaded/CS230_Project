@@ -34,8 +34,9 @@ public class UserHomeTest {
 	@Test
 	public void testViewSchools() {
 		String[] schools = uhome.viewSchools(user);
-		assertEquals("The first saved school is Seton Hall", "Seton Hall", schools[1]);
-		assertEquals("The second saved school is Villanova", "Villanova", schools[3]);
+		assertEquals("The first saved school is Brown", "BROWN", schools[1]);
+		assertEquals("The second saved school Seton Hall", "Seton Hall", schools[3]);
+		assertEquals("The second saved school is Villanova", "Villanova", schools[5]);
 	}
 
 	/**
