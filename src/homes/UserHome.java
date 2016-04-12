@@ -19,7 +19,7 @@ public class UserHome {
 	 * Constructor initializing the DBController
 	 */
 	public UserHome() {
-		controller = new DBController("cottonhead","cottonhead", "acls4");
+		controller = new DBController();
 	}
 	
 	/**

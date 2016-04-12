@@ -24,7 +24,7 @@ public class AdminHome {
 	 */
 	public AdminHome() {
 		// TODO Auto-generated constructor stub
-		controller = new DBController("cottonhead","cottonhead", "acls4");
+		controller = new DBController();
 	}
 	
 	/**

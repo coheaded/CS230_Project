@@ -1,12 +1,15 @@
 package controller;
 import dblibrary.project.csci230.UniversityDBLibrary;
+import people.Admin;
+import people.Person;
 import people.University;
+import people.User;
 
 import java.util.*;
 
 /**
  * class that communicates with the database library and contains methods to  ease controller functions
- * @author ldschramel
+ * @author ldschramel, smcarik, a1noack, ccnoecker
  * @version 03/15/2016
  *
  */
@@ -14,17 +17,22 @@ public class DBController {
 	/**
 	 * database object
 	 */
-	private UniversityDBLibrary univDBlib;
-	  
+	private UniversityDBLibrary univDBlib = new UniversityDBLibrary("cottonhead", "cottonhead","acls4");
+	private boolean loggedin = false;
+	private Person user;
 	/**
-	 * default constructor that creates a database object
+	 * constructor that creates a database object
 	 * @param db database name
 	 * @param username username of database
 	 * @param password password for database
 	 */
-	  public  DBController(String db, String username, String password){
+	  public DBController(String db, String username, String password){
 	    univDBlib = new UniversityDBLibrary(db,username,password);
 	  }
+	  /**
+	   * default constructor
+	   */
+	  public DBController(){}
 	  
 	  /**
 	   * method that returns an instance of this class
@@ -52,6 +60,7 @@ public class DBController {
 	  public char login(String username, String pass){
 		  String[][] array = univDBlib.user_getUsers();
 		  for(int i=0; i<array.length; i++){
+
 			  if(array[i][2].equals(username) && array[i][3].equals(pass)){
 				  if(array[i][4].equals("u") && array[i][5].equalsIgnoreCase("y")){
 					  return 'u';
@@ -64,6 +73,69 @@ public class DBController {
 		  return 'n';
 	  }
 	  
+	  public int login2(String username, String pass) {
+		  int status = -4;
+		  String[][] array = univDBlib.user_getUsers();
+		  for(int i = 0; i< array.length; i++) {
+			  status = -1;
+			  if(array[i][2].equals(username)) {
+				  if(array[i][3].equals(pass)) {
+					  if(array[i][4].equalsIgnoreCase("u")){
+						  if(array[i][5].equalsIgnoreCase("y")) {
+							  status = 1;
+							  user = new User(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4].charAt(0),array[i][5].charAt(0));
+							  loggedin = true;
+						  }
+					  }
+					  else if(array[i][4].equalsIgnoreCase("a")){ 
+						  if(array[i][5].equalsIgnoreCase("y")) {
+							  status = 2;
+							  user = new Admin(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4].charAt(0),array[i][5].charAt(0));
+							  loggedin = true;
+						  }
+					  }
+					  else
+						  status = -3;
+					  break;
+				  }
+				  else 
+					  status = -2;
+			  }
+		  }
+		  return status;
+	  }
+	  
+	  /**
+	   * method that gets the currently logged in user
+	   * @return the currently logged in user
+	   */
+	  public Person getCurrentUser(){
+		  return user;
+	  }
+	  
+	  /**
+	   * gets whether a user is logged in or not
+	   * @return true if user is logged in, otherwise false
+	   */
+	  public boolean getloggedin() {
+		  return loggedin;
+	  }
+	  
+	  /**
+	   * sets user to the currently logged in user
+	   * @param user the user that is loggin in
+	   */
+	  public void setCurrentUser(Person user) {
+		  this.user=user;
+	  }
+	  
+	  /**
+	   * sets the status of logged in to givin parameter
+	   * @param status new status of logged in
+	   */
+	  public void setLoggedIn(boolean status) {
+		  loggedin = status;
+	  }
 	  
 	  /**
 	   * adds a new user with the given params as their info
