@@ -4,15 +4,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Admin Home</title>
 </head>
 <body>
-Complete AdminHome -- Displays either hyperlinks, or buttons to:
-add_person.jsp
-edit_Person.jsp
-add_University.jsp
-edit_University.jsp
-view_People.jsp
-view_Universities.jsp
+<table style = "text-align: center; width: 200; height: 400"
+		border="1" cellpadding="2" cellspacing="2">
+<tr>
+<td>
+<form method ="post" action = "View_People.jsp" name = "View People">
+<input value ="View People" name = "View People" type = "submit">
+</form>
+<form method="post" action="Add_Person.jsp" name = "Add Person">
+<input value="Add Person" name = "Add Person" type = "submit">
+</form>
+<form method ="post" action = "Add_University.jsp" name = "Add University">
+<input value = "Add_University" name = "Add University" type = "submit">
+</form>
+<form method ="post" action="View_Universities.jsp" name = "View Universities">
+<input value = "View Universities" name ="View Universities" type = "submit">
+</form>
+</td>
+</tr>
+</table>
 </body>
 </html>
