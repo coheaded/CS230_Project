@@ -6,12 +6,12 @@
 	String pass = request.getParameter("Password");
 	int in = con.login2(name,pass);
 	if(in == 1) {
-		UserHome uh= new UserHome();
+		UserUI uh= new UserUI(name);
 		session.setAttribute("Home",uh);
 		response.sendRedirect("UserHome.jsp");
 	}
 	else if(in == 2) {
-		AdminHome ah = new AdminHome();
+		AdminUI ah = new AdminUI(name);
 		session.setAttribute("Home", ah);
 		response.sendRedirect("AdminHome.jsp");
 	}
