@@ -7,10 +7,26 @@
 <title>User Home</title>
 </head>
 <body>
-Complete UserHome with either Hyperlinks or buttons to:
-View_Saved_Schools.jsp
-Edit_Profile.jsp
-Search.jsp
+<table style = "text-align: center; width: 200; height: 400"
+		border="1" cellpadding="2" cellspacing="2">
+<tr>
+<td>
+<form method = "post" action = "Manage_Saved_Schools.jsp" name = "Manage Saved Schools">
+<input value = "Manage Saved Schools" name = "Manage Saved Schools" type = "submit">
+</form>
+</td>
+<td>
+<form method = "post" action = "Edit_Profile.jsp" name = "Edit Profile">
+<input value = "Edit Profile" name = "Edit Profile" type = "submit">
+</form>
+</td>
+<td>
+<form method = "post" action = "Search.jsp" name = "Search">
+<input value = "Search" name = "Search" type = "submit">
+</form>
+</td>
+</tr>
 
+</table>
 </body>
 </html>
