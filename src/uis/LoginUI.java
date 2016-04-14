@@ -27,16 +27,8 @@ public class LoginUI {
 	 * @param password
 	 * @return char a for admin, char u for user, char n if user not found
 	 */
-	public char login(String username, String password){
-		if(controller.login(username,password)=='a'){
-			return 'a';
-		}
-		else if(controller.login(username,password)=='u'){
-			return 'u';
-		}
-		else{
-			return 'n';
-		}
+	public int login2(String username, String password){
+		return controller.login2(username, password);
 	}
 	
 	/**

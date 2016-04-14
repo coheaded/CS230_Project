@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="controller.*, homes.*"%>
+    pageEncoding="UTF-8" import="uis.*, homes.*"%>
 <%
-	DBController con = new DBController();
+	LoginUI con = new LoginUI();
 	String name = request.getParameter("Username");
 	String pass = request.getParameter("Password");
 	int in = con.login2(name,pass);
