@@ -11,8 +11,8 @@
 		border="1" cellpadding="2" cellspacing="2">
 <tr>
 <td>
-<form method = "post" action = "View_Saved_Schools.jsp" name = "View Saved Schools">
-<input value = "View Saved Schools" name = "View Saved Schools" type = "submit">
+<form method = "post" action = "Manage_Saved_Schools.jsp" name = "Manage Saved Schools">
+<input value = "Manage Saved Schools" name = "Manage Saved Schools" type = "submit">
 </form>
 </td>
 <td>
@@ -25,10 +25,7 @@
 <input value = "Search" name = "Search" type = "submit">
 </form>
 </td>
-<!-- Complete UserHome with either Hyperlinks or buttons to: -->
-<!-- View_Saved_Schools.jsp -->
-<!-- Edit_Profile.jsp -->
-<!-- Search.jsp -->
+</tr>
 
 </table>
 </body>
