@@ -85,6 +85,11 @@ public class DBController {
 							  status = 1;
 							  user = new User(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4].charAt(0),array[i][5].charAt(0));
 							  loggedin = true;
+							  return status;
+						  }
+						  else{
+							  status = -3;
+							  return status;
 						  }
 					  }
 					  else if(array[i][4].equalsIgnoreCase("a")){ 
@@ -92,14 +97,18 @@ public class DBController {
 							  status = 2;
 							  user = new Admin(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4].charAt(0),array[i][5].charAt(0));
 							  loggedin = true;
+							  return status;
+						  }
+						  else{
+							  status = -3;
+							  return status;
 						  }
 					  }
-					  else
-						  status = -3;
-					  break;
 				  }
-				  else 
+				  else {
 					  status = -2;
+					  return status;
+				  }
 			  }
 		  }
 		  return status;
