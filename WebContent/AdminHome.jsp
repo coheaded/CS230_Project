@@ -10,8 +10,9 @@
 <table style = "text-align: center; width: 200; height: 400"
 		border="1" cellpadding="2" cellspacing="2">
 <tr>
-<form method ="post" action = "View_People.jsp" name = "View People">
-<input value ="View People" name = "View People" type = "submit">
+<td>
+<form method ="post" action = "Manage_People.jsp" name = "Manage People">
+<input value ="Manage People" name = "Manage People" type = "submit">
 </form>
 <form method="post" action="Add_Person.jsp" name = "Add Person">
 <input value="Add Person" name = "Add Person" type = "submit">
