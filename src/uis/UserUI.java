@@ -49,6 +49,10 @@ public class UserUI {
 		uniHome = new UniversityHome();
 	}
 	
+	public User getUser(){
+		return user;
+	}
+	
 	/**
 	 * 
 	 * viewSavedSchools() calls viewSchools on the userHome with the user object as a parameter and returns a String array

@@ -8,7 +8,7 @@
 </head>
 <body>
 <table style = "text-align: center; width: 200; height: 400"
-		border="1" cellpadding="2" cellspacing="2">
+		cellpadding="2" cellspacing="2">
 <tr>
 <td>
 <form method = "post" action = "Manage_Saved_Schools.jsp" name = "Manage Saved Schools">

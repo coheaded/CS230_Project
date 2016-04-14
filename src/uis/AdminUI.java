@@ -1,9 +1,8 @@
 package uis;
-import java.util.*;
 
 import homes.AdminHome;
-import people.Person;
 import people.University;
+import java.util.*;
 /**
  * @author a1noack
  * @version 3/15/16
