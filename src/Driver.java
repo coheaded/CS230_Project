@@ -22,12 +22,12 @@ public class Driver {
 		System.out.println("\n*****************************U1: Login as user*****************************\n");
 		LoginUI login = new LoginUI();
 
-		if(login.login("juser", "user")=='a'){
+		if(login.login2("juser", "user")=='a'){
 			adminUI = new AdminUI("juser");
 			System.out.println("Created new AdminUI");
 		}
 
-		else if(login.login("juser", "user")=='u'){
+		else if(login.login2("juser", "user")=='u'){
 			userUI = new UserUI("juser");
 			System.out.println("Created new UserUI");
 		}
@@ -37,12 +37,12 @@ public class Driver {
 
 		login = new LoginUI();
 		System.out.println("\n*****************************U1: Login as admin*****************************\n");
-		if(login.login("nadmin", "admin")=='a'){
+		if(login.login2("nadmin", "admin")=='a'){
 			adminUI = new AdminUI("nadmin");
 			System.out.println("Created new AdminUI");
 		}
 
-		else if(login.login("nadmin", "admin")=='u'){
+		else if(login.login2("nadmin", "admin")=='u'){
 			userUI = new UserUI("nadmin");
 			System.out.println("Created new UserUI");
 		}
@@ -53,12 +53,12 @@ public class Driver {
 
 		login = new LoginUI();
 		System.out.println("\n*****************************U1: Login fails*****************************\n");
-		if(login.login("junk", "morJunk")=='a'){
+		if(login.login2("junk", "morJunk")=='a'){
 			adminUI = new AdminUI("junk");
 			System.out.println("Created new AdminUI");
 		}
 
-		else if(login.login("junk", "morJunk")=='u'){
+		else if(login.login2("junk", "morJunk")=='u'){
 			userUI = new UserUI("junk");
 			System.out.println("Created new UserUI");
 		}

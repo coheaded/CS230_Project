@@ -31,9 +31,9 @@ public class LoginUITest {
 	 */
 	@Test
 	public void testLogin() {
-		assertTrue("Error on user branch", lui.login("juser", "user")=='u');
-		assertTrue("Error on admin branch", lui.login("nadmin", "admin")=='a');
-		assertTrue("Wrong username or password", lui.login("hehe", "user")=='n');
+		assertTrue("Error on user branch", lui.login2("juser", "user")=='u');
+		assertTrue("Error on admin branch", lui.login2("nadmin", "admin")=='a');
+		assertTrue("Wrong username or password", lui.login2("hehe", "user")=='n');
 	}
 
 	/**
