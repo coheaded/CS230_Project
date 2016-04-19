@@ -7,6 +7,26 @@
 <title>Manage People</title>
 </head>
 <body>
+<table style = "text-align: center; width: 200; height: 400"
+ 		cellpadding="2" cellspacing="2">
+<tr>
+<td>
+<form method ="post" action = "Manage_People.jsp" name = "Manage People">
+<input value ="Manage People" name = "Manage People" type = "submit">
+</form>
+</td>
+<td>
+<form method="post" action="Add_Person.jsp" name = "Add Person">
+<input value="Add Person" name = "Add Person" type = "submit">
+</form>
+</td>
+<td>
+<form method ="post" action = "Add_University.jsp" name = "Add University">
+<input value = "Add_University" name = "Add University" type = "submit">
+</form>
+</td>
+</tr>
+</table>
 <% AdminUI au = (AdminUI) session.getAttribute("Home");%>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
