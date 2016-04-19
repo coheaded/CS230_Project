@@ -2,17 +2,20 @@
     pageEncoding="UTF-8" import="uis.*, homes.*"%>
 <%
 	LoginUI con = new LoginUI();
+	session.setAttribute("LoginUI", con);
 	String name = request.getParameter("Username");
 	String pass = request.getParameter("Password");
 	int in = con.login2(name,pass);
 	if(in == 1) {
 		UserUI uh= new UserUI(name);
 		session.setAttribute("Home",uh);
+		session.setAttribute("CurrentUser", con.getLoggedInUser());
 		response.sendRedirect("UserHome.jsp");
 	}
 	else if(in == 2) {
 		AdminUI ah = new AdminUI(name);
 		session.setAttribute("Home", ah);
+		session.setAttribute("CurrentUser",con.getLoggedInUser());
 		response.sendRedirect("AdminHome.jsp");
 	}
 	else {

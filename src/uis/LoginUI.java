@@ -1,6 +1,7 @@
 package uis;
 import controller.DBController;
 import people.Admin;
+import people.Person;
 import people.User;
 
 /**
@@ -66,5 +67,9 @@ public class LoginUI {
 			  }
 		  }
 		 return null;
+	 }
+	 
+	 public Person getLoggedInUser(){
+		 return controller.getCurrentUser();
 	 }
 }
