@@ -26,19 +26,98 @@ cellspacing="2">
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;"><br><%out.print("State");%>
+<td style="vertical-align: top;"><br><%out.print("Location");%>
 </td>	
-<td style="vertical-align: top;"><br><%out.print(school[1]);%>
+<td style="vertical-align: top;"><br><%out.print(school[2]);%>
 </td>
 </tr>
-<td style="vertical-align: top;">
-<form method="post" action="Change_Activated.jsp" name="Change Activated">
-    <input name="Change Activated" value="Change Activated" type="submit"><br>
-    <input name="Username" value="<%out.print(users[i][2]);%>" type="hidden">
-</form>
-<br>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Control");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[3]);%>
 </td>
 </tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Number Of Students");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[4]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Percent Female");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[5]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("SAT Verbal");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[6]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("SAT Math");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[7]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Expenses");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[8]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Percent Financial Aid");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[9]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Number Of Applicants");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[10]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Percent Admitted");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[11]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Percent Enrolled");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[12]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Academic Scale");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[13]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Social Scale");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[14]);%>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Quality of Life");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[15]);%>
+</td>
+</tr>
+<%int i = 16;
+while(school[i]!= null){%>
+<tr>
+<td style="vertical-align: top;"><br><%out.print("Emphasis");%>
+</td>	
+<td style="vertical-align: top;"><br><%out.print(school[i]);%>
+</td>
+</tr>
+<%i++;}%>
 </tbody>
 </table>
 <br>
