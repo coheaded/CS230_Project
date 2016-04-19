@@ -30,9 +30,9 @@ public class AdminUI {
 	 * @param pnord the Password of the new Person
 	 * @param type the type of the new Person
 	 */
-	public void addPerson(String fname, String lname, String uname, String pnord, char type)
+	public int addPerson(String fname, String lname, String uname, String pnord, char type)
 	{
-		home.addPerson(fname, lname, uname, pnord, type);
+		return home.addPerson(fname, lname, uname, pnord, type);
 	}
 	
 	/**

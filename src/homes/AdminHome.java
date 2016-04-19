@@ -35,9 +35,9 @@ public class AdminHome {
 	 * @param pnord person pass word
 	 * @param type person type
 	 */
-	public void addPerson(String fname, String lname, String uname, String pnord, char type)
+	public int addPerson(String fname, String lname, String uname, String pnord, char type)
 	{
-		controller.addUser(fname, lname, uname, pnord, type);
+		return controller.addUser(fname, lname, uname, pnord, type);
 	}
 	
 	/**

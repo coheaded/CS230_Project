@@ -114,6 +114,12 @@ public class DBController {
 		  return status;
 	  }
 	  
+	  public void logOut()
+	  {
+		  user = null;
+		  loggedin = false; 
+	  }
+	  
 	  /**
 	   * method that gets the currently logged in user
 	   * @return the currently logged in user
