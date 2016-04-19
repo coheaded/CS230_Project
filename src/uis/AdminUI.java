@@ -2,6 +2,8 @@ package uis;
 
 import homes.AdminHome;
 import people.University;
+import people.User;
+
 import java.util.*;
 /**
  * @author a1noack

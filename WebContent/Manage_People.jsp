@@ -35,7 +35,7 @@ cellspacing="2">
 <%String[][] users = au.viewPeople();
 for(int i = 0; i<users.length; i++){%>
 <td style="vertical-align: top;">
-<form method="post" action="Edit.jsp" name="Edit">
+<form method="post" action="Edit_Person.jsp" name="Edit">
     <input name="Edit" value="Edit" type="submit"><br>
     <input name="Username" value="<%out.print(users[i][2]);%>" type="hidden"><br>
 </form>
