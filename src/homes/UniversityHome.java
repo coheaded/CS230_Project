@@ -98,7 +98,7 @@ public class UniversityHome {
 			  double finAidL, double finAidH, int numAppsL, int numAppsH, double perAdmL, double perAdmH,
 			  double perEnrollL, double perEnrollH, int acadScaleL, int acadScaleH, int socialScaleL, 
 			  int socialScaleH, int qualLifeScaleL, int qualLifeScaleH){
-		  PriorityQueue<University> matches = controller.getUs();
+		  ArrayList<University> matches = controller.getUs();
 		  if(popL <-1)
 			  throw new IllegalArgumentException("Population needs to be greater than 0");
 	  	  if (popH <-1)
@@ -228,14 +228,14 @@ public class UniversityHome {
 			  }
 		  }
 
-		  ArrayList<University> matches2 = new ArrayList<University>();
+		  /*ArrayList<University> matches2 = new ArrayList<University>();
 		  University univ;
 		  while(!matches.isEmpty()){
 			  univ = matches.poll();
 			  matches2.add(univ);
 		  }
-		  return matches2;
-		  
+		  return matches2;*/
+		  return matches;
 	  }
 	  
 	  /**

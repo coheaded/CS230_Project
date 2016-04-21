@@ -156,9 +156,11 @@ public class UserUI {
 			  double finAidL, double finAidH, int numAppsL, int numAppsH, double perAdmL, double perAdmH,
 			  double perEnrollL, double perEnrollH, int acadScaleL, int acadScaleH, int socialScaleL, 
 			  int socialScaleH, int qualLifeScaleL, int qualLifeScaleH){
-		return uniHome.search(school, state, location, control, popL, popH, perFemL, perFemH, SATVerbL, SATVerbH, SATMathL, SATMathH, expensesL, expensesH, finAidL, 
+		ArrayList<University> sorted = uniHome.search(school, state, location, control, popL, popH, perFemL, perFemH, SATVerbL, SATVerbH, SATMathL, SATMathH, expensesL, expensesH, finAidL, 
 				finAidH, numAppsL, numAppsH, perAdmL, perAdmH, perEnrollL, perEnrollH, acadScaleL, acadScaleH, socialScaleL, socialScaleH, qualLifeScaleL, 
 				qualLifeScaleH);
+		Collections.sort(sorted);
+		return sorted;
 	}
 	/**
 	   * a method that returns the schools that most closely match the given school

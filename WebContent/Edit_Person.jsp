@@ -16,31 +16,31 @@
 <table style="text-align: left; width: 400px;"
 		border="1" cellpadding="2" cellspacing="2">
 <tr>
+<form method = "post" action = "Edit_Person_Action.jsp" name = "Edit Person">
 <td>First Name</td>
-<td><input name = "FirstName" value = "<%out.print(person.getfName());%>"></td>
+<td><input name = "FirstName" value = <%=person.getfName()%>></td>
 </tr>
 <tr>
 <td>Last Name</td>
-<td><input name = "LastName" value = "<%out.print(person.getlName());%>"></td>
+<td><input name = "LastName" value = <%=person.getlName()%>></td>
 </tr>
 <tr>
 <td>User name</td>
-<td><input name = "Username" value = "<%out.print(request.getParameter("Username")); %>" ></td>
+<td><input name = "Username" value = <%=person.getuName() %> readonly></td>
 </tr>
 <tr>
 <td>Password</td>
-<td><input name = "Password" value = "<%out.print(person.getpWord());%>"></td>
+<td><input name = "Password" value = <%=person.getpWord()%>></td>
 </tr>
 <tr>
 <td>Type</td>
-<td><input name = "Type" value = "<%out.print(person.getType()); %>" ></td>
+<td><input name = "Type" value = <%=person.getType()%> ></td>
 </tr>
 <tr>
 <td>Activation</td>
-<td><input name = "Activation" value = "<%out.print(person.getActivated()); %>"></td>
+<td><input name = "Activation" value = <%=person.getActivated()%>></td>
 </tr>
 <tr>
-<form method = "post" action = "Edit_Person_Action.jsp" name = "Edit Person">
 <td><input value = "Submit Edit" type ="submit"></td>
 </form>
 <form method ="post" action = "Manage_People.jsp" name ="Manage People">

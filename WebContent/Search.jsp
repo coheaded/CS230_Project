@@ -13,6 +13,11 @@ is an overwhelming number of options)
 	<table style="text-align: left; width: 400px;"
 			border="1" cellpadding="2" cellspacing="2">
 		<tr>
+			<td></td>
+			<td>Desired Value</td>
+			<td></td>
+		</tr>
+		<tr>
 			<td style="vertical-align: top;">School</td>
 			<td><input name = "name" ></td>
 		</tr>
@@ -30,68 +35,68 @@ is an overwhelming number of options)
 		</tr>
 		<tr>
 			<td></td>
-			<td style="vertical-align: top;">Lower Search Bound</td>
-			<td style="vertical-align: top;">Upper Search Bound</td>
+			<td style="vertical-align: top;" >Lower Search Bound</td>
+			<td style="vertical-align: top;" >Upper Search Bound</td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Population</td>
-			<td><input name = "popL" ></td>
-			<td><input name = "popH" ></td>
+			<td><input name = "popL" value = "0"></td>
+			<td><input name = "popH" value = "100000"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Percent Female</td>
-			<td><input name = "femL" ></td>
-			<td><input name = "femH" ></td>
+			<td><input name = "femL" value = "0"></td>
+			<td><input name = "femH" value = "100"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">SAT Verbal</td>
-			<td><input name = "vsatL" ></td>
-			<td><input name = "vsatH" ></td>
+			<td><input name = "vsatL" value = "0"></td>
+			<td><input name = "vsatH" value = "800"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">SAT Math</td>
-			<td><input name = "msatL" ></td>
-			<td><input name = "msatH" ></td>
+			<td><input name = "msatL" value = "0"></td>
+			<td><input name = "msatH" value = "800"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Expenses</td>
-			<td><input name = "expL" ></td>
-			<td><input name = "expH" ></td>
+			<td><input name = "expL" value = "0"></td>
+			<td><input name = "expH" value = "100000"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Financial Aid</td>
-			<td><input name = "finL" ></td>
-			<td><input name = "finH" ></td>
+			<td><input name = "finL" value = "0"></td>
+			<td><input name = "finH" value = "100000"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Number of Applications</td>
-			<td><input name = "appL" ></td>
-			<td><input name = "appH" ></td>
+			<td><input name = "appL" value = "0"></td>
+			<td><input name = "appH" value = "100000"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Percent Admitted</td>
-			<td><input name = "admL" ></td>
-			<td><input name = "admH" ></td>
+			<td><input name = "admL" value = "0"></td>
+			<td><input name = "admH" value = "100"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Percent Enrolled</td>
-			<td><input name = "enrL" ></td>
-			<td><input name = "enrH" ></td>
+			<td><input name = "enrL" value = "0"></td>
+			<td><input name = "enrH" value = "100"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Academics (1-5)</td>
-			<td><input name = "acdL" ></td>
-			<td><input name = "acdH" ></td>
+			<td><input name = "acdL" value = "1"></td>
+			<td><input name = "acdH" value = "5"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Social Life (1-5)</td>
-			<td><input name = "socL" ></td>
-			<td><input name = "socH" ></td>
+			<td><input name = "socL" value = "1"></td>
+			<td><input name = "socH" value = "5"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Quality of Life (1-5)</td>
-			<td><input name = "quaL" ></td>
-			<td><input name = "quaH" ></td>
+			<td><input name = "quaL" value = "1"></td>
+			<td><input name = "quaH" value = "5"></td>
 		</tr>
 		<tr>
 			<td></td>

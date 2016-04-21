@@ -303,7 +303,7 @@ public class AdminHome {
 	 * returns a priorityQueue of all University objects
 	 * @return the priorityQueue containing all university objects
 	 */
-	public PriorityQueue<University> getAllUs() {
+	public ArrayList<University> getAllUs() {
 		return controller.getUs();
 	}
 	  

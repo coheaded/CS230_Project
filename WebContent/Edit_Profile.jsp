@@ -14,6 +14,7 @@
 <table style="text-align: left; width: 400px;"
 		border="1" cellpadding="2" cellspacing="2">
 <tr>
+<form method = "post" action = "Edit_Profile_Action.jsp" name = "Edit Person">
 <td>First Name</td>
 <td><input name = "FirstName" value = <%=person.getfName() %>></td>
 </tr>
@@ -38,7 +39,7 @@
 <td><input name = "Activation" value = <%=person.getActivated() %> readonly></td>
 </tr>
 <tr>
-<form method = "post" action = "Edit_Profile_Action.jsp" name = "Edit Person">
+
 <td><input value = "Edit Profile" type = "submit"></td>
 </form>
 <form method = "post" action = "UserHome.jsp" name = "User Home">

@@ -173,8 +173,8 @@ public class DBController {
 	   * method that returns a priority queue of universities objects
 	   * @return uniList PriorityQueue<University> priority queue of all university objects
 	   */
-	  public PriorityQueue<University> getUs(){
-		  PriorityQueue<University> unisList = new PriorityQueue<University>();
+	  public ArrayList<University> getUs(){
+		  ArrayList<University> unisList = new ArrayList<University>();
 		  University toAdd;
 		  String[][] unisData = getUniversities();
 		  String[][] emphases = univDBlib.university_getNamesWithEmphases();
