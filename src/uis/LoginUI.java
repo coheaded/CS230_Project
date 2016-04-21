@@ -84,4 +84,8 @@ public class LoginUI {
 	 public boolean isLoggedIn(){
 		 return controller.getloggedin();
 	 }
+	 
+	 public void logout(){
+		 controller.logOut();
+	 }
 }
