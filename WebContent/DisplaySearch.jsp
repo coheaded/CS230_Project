@@ -36,7 +36,8 @@ cellspacing="2">
 		un = iter.next();
 		i++;%>
 <td style="vertical-align: top;">
-<form method="post" name="saveSchool">
+<form method="post" name="saveSchool" action="SaveSchool_Action.jsp">
+    <input name="School" value=<%=un.getName() %> type="hidden"><br>
     <input name="Save School" value="Save School" type="submit"><br>
 </form>
 <br>
