@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Manage People</title>
+<title>View Universities</title>
 </head>
 <body>
 <table style = "text-align: center; width: 200; height: 400"

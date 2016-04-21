@@ -7,15 +7,13 @@
 <title>View School</title>
 </head>
 <body>
-<% 
-	AdminUI au = (AdminUI) session.getAttribute("Home");
-%>
+<% UserUI uui = (UserUI) session.getAttribute("Home");%>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
 <tr>
-
-<%String[] school = au.displaySchool(request.getParameter("School"));%>
+<h2>View Specific School</h2>
+<%String[] school = uui.displaySchool(request.getParameter("School"));%>
 <td style="vertical-align: top;"><br><%out.print("School");%>
 </td>	
 <td style="vertical-align: top;"><br><%out.print(school[0]);%>
@@ -120,6 +118,9 @@ while(school[i]!= null){%>
 </td>
 </tr>
 <%i++;}%>
+<form method="post" action="Manage_Saved_Schools.jsp" name="Back">
+    <input name="Back" value="Back" type="submit"><br>
+</form>
 </tbody>
 </table>
 <br>
