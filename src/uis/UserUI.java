@@ -92,8 +92,8 @@ public class UserUI {
 	 * @param lastName	the user's (potentially) edited last name.
 	 * @param pass	the user's (potentially) edited password.
 	 */
-	public void editProfile(String firstName, String lastName, String pass){
-		home.editProfile(firstName, lastName, user.getUsername(), pass, user.getType(), user.getActivated());
+	public void editProfile(String firstName, String lastName, String username, String pass, char type, char activated){
+		home.editProfile(firstName, lastName, username, pass, type, activated);
 	}
 	
 	/**
