@@ -9,7 +9,8 @@
 <body>
 <%
 	UserUI ui = (UserUI) session.getAttribute("Home"); 
-	Person person = (Person) session.getAttribute("CurrentUser");
+	//Person person = (Person) session.getAttribute("CurrentUser");
+	Person person = (Person) ui.getUser();
 %>
 <table style="text-align: left; width: 400px;"
 		border="1" cellpadding="2" cellspacing="2">

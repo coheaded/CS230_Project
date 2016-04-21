@@ -72,7 +72,7 @@ public class UserUI {
 	 * @param school The school name that you want to save to the user.
 	 */
 	public void saveSchool(String school){
-		home.saveSchool(user.getUsername(), school);
+		home.saveSchool(user.getuName(), school);
 	}
 	
 	/**
@@ -83,7 +83,7 @@ public class UserUI {
 	 * @return a positive number if the school was successfully removed or a negative number if it was not.
 	 */
 	public int removeSchool(String school){
-		return home.removeSchool(user.getUsername(),school);
+		return home.removeSchool(user.getuName(),school);
 	}
 	
 	/**
@@ -94,6 +94,7 @@ public class UserUI {
 	 */
 	public void editProfile(String firstName, String lastName, String username, String pass, char type, char activated){
 		home.editProfile(firstName, lastName, username, pass, type, activated);
+		user = new User(firstName,lastName,username,pass,type,activated);
 	}
 	
 	/**

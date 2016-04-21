@@ -8,5 +8,6 @@
 			request.getParameter("Password"), 
 			request.getParameter("Type").charAt(0),
 			request.getParameter("Activation").charAt(0));
+	//session.setAttribute("CurrentUser",uui.getUser());
 	response.sendRedirect("UserHome.jsp");
 %>

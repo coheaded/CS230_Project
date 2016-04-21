@@ -37,7 +37,7 @@ public class UserTest {
 
 	@Test
 	public void testGetuName() {
-		assertTrue("user name should be adnoack", user.getUsername().equals("adnoack"));
+		assertTrue("user name should be adnoack", user.getuName().equals("adnoack"));
 	}
 
 	@Test

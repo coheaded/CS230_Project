@@ -33,7 +33,7 @@ public class UserHome {
 		String[] savedSchools = new String[100];
 		int count = 0;
 		for(int i=0; i<array.length; i++){
-			  if(array[i][0].equals(user.getUsername())){
+			  if(array[i][0].equals(user.getuName())){
 				  for(int j = 0; j<array[i].length; j++){
 					  if(savedSchools[count]==null){
 							  savedSchools[count] = array[i][j];
