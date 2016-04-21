@@ -50,8 +50,8 @@
 			<td><input value = "" name = "UserName"></td>
 		</tr>
 		<tr>
-			<td style = "vertical-align: top">PassWord<br></td>
-			<td><input name = "Password" type = "password"></td>
+			<td style = "vertical-align: top">Password<br></td>
+			<td><input value = "" name = "Password" type = "password"></td>
 		</tr>
 		<tr>
 			<td style = "vertical-align: top">Type<br></td>
