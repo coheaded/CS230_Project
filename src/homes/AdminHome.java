@@ -4,8 +4,10 @@ package homes;
  */
 import java.util.*;
 import controller.DBController;
+import people.Admin;
 import people.Person;
 import people.University;
+import people.User;
 
 /**
  * @author smcarik, ldschramel, ccnoecker, a1noack
@@ -82,6 +84,22 @@ public class AdminHome {
 	{
 		controller.editUser(fname, lname, uname, pword, type, status);
 		
+	}
+	
+	public Person getUser(String userName) {
+		String[][] people = viewPeople();
+		Person person = null;
+		for(int i = 0; i<people.length;i++) {
+			if(userName.equals(people[i][2])){
+				if(people[i][4].equalsIgnoreCase("u")){
+					person = new User(people[i][0],people[i][1],people[i][2],people[i][3],people[i][4].charAt(0),people[i][5].charAt(0));
+				}
+				else{
+					person = new Admin(people[i][0],people[i][1],people[i][2],people[i][3],people[i][4].charAt(0),people[i][5].charAt(0));
+				}
+			}
+		}
+		return person;
 	}
 	
 

@@ -1,6 +1,7 @@
 package uis;
 
 import homes.AdminHome;
+import people.Person;
 import people.University;
 import people.User;
 
@@ -48,6 +49,10 @@ public class AdminUI {
 	public void editPerson(String fname, String lname, String username, String pass, char type, char activated)
 	{
 		home.editPerson(fname, lname, username, pass, type, activated);
+	}
+	
+	public Person getUser(String username) {
+		return home.getUser(username);
 	}
 	
 	/**
