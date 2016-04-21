@@ -12,7 +12,7 @@
 cellspacing="2">
 <tbody>
 <tr>
-
+<h2>View Specific School</h2>
 <%String[] school = uui.displaySchool(request.getParameter("School"));%>
 <td style="vertical-align: top;"><br><%out.print("School");%>
 </td>	
