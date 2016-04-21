@@ -69,7 +69,19 @@ public class LoginUI {
 		 return null;
 	 }
 	 
+	 /**
+	  * gets the logged in user
+	  * @return person the logged in user
+	  */
 	 public Person getLoggedInUser(){
 		 return controller.getCurrentUser();
+	 }
+	 
+	 /**
+	  * gets whether a user is logged on or not
+	  * @return boolean true if user is logged in false if not
+	  */
+	 public boolean isLoggedIn(){
+		 return controller.getloggedin();
 	 }
 }
