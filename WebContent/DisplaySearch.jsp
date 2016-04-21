@@ -31,9 +31,10 @@ cellspacing="2">
 	int i =0;
 	%>
 	
-<% while(iter.hasNext() && i<numberOfResultsDisplayed){ 
-	University un = iter.next();
-	i++;%>
+<% 	University un;
+	while(iter.hasNext() && i<numberOfResultsDisplayed){ 
+		un = iter.next();
+		i++;%>
 <td style="vertical-align: top;">
 <form method="post" name="saveSchool">
     <input name="Save School" value="Save School" type="submit"><br>
@@ -46,9 +47,9 @@ cellspacing="2">
 <td style="vertical-align: top;"><br><%=un.getState()%>
 </td>
 <td style="vertical-align: top;">
-<form method="post" action="View_School.jsp" name="View School">
+<form method="post" action="UsersViewSchool.jsp" name="UsersViewSchool">
+    <input name="School" value=<%=un.getName() %> type="hidden"><br>
     <input name="View School" value="View School" type="submit"><br>
-    <input name="School" value="<%=un%>" type="hidden">
 </form>
 <br>
 </td>
