@@ -63,8 +63,5 @@
 		</tr>
 </Table>
 </form>
-<form method = "post" action = "Manage_People.jsp" name = "Manage People">
-<input name = "Manage People" value ="Manage People" type ="submit">
-</form>
 </body>
 </html>
