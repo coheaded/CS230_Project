@@ -5,7 +5,7 @@
 <head>
 <style>
 body {
-	background-color: rgb(110,100,100);
+	background-color: rgb(180,20,0);
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,9 +17,12 @@ body {
 <%
 	if(session.getAttribute("Error")!=null)
 		out.print(session.getAttribute("Error"));
+	else if(session.getAttribute("Log In") != null)
+		out.print(session.getAttribute("Log In"));
 	else
 		out.print("");
 	session.setAttribute("Error", null);
+	session.setAttribute("Log In", null);
 %>
 
 <form method="post" action ="Login_Action.jsp" name = "Login">

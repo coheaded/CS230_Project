@@ -97,6 +97,7 @@ public class UserUI {
 		user = new User(firstName,lastName,username,pass,type,activated);
 	}
 	
+	
 	/**
 	 * displaySchool outputs a string array containing a given school's information that can then be displayed.
 	 * 

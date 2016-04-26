@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import = "uis.*, people.*"%>
+<%@include file="VerifyLogin.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,7 +45,7 @@
 <td><input value = "Submit Edit" type ="submit"></td>
 </form>
 <form method ="post" action = "Manage_People.jsp" name ="Manage People">
-<td><input  value = "Reset" type="submit"></td>
+<td><input  value = "Cancel" type="submit"></td>
 </form>
 </tr>
 </table>
