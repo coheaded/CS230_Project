@@ -12,6 +12,11 @@
  		cellpadding="2" cellspacing="2">
 <tr>
 <td>
+<form method ="post" action ="AdminHome.jsp" name ="Admin Home">
+<input value ="Home" type = "submit">
+</form>
+</td>
+<td>
 <form method ="post" action = "Manage_People.jsp" name = "Manage People">
 <input value ="Manage People" name = "Manage People" type = "submit">
 </form>
@@ -26,14 +31,19 @@
 <input value = "View Universities" name ="View Universities" type = "submit">
 </form>
 </td>
+<td>
+<form method = "post" action = "Logout.jsp" name = "logout">
+<input value = "Logout" type = "submit">
+</form>
+<td>
 </tr>
 </table>
 <%
-	if(session.getAttribute("Message")!=null)
-		out.println(session.getAttribute("Message"));
+	if(session.getAttribute("AddError")!=null)
+		out.println(session.getAttribute("AddError"));
 	else
-		out.println();
-	session.setAttribute("Message", null);
+		out.println("");
+	session.setAttribute("AddError", null);
 	%>
 <form method ="post" action="Add_Person_Action.jsp" name ="Add Person Action">
 <Table style="text-align: left; width: 300px; height: 500px;"

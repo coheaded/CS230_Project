@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import= "uis.*"%>
+<%@include file="VerifyLogin.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,7 +31,15 @@
 <input value = "View Universities" name ="View Universities" type = "submit">
 </form>
 </td>
+<td>
+<form method = "post" action = "Logout.jsp" name = "logout">
+<input value = "Logout" type = "submit">
+</form>
+<td>
 </tr>
 </table>
+Everything is looking good, we just need to finish add university action, edit university, and edit university action i believe
+<br>
+We can also add extra stuff to make it look nicer if we'd like to
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import = "java.util.*, uis.*"%>
+<%@include file="VerifyLogin.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,11 +11,39 @@
 <% 
 	AdminUI au = (AdminUI) session.getAttribute("Home");
 %>
+<table style ="text-align: center; width: 200; height: 400" cellpadding = "2" cellspacing="2">
+<tr>
+<td>
+<form method ="post" action="AdminHome.jsp" name = "AdminHome">
+<input value="AdminHome" type="submit">
+</form>
+</td>
+<td>
+<form method = "post" action ="View_Universities.jsp" name="View_Universities">
+<input value ="View Universities" type = "submit">
+</form>
+</td>
+<td>
+<form method = "post" action = "Logout.jsp" name = "logout">
+<input value = "Logout" type = "submit">
+</form>
+<td>
+</tr>
+</table> 
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
+<tr style="text-align: center">
+<td>
+School Summary
+</td>
+<td>
+<form method ="post" action ="Edit_University.jsp" name = "Edit University">
+<input value = "Edit School" type = "submit">
+</form> 
+</td>
+</tr>
 <tr>
-
 <%String[] school = au.displaySchool(request.getParameter("School"));%>
 <td style="vertical-align: top;"><br><%out.print("School");%>
 </td>	
