@@ -1,27 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import = "java.util.*, uis.*, people.*"%>
+    pageEncoding="UTF-8" import= "java.util.*, uis.*, people.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>View School (User)</title>
 </head>
-<body>
+
 <% UserUI uui = (UserUI) session.getAttribute("Home");%>
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
-cellspacing="2">
-<tbody>
-<tr>
-<h2>View Specific School</h2>
-<br>
+
+
+<h4>View Specific School</h4>
 <br>
 <form method="post" name="saveSchool" action="SaveSchool_Action.jsp">
     <input name="School" value=<%=request.getParameter("School") %> type="hidden"><br>
     <input name="Save School" value="Save School" type="submit"><br>
 </form>
 <br>
-<br>
-<%String[] school = uui.displaySchool(request.getParameter("School"));%>
+<%String[] school = uui.displaySchool(request.getParameter("School"));
+%>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
+cellspacing="2">
+<tbody>
+<tr>
 <td style="vertical-align: top;"><br><%out.print("School");%>
 </td>	
 <td style="vertical-align: top;"><br><%out.print(school[0]);%>
@@ -126,8 +127,11 @@ while(school[i]!= null){%>
 </td>
 </tr>
 <%i++;}%>
-
-<h3>Related Schools</h3>
+</tbody>
+</table>
+<br>
+<h5>Related Schools</h5>
+<br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
@@ -145,10 +149,27 @@ cellspacing="2">
 <tr>
 	
 <%
-	ArrayList<University>unis=uui.relatedSchools();
+University univer = new University(school[0], 
+		school[1], 
+		school[2], 
+		school[3], 
+		Integer.parseInt(school[4]), 
+		Double.parseDouble(school[5]),
+		Double.parseDouble(school[6]), 
+		Double.parseDouble(school[7]), 
+		Double.parseDouble(school[8]), 
+		Double.parseDouble(school[9]),
+		Integer.parseInt(school[10]), 
+		Double.parseDouble(school[11]), 
+		Double.parseDouble(school[12]), 
+		Integer.parseInt(school[13]), 
+		Integer.parseInt(school[14]), 
+		Integer.parseInt(school[15]));
+
+	ArrayList<University>unis=uui.relatedSchools(univer);
 	Iterator<University> iter = unis.iterator();
 	int numberOfResultsDisplayed = 5;
-	int i =0;
+	i =0;
 	%>
 	
 <% 	University un;
@@ -183,8 +204,6 @@ cellspacing="2">
 <form method="post" action="DisplaySearch.jsp" name="Back">
     <input name="Back" value="Back" type="submit"><br>
 </form>
-</tbody>
-</table>
 <br>
 <br>
 <br>
