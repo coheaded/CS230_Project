@@ -50,6 +50,7 @@ cellspacing="2">
 <td style="vertical-align: top;">
 <form method="post" action="UsersViewSchool.jsp" name="UsersViewSchool">
     <input name="School" value=<%=un.getName() %> type="hidden"><br>
+      <input name="univ" value=<%=un %> type="hidden">
     <input name="View School" value="View School" type="submit"><br>
 </form>
 <br>
