@@ -106,21 +106,22 @@ String[] school = aui.displaySchool(request.getParameter("School"));
 		<%int i = 16;
 		while(school[i]!=null){%>
 		<tr>
+	
 			<td style = "vertical-align: top">Emphasis<br></td>
 			<td><input value = "<%out.print(school[i]);%>" name = "Emphasis<%out.print(i-15);%>"></td>
 		</tr>
-		<%i++;} %>
+			<%i++;} %>
 		<tr>
 			<td style = "vertical-align: top">Emphasis<br></td>
-			<td><input value = "" name = "Emphasis<%out.print(i+1);%>"></td>
+			<td><input value = "" name = "Emphasis<%out.print(i-15);%>"></td>
 		</tr>
 		<tr>
 			<td style = "vertical-align: top">Emphasis<br></td>
-			<td><input value = "" name = "Emphasis<%out.print(i+2);%>"></td>
+			<td><input value = "" name = "Emphasis<%out.print(i-14);%>"></td>
 		</tr>
 		<tr>
 			<td style = "vertical-align: top">Emphasis<br></td>
-			<td><input value = "" name = "Emphasis<%out.print(i+3);%>"></td>
+			<td><input value = "" name = "Emphasis<%out.print(i-13);%>"></td>
 		</tr>
 		<tr style = "vertical-align: top">
 			<td><input value ="Edit" name ="Edit" type = "submit"></td>

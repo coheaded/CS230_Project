@@ -4,7 +4,7 @@
 <% 
 AdminUI aui = (AdminUI) session.getAttribute("Home");
 int counter = 1;
-while(request.getParameter("Emphasis"+counter)!=null){
+while(request.getParameter("Emphasis"+counter).equals("")){
 	if(!request.getParameter("Emphasis"+counter).equals("")){
 	counter++;}
 }
@@ -19,5 +19,4 @@ for (int i =1; i <counter; i++){
 		Double.parseDouble(request.getParameter("PercentAdmitted")), Double.parseDouble(request.getParameter("PercentEnrolled")), Integer.parseInt(request.getParameter("AcademicScale")),
 		Integer.parseInt(request.getParameter("SocialScale")), Integer.parseInt(request.getParameter("QualityOfLife")), array);
 response.sendRedirect("Add_University.jsp");
-%>
 %>
