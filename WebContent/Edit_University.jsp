@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add Person</title>
+<title>Edit University</title>
 </head>
 <body>
 <table style = "text-align: center; width: 200; height: 400"
@@ -41,7 +41,7 @@ String[] school = aui.displaySchool(request.getParameter("School"));
 		border="1" cellpadding="2" cellspacing="2">
 		<tr>
 			<td style = "vertical-align: top">School Name<br></td>
-			<td><input value = "<%out.print(school[0]);%>" name = "SchoolName" ></td>
+			<td><input value = "<%out.print(school[0]);%>" readonly name = "SchoolName" ></td>
 		</tr>
 		<tr>
 			<td style = "vertical-align: top">State<br></td>
@@ -110,6 +110,18 @@ String[] school = aui.displaySchool(request.getParameter("School"));
 			<td><input value = "<%out.print(school[i]);%>" name = "Emphasis<%out.print(i-15);%>"></td>
 		</tr>
 		<%i++;} %>
+		<tr>
+			<td style = "vertical-align: top">Emphasis<br></td>
+			<td><input value = "" name = "Emphasis<%out.print(i+1);%>"></td>
+		</tr>
+		<tr>
+			<td style = "vertical-align: top">Emphasis<br></td>
+			<td><input value = "" name = "Emphasis<%out.print(i+2);%>"></td>
+		</tr>
+		<tr>
+			<td style = "vertical-align: top">Emphasis<br></td>
+			<td><input value = "" name = "Emphasis<%out.print(i+3);%>"></td>
+		</tr>
 		<tr style = "vertical-align: top">
 			<td><input value ="Edit" name ="Edit" type = "submit"></td>
 			<td><input value = "reset" name = "reset" type = "reset"></td>

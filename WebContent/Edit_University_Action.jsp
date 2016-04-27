@@ -3,8 +3,17 @@
     
 <% 
 AdminUI aui = (AdminUI) session.getAttribute("Home");
-String[] array = {request.getParameter("Emphasis1"), request.getParameter("Emphasis2"), request.getParameter("Emphasis3"), request.getParameter("Emphasis4"), request.getParameter("Emphasis5")};
-aui.editUniversity(request.getParameter("SchoolName"), request.getParameter("State"), request.getParameter("Location"), 
+int counter = 1;
+while(request.getParameter("Emphasis"+counter)!=null){
+	if(!request.getParameter("Emphasis"+counter).equals("")){
+	counter++;}
+}
+String[] array = new String[counter-1];
+for (int i =1; i <counter; i++){
+	if(!request.getParameter("Emphasis"+i).equals("")){
+		array[i-1] = request.getParameter("Emphasis"+i);
+	}
+}aui.editUniversity(request.getParameter("SchoolName"), request.getParameter("State"), request.getParameter("Location"), 
 		request.getParameter("Control"), Integer.parseInt(request.getParameter("StudentPop")), Double.parseDouble(request.getParameter("PercentFemale")), Double.parseDouble(request.getParameter("SATVerbal")),
 		Double.parseDouble(request.getParameter("SATMath")), Double.parseDouble(request.getParameter("Expenses")), Double.parseDouble(request.getParameter("PercentFinAid")), Integer.parseInt(request.getParameter("NumApplicants")),
 		Double.parseDouble(request.getParameter("PercentAdmitted")), Double.parseDouble(request.getParameter("PercentEnrolled")), Integer.parseInt(request.getParameter("AcademicScale")),

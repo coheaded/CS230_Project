@@ -3,10 +3,16 @@
     
 <% 
 	AdminUI aui = (AdminUI) session.getAttribute("Home");
-	String[] array = new String[5];
+	int counter = 0;
 	for (int i = 1; i < 6; i++){
-		if(request.getParameter("Emphasis"+i)!=null)
+		if(!request.getParameter("Emphasis"+i).equals("")){
+		counter++;}
+	}
+	String[] array = new String[counter];
+	for (int i =1; i <6; i++){
+		if(!request.getParameter("Emphasis"+i).equals("")){
 			array[i-1] = request.getParameter("Emphasis"+i);
+		}
 	}
 	aui.addUniversity(request.getParameter("SchoolName"), request.getParameter("State"), request.getParameter("Location"), 
 			request.getParameter("Control"), Integer.parseInt(request.getParameter("StudentPop")), Double.parseDouble(request.getParameter("PercentFemale")), Double.parseDouble(request.getParameter("SATVerbal")),
