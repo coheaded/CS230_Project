@@ -170,7 +170,7 @@ public class UniversityHome {
 		  for(University u: matches){
 			  if(u.getName().equalsIgnoreCase(school))
 				  u.addToMatchStrength(10);
-			  else if(u.getName().contains(school))
+			  else if(u.getName().toLowerCase().contains(school.toLowerCase()))
 				  u.addToMatchStrength(5);
 			  if(u.getState().equalsIgnoreCase(state))
 				  u.addToMatchStrength(3);
