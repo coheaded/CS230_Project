@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="uis.*"%>
-    <%@include file="VerifyLogin.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,8 +11,13 @@
  		cellpadding="2" cellspacing="2">
 <tr>
 <td>
-<form method ="post" action = "AdminHome.jsp" name = "AdminHome">
-<input value = "Home" type ="submit">
+<form method ="post" action = "Manage_People.jsp" name = "Manage People">
+<input value ="Manage People" name = "Manage People" type = "submit">
+</form>
+</td>
+<td>
+<form method ="post" action = "Add_Person.jsp" name = "Add Person">
+<input value = "Add Person" name = "Add Person" type = "submit">
 </form>
 </td>
 <td>
@@ -21,11 +25,6 @@
 <input value = "View Universities" name ="View Universities" type = "submit">
 </form>
 </td>
-<td>
-<form method = "post" action = "Logout.jsp" name = "logout">
-<input value = "Logout" type = "submit">
-</form>
-<td>
 </tr>
 </table>
 <%
@@ -105,11 +104,12 @@ String[] school = aui.displaySchool(request.getParameter("School"));
 			<td><input value = "<%out.print(school[15]);%>" name = "QualityOfLife"></td>
 		</tr>
 		<%int i = 16;
-		while(school[i]!=null){%>
+		while(school[i]!=null){
+			String name = school[i];%>
 		<tr>
 	
 			<td style = "vertical-align: top">Emphasis<br></td>
-			<td><input value = "<%out.print(school[i]);%>" name = "Emphasis<%out.print(i-15);%>"></td>
+			<td><input value = "<%out.print(name);%>" name = "Emphasis<%out.print(i-15);%>"></td>
 		</tr>
 			<%i++;} %>
 		<tr>
