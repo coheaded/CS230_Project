@@ -44,9 +44,7 @@
 <tr>
 <td><input value = "Submit Edit" type ="submit"></td>
 </form>
-<form method ="post" action = "Manage_People.jsp" name ="Manage People">
-<td><input  value = "Cancel" type="submit"></td>
-</form>
+<td><input  value = "Reset" type="reset"></td>
 </tr>
 </table>
 </body>
