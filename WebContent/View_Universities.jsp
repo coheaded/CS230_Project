@@ -45,7 +45,8 @@ cellspacing="2">
 <tr>
 
 <%String[][] schools = au.viewSchools();
-for(int i = 0; i<schools.length; i++){%>
+for(int i = 0; i<schools.length; i++){
+if(!schools[i][0].equals("")){%>
 <td style="vertical-align: top;">
 <form method="post" action="Edit_University.jsp" name="Edit">
     <input name="Edit" value="Edit" type="submit"><br>
@@ -66,7 +67,7 @@ for(int i = 0; i<schools.length; i++){%>
 <br>
 </td>
 </tr>
-<%}%>
+<%}}%>
 </tbody>
 </table>
 <br>
