@@ -316,6 +316,7 @@ public class UniversityHome {
 				  (int)(numapps*.85), (int)(numapps*1.15), admittedperc*.85, admittedperc*1.15,
 				  enrolledperc*.85, enrolledperc*1.15, (int)(academicscale*.85), (int)(academicscale*1.15),
 				  (int)(socialscale*.85), (int)(socialscale*1.15), (int)(qualityoflife*.85), (int)(qualityoflife*1.15));
+		  Collections.sort(out);
 		  return out;
 	  }
 	  

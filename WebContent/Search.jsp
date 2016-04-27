@@ -64,9 +64,9 @@ is an overwhelming number of options)
 			<td><input name = "expH" value = "100000"></td>
 		</tr>
 		<tr>
-			<td style="vertical-align: top;">Financial Aid</td>
+			<td style="vertical-align: top;">Percent Financial Aid</td>
 			<td><input name = "finL" value = "0"></td>
-			<td><input name = "finH" value = "100000"></td>
+			<td><input name = "finH" value = "100"></td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">Number of Applications</td>

@@ -179,7 +179,7 @@ University univer = new University(school[0],
 		i++;%>
 <td style="vertical-align: top;">
 <form method="post" name="saveSchool" action="SaveSchool_Action.jsp">
-    <input name="School" value=<%=un.getName() %> type="hidden"><br>
+    <input name="School" value="<%=un.getName() %>" type="hidden"><br>
     <input name="Save School" value="Save School" type="submit"><br>
 </form>
 <br>
@@ -191,8 +191,8 @@ University univer = new University(school[0],
 </td>
 <td style="vertical-align: top;">
 <form method="post" action="UsersViewSchool.jsp" name="UsersViewSchool">
-    <input name="School" value=<%=un.getName() %> type="hidden"><br>
     <input name="View School" value="View School" type="submit"><br>
+    <input name="School1" value="<%out.print(un.getName());%>" type="hidden">
 </form>
 <br>
 </td>

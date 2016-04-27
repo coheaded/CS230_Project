@@ -38,8 +38,5 @@
 <td>
 </tr>
 </table>
-Everything is looking good, we just need to finish add university action, edit university, and edit university action i believe
-<br>
-We can also add extra stuff to make it look nicer if we'd like to
 </body>
 </html>

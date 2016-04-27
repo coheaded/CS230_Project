@@ -37,14 +37,15 @@ cellspacing="2">
 <td>
 School Summary
 </td>
+<%String[] school = au.displaySchool(request.getParameter("School"));%>
 <td>
 <form method ="post" action ="Edit_University.jsp" name = "Edit University">
 <input value = "Edit School" type = "submit">
+<input name="School" value="<%out.print(school[0]);%>" type="hidden"><br>
 </form> 
 </td>
 </tr>
 <tr>
-<%String[] school = au.displaySchool(request.getParameter("School"));%>
 <td style="vertical-align: top;"><br><%out.print("School");%>
 </td>	
 <td style="vertical-align: top;"><br><%out.print(school[0]);%>
