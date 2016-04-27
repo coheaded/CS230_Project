@@ -18,4 +18,3 @@
 	session.setAttribute("matches", unis);
 	response.sendRedirect("DisplaySearch.jsp");
 %>
-	

@@ -123,13 +123,13 @@ public class UniversityHome {
 			  throw new IllegalArgumentException("SAT Math needs to be between 0 and 800");
 		  if(SATMathL>SATMathH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if (expensesL <-1 || expensesH <0)
+		  if (expensesL <-1 || expensesH <-1)
 			  throw new IllegalArgumentException("Expenses cannot be below 0");
 		  if(expensesL>expensesH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(finAidL <-1 || finAidL > 100)
+		  if(finAidH <-1 || finAidL < -1)
 			  throw new IllegalArgumentException("percent financial aid needs to be between 0 and 100");
-		  if(finAidH <-1 || finAidH > 100)
+		  if(finAidL > 100 || finAidH > 100)
 			  throw new IllegalArgumentException("percent financial aid needs to be between 0 and 100");
 		  if(finAidL>finAidH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
@@ -143,9 +143,9 @@ public class UniversityHome {
 			  throw new IllegalArgumentException("percent admitted needs to be between 0 and 100");
 		  if(perAdmL>perAdmH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");
-		  if(perEnrollL<-1||perEnrollL>100)
+		  if(perEnrollH<-1||perEnrollL<-1)
 			  throw new IllegalArgumentException("percent enrolled needs to be between 0 and 100");
-		  if(perEnrollH<-1||perEnrollH>100)
+		  if(perEnrollL>100||perEnrollH>100)
 			  throw new IllegalArgumentException("percent enrolled needs to be between 0 and 100");
 		  if(perEnrollL>perEnrollH)
 			  throw new IllegalArgumentException("Lower bound is higher than upper bound");

@@ -8,12 +8,29 @@
 </head>
 <body>
 <% UserUI uui = (UserUI) session.getAttribute("Home");%>
+
+<%String[] school = uui.displaySchool(request.getParameter("School"));%>
+<table style = "text-align: center; width: 200; height: 400"
+		cellpadding="2" cellspacing="2">
+<tr>
+<h2>View Specific School</h2>
+<td>
+<form method="post" action="Manage_Saved_Schools.jsp" name="Back">
+    <input name="Back" value="Back" type="submit"><br>
+</form>
+</td>
+<td>
+<form method="post" action="Remove_Saved_School_Action.jsp" name="Remove">
+	<input name="SchoolName" value="<%out.print(school[0]); %>" type="hidden">
+    <input name="Remove" value="Remove" type="submit"><br>
+</form>
+</td>
+</tr>
+</table>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
 <tr>
-<h2>View Specific School</h2>
-<%String[] school = uui.displaySchool(request.getParameter("School"));%>
 <td style="vertical-align: top;"><br><%out.print("School");%>
 </td>	
 <td style="vertical-align: top;"><br><%out.print(school[0]);%>
@@ -118,9 +135,7 @@ while(school[i]!= null){%>
 </td>
 </tr>
 <%i++;}%>
-<form method="post" action="Manage_Saved_Schools.jsp" name="Back">
-    <input name="Back" value="Back" type="submit"><br>
-</form>
+
 </tbody>
 </table>
 <br>
