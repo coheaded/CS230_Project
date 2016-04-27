@@ -41,7 +41,7 @@ public class Admin extends Person {
 	 * @param activated the activation status for this Admin
 	 * @param type the type of this Person
 	 */
-	public Admin(String fName, String lName, String uName, String pWord, char activated, char type) {
+	public Admin(String fName, String lName, String uName, String pWord, char type, char activated) {
 		this.fName = fName;
 		this.lName = lName;
 		this.uName = uName;
