@@ -4,7 +4,7 @@
 <% 
 AdminUI aui = (AdminUI) session.getAttribute("Home");
 int counter = 1;
-while(request.getParameter("Emphasis"+counter).equals("")){
+while(!request.getParameter("Emphasis"+counter).equals("")){
 	if(!request.getParameter("Emphasis"+counter).equals("")){
 	counter++;}
 }
