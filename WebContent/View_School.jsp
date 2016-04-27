@@ -15,7 +15,7 @@
 <tr>
 <td>
 <form method ="post" action="AdminHome.jsp" name = "AdminHome">
-<input value="AdminHome" type="submit">
+<input value="Home" type="submit">
 </form>
 </td>
 <td>

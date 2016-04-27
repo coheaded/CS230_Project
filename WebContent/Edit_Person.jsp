@@ -8,6 +8,26 @@
 <title>Edit Profile</title>
 </head>
 <body>
+<table style = "text-align: center; width: 200; height: 400"
+ 		cellpadding="2" cellspacing="2">
+<tr>
+<td>
+<form method ="post" action = "AdminHome.jsp" name = "AdminHome">
+<input value = "Home" type ="submit">
+</form>
+</td>
+<td>
+<form method ="post" action = "Manage_People.jsp" name = "Manage People">
+<input value ="Manage People" name = "Manage People" type = "submit">
+</form>
+</td>
+<td>
+<form method = "post" action = "Logout.jsp" name = "logout">
+<input value = "Logout" type = "submit">
+</form>
+<td>
+</tr>
+</table>
 <%
 	AdminUI ui = (AdminUI) session.getAttribute("Home"); 
 	Person person = ui.getUser(request.getParameter("Username"));

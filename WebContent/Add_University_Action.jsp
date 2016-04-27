@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="uis.*"%>
-    
+<%@include file="VerifyLogin.jsp"%>
 <% 
 	AdminUI aui = (AdminUI) session.getAttribute("Home");
 	int counter = 0;

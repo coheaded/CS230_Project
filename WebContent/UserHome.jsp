@@ -26,6 +26,11 @@
 <input value = "Search" name = "Search" type = "submit">
 </form>
 </td>
+<td>
+<form  method ="post" action = "Logout.jsp">
+<input value ="Logout" type ="submit">
+</form>
+</td>
 </tr>
 
 </table>

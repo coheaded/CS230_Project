@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import = "uis.*"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import = "uis.*" errorPage="ErrorPage.jsp"%>
+<%@include file="VerifyLogin.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +8,31 @@
 <title>Search For Schools</title>
 </head>
 <body>
+<table style = "text-align: center; width: 200; height: 400"
+		cellpadding="2" cellspacing="2">
+<tr>
+<td>
+<form method ="post" action = "UserHome.jsp">
+<input value ="Home" type ="submit">
+</form>
+<td>
+<form method = "post" action = "Manage_Saved_Schools.jsp" name = "Manage Saved Schools">
+<input value = "Manage Saved Schools" name = "Manage Saved Schools" type = "submit">
+</form>
+</td>
+<td>
+<form method = "post" action = "Edit_Profile.jsp" name = "Edit Profile">
+<input value = "Edit Profile" name = "Edit Profile" type = "submit">
+</form>
+</td>
+<td>
+<form  method ="post" action = "Logout.jsp">
+<input value ="Logout" type ="submit">
+</form>
+</td>
+</tr>
+
+</table>
 <h2>Enter all desired search criteria</h2><br>(yes, i know what you're thinking, there 
 is an overwhelming number of options)
 <form method="post" action ="Search_Action.jsp" name = "Search">

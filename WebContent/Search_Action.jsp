@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="uis.*, homes.*, people.*, java.util.*"%>
+<%@include file="VerifyLogin.jsp"%>
 <%	UserUI ui = (UserUI) session.getAttribute("Home"); 
 	ArrayList<University> unis = ui.search(request.getParameter("name"), request.getParameter("state"),
 			request.getParameter("location"), request.getParameter("control"),
