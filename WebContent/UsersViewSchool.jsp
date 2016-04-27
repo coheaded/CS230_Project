@@ -8,18 +8,18 @@
 </head>
 
 <% UserUI uui = (UserUI) session.getAttribute("Home");%>
-
+<%String name = request.getParameter("School1");
+String[] school = uui.displaySchool(name);
+%>
 
 <h4>View Specific School</h4>
 <br>
 <form method="post" name="saveSchool" action="SaveSchool_Action.jsp">
-    <input name="School" value=<%=request.getParameter("School") %> type="hidden"><br>
+    <input name="School" value="<%out.print(request.getParameter("School1")); %>" type="hidden"><br>
     <input name="Save School" value="Save School" type="submit"><br>
 </form>
 <br>
-<%String name = request.getParameter("School1");
-String[] school = uui.displaySchool(name);
-%>
+
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>

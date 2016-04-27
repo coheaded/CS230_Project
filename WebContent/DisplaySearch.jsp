@@ -7,7 +7,21 @@
 <title>Search Results</title>
 </head>
 <body>
-
+<table style = "text-align: center; width: 200; height: 400"
+		cellpadding="2" cellspacing="2">
+<tr>
+<td>
+<form method = "post" action = "Manage_Saved_Schools.jsp" name = "Manage Saved Schools">
+<input value = "Manage Saved Schools" name = "Manage Saved Schools" type = "submit">
+</form>
+</td>
+<td>
+<form method = "post" action = "Edit_Profile.jsp" name = "Edit Profile">
+<input value = "Edit Profile" name = "Edit Profile" type = "submit">
+</form>
+</td>
+</tr>
+</table>
 
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
@@ -47,7 +61,6 @@ cellspacing="2">
 <td style="vertical-align: top;"><br><%=un.getState()%>
 </td>
 <td style="vertical-align: top;">
-<%=un.getName() %>
 <form method="post" action="UsersViewSchool.jsp" name="UsersViewSchool">
     <input name="School1" value="<%out.print(un.getName()); %>" type="hidden"><br>
     <input name="View School" value="View School" type="submit"><br>
