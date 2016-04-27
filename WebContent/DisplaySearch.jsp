@@ -26,18 +26,17 @@ cellspacing="2">
 <tr>
 
 <%	ArrayList<University> unis = (ArrayList<University>) session.getAttribute("matches");
-	Iterator<University> iter = unis.iterator();
 	int numberOfResultsDisplayed = 20;
-	int i =0;
 	%>
 	
 <% 	University un;
-	while(iter.hasNext() && i<numberOfResultsDisplayed){ 
-		un = iter.next();
+	for(int i = 0;i<numberOfResultsDisplayed;i++){
+	//while(iter.hasNext() && i<numberOfResultsDisplayed){ 
+		un = unis.get(i);
 		i++;%>
 <td style="vertical-align: top;">
 <form method="post" name="saveSchool" action="SaveSchool_Action.jsp">
-    <input name="School" value=<%=un.getName() %> type="hidden"><br>
+    <input name="School" value="<%out.print(un.getName()); %>" type="hidden"><br>
     <input name="Save School" value="Save School" type="submit"><br>
 </form>
 <br>
@@ -48,9 +47,9 @@ cellspacing="2">
 <td style="vertical-align: top;"><br><%=un.getState()%>
 </td>
 <td style="vertical-align: top;">
+<%=un.getName() %>
 <form method="post" action="UsersViewSchool.jsp" name="UsersViewSchool">
-    <input name="School" value=<%=un.getName() %> type="hidden"><br>
-      <input name="univ" value=<%=un %> type="hidden">
+    <input name="School1" value="<%out.print(un.getName()); %>" type="hidden"><br>
     <input name="View School" value="View School" type="submit"><br>
 </form>
 <br>
