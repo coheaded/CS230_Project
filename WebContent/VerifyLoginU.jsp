@@ -4,7 +4,7 @@
 <%
 	LoginUI ui2 = (LoginUI) session.getAttribute("LoginUI");
 	Person person2 = ui2.getLoggedInUser();
-	if(ui2 == null || ui2.isLoggedIn() == false || person2.getType() == 'u' || person2.getType() == 'U'){
+	if(ui2 == null || ui2.isLoggedIn() == false){
 		session.setAttribute("Log in", "Nice try bud, but you need to log in to access that! >:)");
 		response.sendRedirect("Login.jsp");
 		return;

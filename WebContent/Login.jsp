@@ -17,15 +17,15 @@ body {
 <%
 	if(session.getAttribute("Error")!=null)
 		out.print(session.getAttribute("Error"));
-	else if(session.getAttribute("Log In") != null)
-		out.print(session.getAttribute("Log In"));
+	else if(session.getAttribute("Log in") != null)
+		out.print(session.getAttribute("Log in"));
 	else if(session.getAttribute("eMessage")!=null)
 		out.print(session.getAttribute("eMessage"));
 	else
 		out.print("");
 	session.setAttribute("eMessage",null);
 	session.setAttribute("Error", null);
-	session.setAttribute("Log In", null);
+	session.setAttribute("Log in", null);
 %>
 
 <form method="post" action ="Login_Action.jsp" name = "Login">
