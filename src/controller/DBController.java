@@ -367,11 +367,22 @@ public class DBController {
 	   * @return
 	   */
 	  public String encryptPass(String password){
-		  String all = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+		  String all = "cdD723lhH6Ioj$%OJeGgmkKPiaB1rRsStTLECfNu=UvVwWA#pbFMnxq!@-XQ890yYzZ45^&*()_+";
 		  String out ="";
 		  for(int i =0;i<password.length();i++)
 		    {
-		     String d = all.substring((all.indexOf(password.substring(i,i+1))+35)%52, ((all.indexOf(password.substring(i,i+1))+35)%52)+1);
+		     String d = all.substring((all.indexOf(password.substring(i,i+1))+23)%76, ((all.indexOf(password.substring(i,i+1))+23)%76)+1);
+		     out = out+d;
+		    }
+		  return out;
+	  }
+	  
+	  public String decryptPass(String password) {
+		  String all = "cdD723lhH6Ioj$%OJeGgmkKPiaB1rRsStTLECfNu=UvVwWA#pbFMnxq!@-XQ890yYzZ45^&*()_+";
+		  String out ="";
+		  for(int i =0;i<password.length();i++)
+		    {
+		     String d = all.substring((all.indexOf(password.substring(i,i+1))-23)%76, ((all.indexOf(password.substring(i,i+1))-23)%76)+1);
 		     out = out+d;
 		    }
 		  return out;

@@ -52,9 +52,7 @@ cellspacing="2">
 <td style="vertical-align: top;"><br>
 </td>
 </tr>
-
 <tr>
-
 <%String[][] schools = au.viewSchools();
 for(int i = 0; i<schools.length; i++){
 if(!schools[i][0].equals("")){%>

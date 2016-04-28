@@ -52,9 +52,9 @@ public class AdminHome {
 		for(int i = 0; i<users.length;i++){
 			if(users[i][2].equals(user)){
 				if(users[i][5].equalsIgnoreCase("y"))
-					controller.editUser(users[i][0], users[i][1], users[i][2], users[i][3], users[i][4].charAt(0), 'N');
+					controller.editUser(users[i][0], users[i][1], users[i][2], controller.decryptPass(users[i][3]), users[i][4].charAt(0), 'N');
 				else
-					controller.editUser(users[i][0], users[i][1], users[i][2], users[i][3], users[i][4].charAt(0), 'Y');
+					controller.editUser(users[i][0], users[i][1], users[i][2], controller.decryptPass(users[i][3]), users[i][4].charAt(0), 'Y');
 			}
 		}
 		
