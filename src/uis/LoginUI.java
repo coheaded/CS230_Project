@@ -32,6 +32,10 @@ public class LoginUI {
 		return controller.login2(username, password);
 	}
 	
+	public int createNewUser(String fname, String lname, String uname, String pword){
+		return controller.addUser(fname, lname, uname, pword, 'u');
+	}
+	
 	/**
 	 * method that returns a user object with the info found by its username
 	 * @param username of the person you are searching for
@@ -85,7 +89,11 @@ public class LoginUI {
 		 return controller.getloggedin();
 	 }
 	 
+	 /**
+	  * logs out the current user
+	  */
 	 public void logout(){
 		 controller.logOut();
 	 }
+	 
 }

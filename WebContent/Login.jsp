@@ -19,8 +19,11 @@ body {
 		out.print(session.getAttribute("Error"));
 	else if(session.getAttribute("Log In") != null)
 		out.print(session.getAttribute("Log In"));
+	else if(session.getAttribute("eMessage")!=null)
+		out.print(session.getAttribute("eMessage"));
 	else
 		out.print("");
+	session.setAttribute("eMessage",null);
 	session.setAttribute("Error", null);
 	session.setAttribute("Log In", null);
 %>
@@ -49,6 +52,15 @@ body {
 	</table>
 	<br>
 </form>
-
+Don't have an Account? Click here to create one!
+<form method ="post" action ="createAccount.jsp">
+<input value ="Create Free Account" type ="submit">
+</form>
+<br><br>
+Forgot Password?
+<form method = "post" action = "Forgot_password.jsp">
+<input name = "username" type = "text">
+<input value ="Reset Password" type ="submit">
+</form>
 </body>
 </html>
