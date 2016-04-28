@@ -59,7 +59,7 @@ Don't have an Account? Click here to create one!
 <br><br>
 Forgot Password?
 <form method = "post" action = "Forgot_password.jsp">
-<input name = "username" type = "text">
+<input name = "username4FP" type = "text">
 <input value ="Reset Password" type ="submit">
 </form>
 </body>

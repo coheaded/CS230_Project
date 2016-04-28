@@ -74,12 +74,13 @@ public class DBController {
 	  }
 	  
 	  public int login2(String username, String pass) {
+		  String newPass = encryptPass(pass);
 		  int status = -4;
 		  String[][] array = univDBlib.user_getUsers();
 		  for(int i = 0; i< array.length; i++) {
 			  status = -1;
 			  if(array[i][2].equals(username)) {
-				  if(array[i][3].equals(pass)) {
+				  if(array[i][3].equals(newPass)) {
 					  if(array[i][4].equalsIgnoreCase("u")){
 						  if(array[i][5].equalsIgnoreCase("y")) {
 							  status = 1;
@@ -161,9 +162,10 @@ public class DBController {
 	   * @param type the type of person eg. 'a' for admin, 'u' for user
 	   */
 	  public int addUser(String firstName, String lastName, String username, String pass, char type){
+		  String newPass = encryptPass(pass);
 		  if(type!='u' && type!= 'U' && type!='a' && type!='A')
 			  throw new IllegalArgumentException("Type must either be u, U, a, or A");
-		  int check = univDBlib.user_addUser(firstName, lastName, username, pass, type);
+		  int check = univDBlib.user_addUser(firstName, lastName, username, newPass, type);
 		  if(check<0)
 			  throw new IllegalArgumentException("Username taken");
 		  return check;
@@ -211,11 +213,12 @@ public class DBController {
 	   * @param activated activation you wish to change to
 	   */
 	  public int editUser( String firstName, String lastName, String username,  String pass, char type, char activated){
+		  String newPass = encryptPass(pass);
 		  if(type!='u' && type!= 'U' && type!='a' && type!='A')
 			  throw new IllegalArgumentException("Type must either be u, U, a, or A");
 		  if(activated!='y' && activated!='Y' && activated!= 'n' && activated!= 'N')
 			  throw new IllegalArgumentException("Activation must either y, Y, n, N");
-		  return univDBlib.user_editUser(username, firstName, lastName,  pass, type, activated);
+		  return univDBlib.user_editUser(username, firstName, lastName,  newPass, type, activated);
 	  }
 	  
 	  /**
@@ -357,5 +360,20 @@ public class DBController {
 	   */
 	  public int deleteUser(String user) {
 		  return univDBlib.user_deleteUser(user);
+	  }
+	  /**
+	   * takes in a String and encrypts it.
+	   * @param password
+	   * @return
+	   */
+	  public String encryptPass(String password){
+		  String all = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+		  String out ="";
+		  for(int i =0;i<password.length();i++)
+		    {
+		     String d = all.substring((all.indexOf(password.substring(i,i+1))+35)%52, ((all.indexOf(password.substring(i,i+1))+35)%52)+1);
+		     out = out+d;
+		    }
+		  return out;
 	  }
 }
