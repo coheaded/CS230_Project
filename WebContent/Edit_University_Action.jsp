@@ -23,5 +23,5 @@ aui.editUniversity(request.getParameter("SchoolName"), request.getParameter("Sta
 		Double.parseDouble(request.getParameter("SATMath")), Double.parseDouble(request.getParameter("Expenses")), Double.parseDouble(request.getParameter("PercentFinAid")), Integer.parseInt(request.getParameter("NumApplicants")),
 		Double.parseDouble(request.getParameter("PercentAdmitted")), Double.parseDouble(request.getParameter("PercentEnrolled")), Integer.parseInt(request.getParameter("AcademicScale")),
 		Integer.parseInt(request.getParameter("SocialScale")), Integer.parseInt(request.getParameter("QualityOfLife")), array);
-//response.sendRedirect("View_Universities.jsp");
+response.sendRedirect("View_Universities.jsp");
 %>
