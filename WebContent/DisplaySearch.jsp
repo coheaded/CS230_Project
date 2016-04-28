@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="uis.*, homes.*, people.*, java.util.*"%>
+<%@include file="VerifyLogin.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,6 +12,11 @@
 		cellpadding="2" cellspacing="2">
 <tr>
 <td>
+<form method ="post" action ="UserHome.jsp">
+<input value ="Home" type ="submit">
+</form>
+</td>
+<td>
 <form method = "post" action = "Manage_Saved_Schools.jsp" name = "Manage Saved Schools">
 <input value = "Manage Saved Schools" name = "Manage Saved Schools" type = "submit">
 </form>
@@ -20,7 +26,18 @@
 <input value = "Edit Profile" name = "Edit Profile" type = "submit">
 </form>
 </td>
+<td>
+<form method = "post" action = "Search.jsp" name = "Search">
+<input value = "Search" name = "Search" type = "submit">
+</form>
+</td>
+<td>
+<form  method ="post" action = "Logout.jsp">
+<input value ="Logout" type ="submit">
+</form>
+</td>
 </tr>
+
 </table>
 
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
